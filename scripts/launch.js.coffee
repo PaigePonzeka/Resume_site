@@ -1,0 +1,331 @@
+current_view = "dino"
+dino_messages = []
+$(document).ready ->
+  # generate dino_messages array
+  dino_messages = createDinoMessagesArray()
+  # Intilize litte Dino
+  showLittleDinoMessage()
+  # checking what is is viewpoint and making it as active
+  $(window).scroll ->
+    inview_id = $('section:in-viewport').attr('id')
+    #set the navigation based on what section is in view
+    if (current_view != inview_id)
+      current_view = inview_id
+      console.log(inview_id)
+      $("nav ul li a").removeClass('active')
+      $("nav ul li.#{inview_id} a").addClass('active')
+      showLittleDino()
+
+
+  # hover effects for navigation bar
+  $('#top_nav ul li').hover (->
+    changeDino(this)
+
+  ), ->
+    resetDino()
+
+  # Setting selected for first name hover over
+  $('#first_name li').click ->
+    $('#first_name li').removeClass('active')
+    $(this).addClass('active')
+    item_index = $(this).index() + 1
+
+    # set speech bubble message based on hat
+    message = getMessageClass(this)
+    $("#dino_bubble_content .rawr li").addClass('hide')
+    $(".#{message}").removeClass('hide')
+    hat_class = getHatClass(this)
+    setDinoHat(hat_class)
+
+  $('#last_name li').click ->
+    # give the button active class for styling
+    $('#last_name li').removeClass('active')
+    $(this).addClass('active')
+    accessory_class = getAccessoryClass(this)
+    setDinoAccessory(accessory_class)
+
+  # on hover of last name set the accessory
+  $('#first_name li').hover (->
+    hat_class = getHatClass(this)
+    setDinoHat(hat_class)
+    ), ->
+    #find the 'active' last_name accessory and set that one as active
+    current_active = $('#first_name li.active')
+    if current_active.length != 0  #there might be no active accessory
+      setDinoHat(getHatClass(current_active))
+    else
+      $('#dino_hat').addClass('hide')
+
+  # on hover of last name set the accessory
+  $('#last_name li').hover (->
+    accessory_class = getAccessoryClass(this)
+    setDinoAccessory(accessory_class)
+    ), ->
+    #find the 'active' last_name accessory and set that one as active
+    current_active = $('#last_name li.active')
+    if current_active.length != 0  #there might be no active accessory
+      setDinoAccessory(getAccessoryClass(current_active))
+    else
+      $('#dino_accessory').addClass('hide')
+
+  ########  Scrolling Navigation  ########
+  $("nav a, #top_nav a").bind "click", (event) ->
+    $anchor = $(this)
+
+    $("html, body").stop().animate
+     scrollTop: $($anchor.attr('href')).offset().top
+    , 1000
+    event.preventDefault()
+
+  ###############     Slideshow      #################
+  $('#slideshow_controls_previous').click ->
+    # move to the previous set of slides or move to the next slide
+    slideshow_previous()
+
+  $('#slideshow_controls_next').click ->
+    # move to the next slide or the next set of slides
+    slideshow_next()
+
+  $('#slides li').click ->
+    #set selected
+    setSlideSelected($(this))
+    #show the slide in the window
+
+  # intialize the slideshow pages
+  setSlideshowPages()
+
+  # when a page is clicked scroll to it
+  $('#slideshow_pages ul li a').click ->
+    page_num = parseInt($(this).html())
+    changeSlideshowPage(page_num)
+    false
+
+
+  # Reaction to Little Dino (Clippy) Buttons
+  $('#little_dino_bubble_buttons_yes').click ->
+    console.log("Yes");
+
+  $('#little_dino_bubble_buttons_no').click ->
+    hideLittleDino()
+
+# Contains all the messages Clippy Dino Can say
+createDinoMessagesArray=->
+  messages =
+    "dino" :
+      ["Hi! I am Dino, Your assistant, would you like some assistance?"]
+    "about" :
+      ["Hi! Are you trying to learn more about Paige?... Aren't we all..."]
+    "work" :
+      ["Need help? Cus you probably shouldn't.",
+      "Its a slideshow. It slides. It shows. Whoopy!"]
+    "contact" :
+      ["Looks like you're trying to contact Paige, would you like some assistance?",
+      "If you reach her, tell her to respond to that cat video I sent last week!"]
+
+  return messages
+  getRandomMessage(messages.dino)
+
+
+# get a random message between the array length and 0
+# return the string at that location
+getRandomMessage= (messages)->
+  random= Math.floor(Math.random()*messages.length)
+  return messages[random]
+
+
+# Based on the current view gets the message type and returns the string
+getMessage=->
+  switch current_view
+    when "dino" then return getRandomMessage(dino_messages.dino)
+    when "about" then return getRandomMessage(dino_messages.about)
+    when "work" then return getRandomMessage(dino_messages.work)
+    when "contact" then return getRandomMessage(dino_messages.contact)
+    else console.log("something went wrong")
+
+
+# Changes the class of the message
+showLittleDinoMessage=()->
+  $('#little_dino_bubble').hide()
+  # change the message
+  $('#little_dino_bubble_content p.message').text(getMessage())
+  # show the new bubble
+  $('#little_dino_bubble').fadeIn(200);
+
+# Hides the clippy little Dino
+hideLittleDino =()->
+  $('#little_dino_bubble').hide();
+  $('#little_dino').fadeOut(300);
+  $('#little_dino_container').hide();
+
+# shows the little dino based on the set speech bubble type
+showLittleDino=()->
+  # hide the bubble
+  $('#little_dino_bubble').hide();
+  # show little dino
+  $('#little_dino_container').show();
+  $('#little_dino').show();
+  # show speech bubble
+  showLittleDinoMessage();
+
+
+
+# returns a string of the accessory class using index of li in #last_name
+getAccessoryClass = (listItem) ->
+  return "acc" + ($(listItem).index() + 1)
+
+
+# returns a string of the accessory class using index of li in #first_name
+getHatClass = (listItem) ->
+  return "hat" + ($(listItem).index() + 1)
+
+
+getMessageClass = (listItem) ->
+  return "message" + ($(listItem).index() + 1)
+
+# Changes Dino color
+changeDino = (nav_item) ->
+  if ($(nav_item).hasClass("light_blue"))
+    $('#first_name li:eq(0)').click()
+    $('#last_name li:eq(3)').click()
+  else if ($(nav_item).hasClass("lime_green"))
+    $('#first_name li:eq(1)').click()
+    $('#last_name li:eq(6)').click()
+  else if ($(nav_item).hasClass("purple"))
+    $('#first_name li:eq(2)').click()
+    $('#last_name li:eq(4)').click()
+  nav_item_class = $(nav_item).attr('class')
+  setDinoColor(nav_item_class)
+  $('#dino').removeClass().addClass(nav_item_class)
+  setSpeechBubble(nav_item_class)
+
+
+# resets dino to page load state
+resetDino= ->
+  setSpeechBubble('rawr')
+  $('#dino').removeClass()
+
+
+# set Dino Hat
+setDinoHat= (hat_class)->
+  $('#dino_hat').removeClass().addClass(hat_class)
+
+
+# set Dino Accessory
+setDinoAccessory= (accessory_class) ->
+  $('#dino_accessory').removeClass().addClass(accessory_class)
+
+
+# sets color_class to dino to get ther right image
+setDinoColor=(color_class) ->
+  $('#dino').removeClass().addClass(color_class)
+
+
+# sets speech bubble content to the show_class
+setSpeechBubble=(show_class)->
+  $('#dino_bubble_content>li').addClass('hide')
+  $('#dino_bubble_content').find(".#{show_class}").removeClass('hide')
+
+
+###############     Slideshow      #################
+setSlideSelected=(slide)->
+  slide_width = -700
+
+  $("#slides li").removeClass('selected')
+  slide.addClass('selected')
+  slide_index = parseInt($('#slides li.selected').index())
+  # setting the margin left of the slide window based on index * slide_width
+  $("#slideshow_window_content").animate
+    marginLeft: "#{(slide_width * slide_index)}"
+  , 500, ->
+  # Check if index of currently selected is index =1 and disable previous
+  if ($('#slides li.selected').index() == 0)
+    slideshowDisablePrevious()
+  else
+    slideshowEnablePrevious()
+
+  if ($('#slides li.selected').index() == ($('#slides li').length-1))
+    slideshowDisableNext()
+  else
+    slideshowEnableNext()
+
+slideshowDisableNext= ->
+  $('#slideshow_controls_next').addClass('hide')
+
+slideshowDisablePrevious=->
+  $('#slideshow_controls_previous').addClass('hide')
+
+slideshowEnablePrevious=->
+  $('#slideshow_controls_previous').removeClass('hide')
+
+slideshowEnableNext=->
+  $('#slideshow_controls_next').removeClass('hide')
+
+slideshow_next= ->
+  # reshow the previous control
+  slideshowEnablePrevious()
+  slideshow_content = $("#slideshow_window_content")
+  slide_width = -700
+  slide_set = 5
+  current_margin = parseInt(slideshow_content.css('margin-left'))
+  #set next slide as selected
+  #find the currently selected slide
+  current_selected = $('#slides li.selected')
+  setSlideSelected(current_selected.next('li'))
+  # when you hit the last slide disable next button
+  if(($('#slides li.selected').index() + 1) == $('#slides li').length)
+    slideshowDisableNext()
+  # TODO when you hit the end of a set do something
+  if(current_selected.index() != 0 && ($('#slides li.selected').index()) % slide_set == 0)
+    slide_window_width = parseInt($('#slide_window').css('width'))
+    slides_margin = parseInt($('#slides').css('margin-left'))
+    $("#slides").animate
+      marginLeft: "#{(slides_margin - slide_window_width)}"
+    , 500, ->
+
+
+
+slideshow_previous= ->
+  #reshow the next control
+  slideshowEnableNext()
+  slideshow_content = $("#slideshow_window_content")
+  slide_width = 700
+  slide_set = 5
+  current_margin = parseInt(slideshow_content.css('margin-left'))
+
+  #set previous slide as selected
+  current_selected = $('#slides li.selected')
+  setSlideSelected(current_selected.prev('li'))
+  # when you hit the first slide disable previous button
+  if(current_selected.index() == 1)
+    slideshowDisablePrevious()
+  # TODO when you hit the first of the set do something
+  if(current_selected.index() != $('#slides li').length && ($('#slides li.selected').index()+1) % slide_set == 0)
+    slide_window_width = parseInt($('#slide_window').css('width'))
+    slides_margin = parseInt($('#slides').css('margin-left'))
+    $("#slides").animate
+      marginLeft: "#{(slides_margin + slide_window_width)}"
+    , 500, ->
+
+# for every 5 slides add another page to the slideshow pages nav
+setSlideshowPages= ->
+  num_of_slides = $('#slides li').length
+  num_of_pages = Math.ceil(num_of_slides/5)
+  for page in [1..num_of_pages]
+    page_link = $("<a />",
+      text: page,
+      href: "#"
+    )
+    page_list = $("<li />")
+    page_list.html(page_link)
+    $('#slideshow_pages ul').append(page_list)
+
+
+#when a page is clicked set the margins to scroll to the page
+changeSlideshowPage=(page_num)->
+  slide_window_width = parseInt($('#slide_window').css('width'))
+  slides_margin = -((page_num-1) * slide_window_width)
+  $("#slides").animate
+    marginLeft: "#{slides_margin}"
+  , 500, ->
+  #set the first slide as selected
+  false
