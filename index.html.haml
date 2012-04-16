@@ -34,31 +34,44 @@
     #wrapper
 
       %section#dino
-        %p.summary
-          Howdy, My name is Paige Ponzeka. I'm a web developer here in good old NYC. You can stay here and hang out with Dino (try clicking the buttons ;)) or you can click some links to learn more about me.
         #top_nav
           %ul
             %li.light_blue
               %a(href="#work") Work
             %li.lime_green
               %a(href="#about") About
+            %li.amber
+              %a(href="#contact") Contact
             %li.purple
               %a(href="http://hello.ponzeka.com") Blog
+
         #name_banner
           %ul#first_name
-            %li.blue P
-            %li.lime_green A
-            %li.purple I
-            %li.pink G
-            %li.amber E
+            %li.indent.blue
+              .minimal-indent P
+            %li.indent.lime_green
+              .minimal-indent A
+            %li.indent.purple
+              .minimal-indent I
+            %li.indent.pink
+              .minimal-indent G
+            %li.indent.amber
+              .minimal-indent E
           %ul#last_name
-            %li.maroon P
-            %li.yellow O
-            %li.red N
-            %li.dark_blue Z
-            %li.dark_purple E
-            %li.dark_red K
-            %li.seagreen A
+            %li.indent.maroon
+              .minimal-indent P
+            %li.indent.yellow
+              .minimal-indent O
+            %li.indent.red
+              .minimal-indent N
+            %li.indent.dark_blue
+              .minimal-indent Z
+            %li.indent.dark_purple
+              .minimal-indent E
+            %li.indent.dark_red
+              .minimal-indent K
+            %li.indent.seagreen
+              .minimal-indent A
 
         #dino_container
           #dino_bubble
@@ -72,11 +85,12 @@
               %li.rawr
                 %ul
                   %li.default RAWR!
-                  %li.hide.message1 RAWR, My Dear Watson.
-                  %li.hide.message2 Rawr, bro. Just Rawr!
-                  %li.hide.message3 rawr. :(
-                  %li.hide.message4 Rawr?
-                  %li.hide.message5 RaWr! \m/
+                  %li.hide.message1 Om Nom Nom
+                  %li.hide.message2 Rawr means I love you in Dinosaur!
+                  %li.hide.message3 If You're Happy and you know it clap your...oh.
+                  %li.hide.message4 If Time is Money, Then Are ATM's Time Machines?
+                  %li.hide.message5 We all have a dinosaur deep within us just trying to get out.
+
             #dino_bubble_triangle
           #dino_clothes
             #dino_accessory.hide
@@ -87,12 +101,6 @@
 
 
 
-        #small_nav
-          %h4 Small Apps and Projects
-          %ul
-            %li
-              %a(href="http://paige.ponzeka.com/how_old") How Old
-              %p Find out how old I was or you were when a movie was released.
 
 
 
@@ -243,6 +251,13 @@
           #slideshow_pages
             %ul
               %li
+
+      #small_nav
+        %h4 Small Apps and Projects
+        %ul
+          %li
+            %a(href="http://paige.ponzeka.com/how_old") How Old
+            %p Find out how old I was or you were when a movie was released.
       %section#contact
         %a(name="contact")
         %h1 Talk to Me
@@ -273,8 +288,12 @@
               %a(href="http://www.linkedin.com/in/paigeponzeka")
                 %img(src="./images/social_icons/linkedin.png")
               %a(href="http://www.linkedin.com/in/paigeponzeka") Recruit Me
+            %li
+              %a(href="http://pinterest.com/paigeponzeka/")
+                %img(src="./images/social_icons/pinterest.png")
+              %a(href="http://pinterest.com/paigeponzeka/") Pin Me
 
-#little_dino_container
+#little_dino_container.hide
   #little_dino_bubble
     #little_dino_bubble_content
       %p.message

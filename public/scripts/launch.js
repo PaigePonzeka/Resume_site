@@ -1,22 +1,18 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, hideLittleDino, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, showLittleDino, showLittleDinoMessage, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
 
   current_view = "dino";
 
   dino_messages = [];
 
   $(document).ready(function() {
-    dino_messages = createDinoMessagesArray();
-    showLittleDinoMessage();
     $(window).scroll(function() {
       var inview_id;
       inview_id = $('section:in-viewport').attr('id');
       if (current_view !== inview_id) {
         current_view = inview_id;
-        console.log(inview_id);
         $("nav ul li a").removeClass('active');
-        $("nav ul li." + inview_id + " a").addClass('active');
-        return showLittleDino();
+        return $("nav ul li." + inview_id + " a").addClass('active');
       }
     });
     $('#top_nav ul li').hover((function() {
@@ -133,25 +129,6 @@
     }
   };
 
-  showLittleDinoMessage = function() {
-    $('#little_dino_bubble').hide();
-    $('#little_dino_bubble_content p.message').text(getMessage());
-    return $('#little_dino_bubble').fadeIn(200);
-  };
-
-  hideLittleDino = function() {
-    $('#little_dino_bubble').hide();
-    $('#little_dino').fadeOut(300);
-    return $('#little_dino_container').hide();
-  };
-
-  showLittleDino = function() {
-    $('#little_dino_bubble').hide();
-    $('#little_dino_container').show();
-    $('#little_dino').show();
-    return showLittleDinoMessage();
-  };
-
   getAccessoryClass = function(listItem) {
     return "acc" + ($(listItem).index() + 1);
   };
@@ -175,6 +152,9 @@
     } else if ($(nav_item).hasClass("purple")) {
       $('#first_name li:eq(2)').click();
       $('#last_name li:eq(4)').click();
+    } else if ($(nav_item).hasClass("amber")) {
+      $('#first_name li:eq(4)').click();
+      $('#last_name li:eq(1)').click();
     }
     nav_item_class = $(nav_item).attr('class');
     setDinoColor(nav_item_class);

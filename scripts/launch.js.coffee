@@ -2,19 +2,18 @@ current_view = "dino"
 dino_messages = []
 $(document).ready ->
   # generate dino_messages array
-  dino_messages = createDinoMessagesArray()
+  #dino_messages = createDinoMessagesArray()
   # Intilize litte Dino
-  showLittleDinoMessage()
+  #showLittleDinoMessage()
   # checking what is is viewpoint and making it as active
   $(window).scroll ->
     inview_id = $('section:in-viewport').attr('id')
     #set the navigation based on what section is in view
     if (current_view != inview_id)
       current_view = inview_id
-      console.log(inview_id)
       $("nav ul li a").removeClass('active')
       $("nav ul li.#{inview_id} a").addClass('active')
-      showLittleDino()
+      #showLittleDino()
 
 
   # hover effects for navigation bar
@@ -144,28 +143,28 @@ getMessage=->
 
 
 # Changes the class of the message
-showLittleDinoMessage=()->
-  $('#little_dino_bubble').hide()
+#showLittleDinoMessage=()->
+#  $('#little_dino_bubble').hide()
   # change the message
-  $('#little_dino_bubble_content p.message').text(getMessage())
+#  $('#little_dino_bubble_content p.message').text(getMessage())
   # show the new bubble
-  $('#little_dino_bubble').fadeIn(200);
+#  $('#little_dino_bubble').fadeIn(200);
 
 # Hides the clippy little Dino
-hideLittleDino =()->
-  $('#little_dino_bubble').hide();
-  $('#little_dino').fadeOut(300);
-  $('#little_dino_container').hide();
+#hideLittleDino =()->
+#  $('#little_dino_bubble').hide();
+#  $('#little_dino').fadeOut(300);
+#  $('#little_dino_container').hide();
 
 # shows the little dino based on the set speech bubble type
-showLittleDino=()->
+#showLittleDino=()->
   # hide the bubble
-  $('#little_dino_bubble').hide();
+#  $('#little_dino_bubble').hide();
   # show little dino
-  $('#little_dino_container').show();
-  $('#little_dino').show();
+#  $('#little_dino_container').show();
+#  $('#little_dino').show();
   # show speech bubble
-  showLittleDinoMessage();
+#  showLittleDinoMessage();
 
 
 
@@ -193,6 +192,9 @@ changeDino = (nav_item) ->
   else if ($(nav_item).hasClass("purple"))
     $('#first_name li:eq(2)').click()
     $('#last_name li:eq(4)').click()
+  else if ($(nav_item).hasClass("amber"))
+    $('#first_name li:eq(4)').click()
+    $('#last_name li:eq(1)').click()
   nav_item_class = $(nav_item).attr('class')
   setDinoColor(nav_item_class)
   $('#dino').removeClass().addClass(nav_item_class)
