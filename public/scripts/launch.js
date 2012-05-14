@@ -1,11 +1,14 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, intializeIsotope, intializeLifeStream, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
 
   current_view = "dino";
 
   dino_messages = [];
 
   $(document).ready(function() {
+    impress().init();
+    intializeLifeStream(false);
+    intializeIsotope();
     $(window).scroll(function() {
       var inview_id;
       inview_id = $('section:in-viewport').attr('id');
@@ -95,6 +98,41 @@
       return hideLittleDino();
     });
   });
+
+  intializeIsotope = function() {
+    var $container;
+    $container = $('#work-list');
+    return $container.isotope({
+      itemSelector: '.work-list-item'
+    });
+  };
+
+  intializeLifeStream = function(online) {
+    if (online) {
+      return $("#lifestream").lifestream({
+        list: [
+          {
+            service: "github",
+            user: "PaigePonzeja"
+          }, {
+            service: "twitter",
+            user: "PaigeTPonzeka"
+          }, {
+            service: "tumblr",
+            user: "PaigePonzeka"
+          }
+        ]
+      });
+    } else {
+      return $("#lifestream").html(lifestreamDemo());
+    }
+  };
+
+  lifestreamDemo = function() {
+    var offline;
+    offline = "<ul class='lifestream demo'><li class='lifestream-twitter'>Just completed a 2.01 mile run playing <a href='http://search.twitter.com/search?q=%23zombiesrun'>#zombiesrun</a>: collected 22 supplies, outran a zombie mob <a href='http://t.co/tokDeGgN'>http://t.co/tokDeGgN</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/GCpmn'>@GCpmn</a>: <a href='http://search.twitter.com/search?q=%23addittothequoteboard'>#addittothequoteboard</a> 'He's kind of hot for a duck' <a href='http://twitter.com/PaigeTPonzeka'>@PaigeTPonzeka</a></li><li class='lifestream-twitter'><a href='http://t.co/G5MTR86z'>http://t.co/G5MTR86z</a>   Human Behavior Theories That Can be Applied to Web Design From <a href='http://twitter.com/sixrevisions'>@sixrevisions</a></li><li class='lifestream-twitter'><a href='http://twitter.com/GCpmn'>@GCpmn</a> I mean he's just so cool. <a href='http://t.co/945BBXPS'>http://t.co/945BBXPS</a></li><li class='lifestream-twitter'>Request: Rebecca Black Nyan Cat... who do I call about this?</li><li class='lifestream-twitter'><a href='http://t.co/361VGOjc'>http://t.co/361VGOjc</a>  Zombie Apocalypse, the Board Game <a href='http://search.twitter.com/search?q=%23Zombies'>#Zombies</a></li><li class='lifestream-twitter'>'This is my first experience with a baby making situation.' My Boss Re: Someone's wife in Labor. <a href='http://search.twitter.com/search?q=%23GCAdventures'>#GCAdventures</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/CandyNewYork'>@CandyNewYork</a>: Got 10 pitches today related to Shades of Grey. Duane Reade should capitalize and start stocking it next to the KY. <a href='http://search.twitter.com/search?q=%23j'>#j</a> ...</li><li class='lifestream-twitter'>RT <a href='http://twitter.com/frandrescher'>@frandrescher</a>: Dear <a href='http://twitter.com/boyscouts'>@boyscouts</a>, on Mother's Day I support Jennifer &amp; ALL moms, gay &amp; straight! <a href='http://search.twitter.com/search?q=%23scoutsforall'>#scoutsforall</a> <a href='http://t.co/g8xShAHW'>http://t.co/g8xShAHW</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/HipChat'>@HipChat</a>: The <a href='http://twitter.com/UserVoice'>@UserVoice</a> team has a great HipChat setup going, check it out: <a href='http://t.co/ir1liZZQ'>http://t.co/ir1liZZQ</a></li></ul></article>";
+    return offline;
+  };
 
   createDinoMessagesArray = function() {
     var messages;
@@ -251,7 +289,9 @@
     current_margin = parseInt(slideshow_content.css('margin-left'));
     current_selected = $('#slides li.selected');
     setSlideSelected(current_selected.prev('li'));
-    if (current_selected.index() === 1) slideshowDisablePrevious();
+    if (current_selected.index() === 1) {
+      slideshowDisablePrevious();
+    }
     if (current_selected.index() !== $('#slides li').length && ($('#slides li.selected').index() + 1) % slide_set === 0) {
       slide_window_width = parseInt($('#slide_window').css('width'));
       slides_margin = parseInt($('#slides').css('margin-left'));
@@ -262,11 +302,11 @@
   };
 
   setSlideshowPages = function() {
-    var num_of_pages, num_of_slides, page, page_link, page_list, _results;
+    var num_of_pages, num_of_slides, page, page_link, page_list, _i, _results;
     num_of_slides = $('#slides li').length;
     num_of_pages = Math.ceil(num_of_slides / 5);
     _results = [];
-    for (page = 1; 1 <= num_of_pages ? page <= num_of_pages : page >= num_of_pages; 1 <= num_of_pages ? page++ : page--) {
+    for (page = _i = 1; 1 <= num_of_pages ? _i <= num_of_pages : _i >= num_of_pages; page = 1 <= num_of_pages ? ++_i : --_i) {
       page_link = $("<a />", {
         text: page,
         href: "#"

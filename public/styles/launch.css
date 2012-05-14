@@ -430,31 +430,36 @@ body {
       #wrapper #small_nav ul li p {
         color: #afaeae;
         font-size: 12px; }
-  #wrapper #social_links li {
-    height: 50px;
-    margin: 10px 0;
-    cursor: pointer; }
-    #wrapper #social_links li:hover {
+  #wrapper #social_links {
+    float: left; }
+    #wrapper #social_links li {
+      height: 50px;
+      margin: 10px 0;
       cursor: pointer; }
-      #wrapper #social_links li:hover img {
-        cursor: pointer;
-        -webkit-transform: rotate(-360deg);
-        -moz-transform: rotate(-360deg);
-        -webkit-transition: -webkit-transform 0.5s ease-in;
-        -moz-transition: -moz-transform 0.5s ease-in; }
-      #wrapper #social_links li:hover a {
-        color: black;
+      #wrapper #social_links li:hover {
         cursor: pointer; }
-    #wrapper #social_links li a {
-      cursor: pointer;
-      color: #707070;
-      border: none;
-      font-size: 30px;
-      padding: 10px 0 10px 0;
-      background: left top no-repeat; }
-    #wrapper #social_links li img {
-      cursor: pointer;
-      vertical-align: middle; }
+        #wrapper #social_links li:hover img {
+          cursor: pointer;
+          -webkit-transform: rotate(-360deg);
+          -moz-transform: rotate(-360deg);
+          -webkit-transition: -webkit-transform 0.5s ease-in;
+          -moz-transition: -moz-transform 0.5s ease-in; }
+        #wrapper #social_links li:hover a {
+          color: black;
+          cursor: pointer; }
+      #wrapper #social_links li a {
+        cursor: pointer;
+        color: #707070;
+        border: none;
+        font-size: 30px;
+        padding: 10px 0 10px 0;
+        background: left top no-repeat; }
+      #wrapper #social_links li img {
+        cursor: pointer;
+        vertical-align: middle; }
+  #wrapper #lifestream {
+    float: right;
+    width: 300px; }
   #wrapper #about_nav p {
     font-size: 18px; }
   #wrapper #slideshow {
@@ -578,3 +583,7 @@ body {
             font-size: 16px;
             text-align: center;
             margin-top: 5px; }
+
+.step {
+  min-width: 600px;
+  max-height: 500px; }

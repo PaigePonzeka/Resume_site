@@ -1,6 +1,11 @@
 current_view = "dino"
 dino_messages = []
 $(document).ready ->
+  impress().init() # initialize slideshow
+  # intialize life stream
+  intializeLifeStream(false)
+
+  intializeIsotope()
   # generate dino_messages array
   #dino_messages = createDinoMessagesArray()
   # Intilize litte Dino
@@ -106,6 +111,37 @@ $(document).ready ->
 
   $('#little_dino_bubble_buttons_no').click ->
     hideLittleDino()
+
+
+# intializing the isotope for the work container
+intializeIsotope= ->
+  $container = $('#work-list')
+
+  $container.isotope
+    itemSelector: '.work-list-item'
+
+
+intializeLifeStream=(online) ->
+  if online
+    $("#lifestream").lifestream list: [
+      service: "github"
+      user: "PaigePonzeja"
+    ,
+      service: "twitter"
+      user: "PaigeTPonzeka"
+    ,
+      service: "tumblr"
+      user: "PaigePonzeka"
+    ]
+  else
+    $("#lifestream").html(lifestreamDemo())
+
+
+# Just Some default text for Isotope
+# Used to see styling when working offline
+lifestreamDemo = ->
+  offline = "<ul class='lifestream demo'><li class='lifestream-twitter'>Just completed a 2.01 mile run playing <a href='http://search.twitter.com/search?q=%23zombiesrun'>#zombiesrun</a>: collected 22 supplies, outran a zombie mob <a href='http://t.co/tokDeGgN'>http://t.co/tokDeGgN</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/GCpmn'>@GCpmn</a>: <a href='http://search.twitter.com/search?q=%23addittothequoteboard'>#addittothequoteboard</a> 'He's kind of hot for a duck' <a href='http://twitter.com/PaigeTPonzeka'>@PaigeTPonzeka</a></li><li class='lifestream-twitter'><a href='http://t.co/G5MTR86z'>http://t.co/G5MTR86z</a>   Human Behavior Theories That Can be Applied to Web Design From <a href='http://twitter.com/sixrevisions'>@sixrevisions</a></li><li class='lifestream-twitter'><a href='http://twitter.com/GCpmn'>@GCpmn</a> I mean he's just so cool. <a href='http://t.co/945BBXPS'>http://t.co/945BBXPS</a></li><li class='lifestream-twitter'>Request: Rebecca Black Nyan Cat... who do I call about this?</li><li class='lifestream-twitter'><a href='http://t.co/361VGOjc'>http://t.co/361VGOjc</a>  Zombie Apocalypse, the Board Game <a href='http://search.twitter.com/search?q=%23Zombies'>#Zombies</a></li><li class='lifestream-twitter'>'This is my first experience with a baby making situation.' My Boss Re: Someone's wife in Labor. <a href='http://search.twitter.com/search?q=%23GCAdventures'>#GCAdventures</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/CandyNewYork'>@CandyNewYork</a>: Got 10 pitches today related to Shades of Grey. Duane Reade should capitalize and start stocking it next to the KY. <a href='http://search.twitter.com/search?q=%23j'>#j</a> ...</li><li class='lifestream-twitter'>RT <a href='http://twitter.com/frandrescher'>@frandrescher</a>: Dear <a href='http://twitter.com/boyscouts'>@boyscouts</a>, on Mother's Day I support Jennifer &amp; ALL moms, gay &amp; straight! <a href='http://search.twitter.com/search?q=%23scoutsforall'>#scoutsforall</a> <a href='http://t.co/g8xShAHW'>http://t.co/g8xShAHW</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/HipChat'>@HipChat</a>: The <a href='http://twitter.com/UserVoice'>@UserVoice</a> team has a great HipChat setup going, check it out: <a href='http://t.co/ir1liZZQ'>http://t.co/ir1liZZQ</a></li></ul></article>"
+  offline
 
 # Contains all the messages Clippy Dino Can say
 createDinoMessagesArray=->

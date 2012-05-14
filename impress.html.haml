@@ -1,0 +1,72 @@
+%html
+  %head
+    %title Paige Ponzeka
+    %link(href="styles/reset.css" media="screen" rel="stylesheet" type="text/css" )
+    %link(href="styles/launch.css" media="screen" rel="stylesheet" type="text/css" )
+
+
+  %body.impress-not-supported
+    .fallback-message.hide
+      %p Your browser doesn't support the features requiredby impress.js.
+
+    #fixed-nav
+      #fixed-nav_wrapper
+        %ul#fixed-nav_logo
+          %li P
+          %li A
+          %li I
+          %li G
+          %li E
+        %nav
+          %ul
+            %li.dino
+              %a.active(href="#dino") Dino
+            %li.about
+              %a(href="#about") About
+            %li.work
+              %a(href="#work") Work
+            %li.contact
+              %a(href="#contact") Contact
+            %li.blog
+              %a(href="http://hello.ponzeka.com") Blog
+
+
+    #wrapper
+      #impress
+
+        %section#dino.step(data-x="0" data-y="0")
+          = render 'partials/_dino.html.haml'
+
+        %section#about.step(data-x="1000" data-y="500")
+          = render 'partials/_about.html.haml'
+
+        %section#work.step(data-x="400" data-y="-1000" data-rotate="90")
+          = render 'partials/_work2.html.haml'
+
+        %section#contact.step(data-x="-1000" data-y="-1000" data-scale="0.5")
+          = render 'partials/_contact.html.haml'
+
+  #little_dino_container.hide
+    #little_dino_bubble
+      #little_dino_bubble_content
+        %p.message
+
+      %ul#little_dino_bubble_buttons
+        %li.hide.left#little_dino_bubble_buttons_yes Yes
+        %li.hide.center Okay
+        %li.center#little_dino_bubble_buttons_no Go away
+      #little_dino_bubble_triangle_border
+      #little_dino_bubble_triangle
+    #little_dino
+
+    %script(src="scripts/jquery-1.7.2.min.js" type="text/javascript" )
+    %script(src="scripts/jquery.lifestream.min.js" type="text/javascript" )
+    %script(src="scripts/impress.js" type="text/javascript" )
+    %script(src="scripts/jquery.isotope.min.js" type="text/javascript" )
+    %script(src="scripts/launch.js" type="text/javascript" )
+
+
+
+
+
+
