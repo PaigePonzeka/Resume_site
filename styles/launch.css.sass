@@ -538,7 +538,36 @@ body
     p
       font-size:  18px
 
-  #slideshow
+  ul#work-list
+    li.work-list-item
+      width: 300px
+      min-height: 200px
+      cursor: pointer
+      position: relative
+
+      ul.work-list-tools
+        position: absolute
+        bottom: 5px
+        right: 5px
+        clear: both
+        overflow: hidden
+
+        li
+          float: left
+          margin: 0 5px
+          font-size: 13px
+
+      p.description, img // Not shown by default
+        display: none
+      img
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 1
+        width: 300px
+        height: 200px
+
+  /*#slideshow
     +border-radius(15px)
     position: relative
     background: #bebebe
@@ -661,7 +690,7 @@ body
               color: #fff
               font-size: 16px
               text-align: center
-              margin-top: 5px
+              margin-top: 5px*/
 
 .step
   min-width: 600px

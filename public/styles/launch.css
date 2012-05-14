@@ -196,7 +196,131 @@ body {
   width: 960px;
   padding: 0 50px;
   margin: 0 auto;
-  background: url("../images/bg.png") repeat-y top center; }
+  background: url("../images/bg.png") repeat-y top center;
+  /*#slideshow
+   * +border-radius(15px)
+   * position: relative
+   * background: #bebebe
+   * height: 560px
+   * width: 750px
+   * margin: 40px auto 0 auto
+   * padding: 20px
+   *
+   * #slideshow_window
+   *   width: 700px
+   *   height: 420px
+   *   overflow: hidden
+   *   margin: 0 auto
+   *   +border-radius(15px)
+   *   img
+   *     width: 100%
+   *
+   *   #slideshow_window_content
+   *     width: 60000px
+   *   li
+   *     +border-radius(15px)
+   *     position: relative
+   *     margin: 0 auto
+   *     float: left
+   *     width: 700px
+   *     height: 420px
+   *     background: #2c2c2c
+   *
+   *   .slideshow_window_description
+   *     padding-top: 10px
+   *     position: absolute
+   *     background: $trans_gray
+   *     bottom: 0px
+   *     left: 0px
+   *     -webkit-border-radius: 0px 0px 15px 15px
+   *     -moz-border-radius: 0px 0px 15px 15px
+   *     border-radius: 0px 0px 15px 15px
+   *     height: 90px
+   *     color: #fff
+   *     width: 100%
+   *
+   *     h4
+   *       font-size: 30px
+   *       text-align: center
+   *
+   *     p
+   *       margin-top: 10px
+   *       width: 80%
+   *       margin: 0 auto
+   *       font-size: 16px
+   *       line-height: 18px
+   *
+   * .slideshow_control
+   *   position: absolute
+   *   width: 54px
+   *   height: 70px
+   *   background: url('../images/slideshow_controls.png') top left
+   *   margin-top: 20px
+   *   cursor: pointer
+   * #slideshow_pages
+   *   text-align: center
+   *   li
+   *     display: inline
+   *     margin: 0 5px
+   *
+   * #slideshow_controls_previous
+   *   left: 20px
+   *   background-position: top left
+   *
+   *   &:hover
+   *     background-position: top right
+   *
+   * #slideshow_controls_next
+   *   right: 20px
+   *   background: url('../images/slideshow_controls.png') bottom left
+   *
+   *   &:hover
+   *     background-position: bottom right
+   *
+   * #slideshow_nav
+   *   #slide_window
+   *     width: 505px
+   *     margin: 10px auto
+   *     overflow: hidden
+   *
+   *   ul
+   *     width: 6000px
+   *     height: 100px
+   *
+   *     +clearfix
+   *
+   *     li
+   *       position: relative
+   *       overflow: hidden
+   *       cursor: pointer
+   *       float: left
+   *       width: 80px
+   *       height: 80px
+   *       margin: 10px
+   *       background: #3b3b3b
+   *       +border-radius(10px)
+   *
+   *       &.selected
+   *         +boxshadow(0px, 0px, 5px, 5px, $purple)
+   *       &:hover
+   *         +boxshadow(0px, 0px, 5px, 5px, $lime_green)
+   *
+   *       img
+   *         width: 100%
+   *         +border-radius(10px)
+   *
+   *       .slide_title
+   *         display: none
+   *         position: absolute
+   *         bottom: 5px
+   *         width: 80px
+   *         margin: 0 auto
+   *         background: $trans_gray
+   *         h3
+   *           color: #fff
+   *           font-size: 16px
+   *           text-align: center
+   *           margin-top: 5px */ }
   #wrapper section {
     margin: 20px;
     padding: 100px 0 200px 0; }
@@ -462,127 +586,30 @@ body {
     width: 300px; }
   #wrapper #about_nav p {
     font-size: 18px; }
-  #wrapper #slideshow {
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    position: relative;
-    background: #bebebe;
-    height: 560px;
-    width: 750px;
-    margin: 40px auto 0 auto;
-    padding: 20px; }
-    #wrapper #slideshow #slideshow_window {
-      width: 700px;
-      height: 420px;
-      overflow: hidden;
-      margin: 0 auto;
-      -webkit-border-radius: 15px;
-      -moz-border-radius: 15px;
-      border-radius: 15px; }
-      #wrapper #slideshow #slideshow_window img {
-        width: 100%; }
-      #wrapper #slideshow #slideshow_window #slideshow_window_content {
-        width: 60000px; }
-      #wrapper #slideshow #slideshow_window li {
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-        position: relative;
-        margin: 0 auto;
-        float: left;
-        width: 700px;
-        height: 420px;
-        background: #2c2c2c; }
-      #wrapper #slideshow #slideshow_window .slideshow_window_description {
-        padding-top: 10px;
-        position: absolute;
-        background: rgba(75, 75, 75, 0.8);
-        bottom: 0px;
-        left: 0px;
-        -webkit-border-radius: 0px 0px 15px 15px;
-        -moz-border-radius: 0px 0px 15px 15px;
-        border-radius: 0px 0px 15px 15px;
-        height: 90px;
-        color: white;
-        width: 100%; }
-        #wrapper #slideshow #slideshow_window .slideshow_window_description h4 {
-          font-size: 30px;
-          text-align: center; }
-        #wrapper #slideshow #slideshow_window .slideshow_window_description p {
-          margin-top: 10px;
-          width: 80%;
-          margin: 0 auto;
-          font-size: 16px;
-          line-height: 18px; }
-    #wrapper #slideshow .slideshow_control {
+  #wrapper ul#work-list li.work-list-item {
+    width: 300px;
+    min-height: 200px;
+    cursor: pointer;
+    position: relative; }
+    #wrapper ul#work-list li.work-list-item ul.work-list-tools {
       position: absolute;
-      width: 54px;
-      height: 70px;
-      background: url("../images/slideshow_controls.png") top left;
-      margin-top: 20px;
-      cursor: pointer; }
-    #wrapper #slideshow #slideshow_pages {
-      text-align: center; }
-      #wrapper #slideshow #slideshow_pages li {
-        display: inline;
-        margin: 0 5px; }
-    #wrapper #slideshow #slideshow_controls_previous {
-      left: 20px;
-      background-position: top left; }
-      #wrapper #slideshow #slideshow_controls_previous:hover {
-        background-position: top right; }
-    #wrapper #slideshow #slideshow_controls_next {
-      right: 20px;
-      background: url("../images/slideshow_controls.png") bottom left; }
-      #wrapper #slideshow #slideshow_controls_next:hover {
-        background-position: bottom right; }
-    #wrapper #slideshow #slideshow_nav #slide_window {
-      width: 505px;
-      margin: 10px auto;
-      overflow: hidden; }
-    #wrapper #slideshow #slideshow_nav ul {
-      width: 6000px;
-      height: 100px;
+      bottom: 5px;
+      right: 5px;
       clear: both;
       overflow: hidden; }
-      #wrapper #slideshow #slideshow_nav ul li {
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
+      #wrapper ul#work-list li.work-list-item ul.work-list-tools li {
         float: left;
-        width: 80px;
-        height: 80px;
-        margin: 10px;
-        background: #3b3b3b;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px; }
-        #wrapper #slideshow #slideshow_nav ul li.selected {
-          -moz-box-shadow: 0px 0px 5px 5px #9900ff;
-          -webkit-box-shadow: 0px 0px 5px 5px #9900ff;
-          box-shadow: 0px 0px 5px 5px #9900ff; }
-        #wrapper #slideshow #slideshow_nav ul li:hover {
-          -moz-box-shadow: 0px 0px 5px 5px #99ff00;
-          -webkit-box-shadow: 0px 0px 5px 5px #99ff00;
-          box-shadow: 0px 0px 5px 5px #99ff00; }
-        #wrapper #slideshow #slideshow_nav ul li img {
-          width: 100%;
-          -webkit-border-radius: 10px;
-          -moz-border-radius: 10px;
-          border-radius: 10px; }
-        #wrapper #slideshow #slideshow_nav ul li .slide_title {
-          display: none;
-          position: absolute;
-          bottom: 5px;
-          width: 80px;
-          margin: 0 auto;
-          background: rgba(75, 75, 75, 0.8); }
-          #wrapper #slideshow #slideshow_nav ul li .slide_title h3 {
-            color: white;
-            font-size: 16px;
-            text-align: center;
-            margin-top: 5px; }
+        margin: 0 5px;
+        font-size: 13px; }
+    #wrapper ul#work-list li.work-list-item p.description, #wrapper ul#work-list li.work-list-item img {
+      display: none; }
+    #wrapper ul#work-list li.work-list-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 300px;
+      height: 200px; }
 
 .step {
   min-width: 600px;
