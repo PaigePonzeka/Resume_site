@@ -3,6 +3,7 @@ dino_messages = []
 $(document).ready ->
   impress().init() # initialize slideshow
   # intialize life stream
+  intializeWorkIsotope($("#work-list")) # intialize isotop content
   intializeLifeStream(false)
 
   intializeIsotope()
@@ -113,6 +114,142 @@ $(document).ready ->
     hideLittleDino()
 
 
+# get the json data structure of the work details and populate the isotope
+intializeWorkIsotope=(container)->
+  work_data = getWorkDetails()
+  # for each work item in the work details array
+  $(work_data).each ->
+    work_item = $(this)[0]
+    # create a new isotope object
+    item = $("<li/>", {class: "work-list-item"})
+
+    item_title = $("<h3/>",{class: "work-list-item-title", text:work_item.title})
+    item_description = $("<p/>",{class: "work-list-item-description", text:work_item.description})
+
+    # Create a list item for each item tag and append it to the ul
+    item_tags_list = $("<ul/>",{class: "work-list-item-tags"})
+    work_item_tags = work_item.tags
+    $(work_item_tags).each ->
+      item_tags_list_item = $("<li/>", {text: "#{this}"})
+      item_tags_list.append(item_tags_list_item)
+
+    # images
+    images_folder = "images/work/"
+    # icons
+    work_icon = work_item.images.icon
+    # right now assuming blank icon if none
+    if (work_icon.length > 0)
+      item_icon = $("<img/>",{class: "work-list-item-icon", src: "#{images_folder}#{work_icon}"})
+      console.log(item_icon)
+
+    work_screenshots = work_item.images.screenshots
+    if(work_screenshots.length > 0)
+      console.log("use it")
+      $(work_screenshots).each ->
+        console.log("#{this}")
+        # TODO Not sure what I'm using screenshots for right now
+        #item_screenshot = $("<img/>",{class: "work-list-item-screenshot"})
+
+    # appending everything to the isotope object
+    item
+      .append(item_icon)
+      .append(item_title)
+      .append(item_description)
+      .append(item_tags_list)
+
+    # append isotope object to isotope container
+    container.append(item)
+
+
+
+# returns the work details json data structure
+getWorkDetails = ->
+  work = [
+    title: "stats2v",
+    description: "This was a collborative project with programmers to develop an application that track player stats from servers and then uploaded them to a database. Stats2V was the user interface for playersto view their stats and compare themselves to other players.",
+    tags: ["PHP","HTML", "CSS", "JQuery", "Javascript", "C#"],
+    images:
+      icon: "icon_stats2v.gif",
+      screenshots: ["stats2v.gif"]
+    links:
+      demo: "demo.test.html"
+      github: "http://github.com/codetestrawr"
+
+  ,
+    title: "blueshirts united",
+    description: "Did some development work and maintanince on this rangers fan site hosted by MSG.",
+    tags: ["SASS", "HAML", "JQuery", "Javascript", "RoR"],
+    images:
+      icon: "icon_bsu.gif",
+      screenshots: ["bsu.gif"]
+    links:
+      demo: "http://blueshirtsunited.com"
+      github: ""
+  ,
+    title: "knicksnow",
+    description: "Did some development work and maintanince on this Knicks fan site hosted by MSG.",
+    tags: ["SASS", "HAML", "JQuery", "Javascript", "RoR"],
+    images:
+      icon: "icon_knicks.gif",
+      screenshots: ["knicks.gif"]
+    links:
+      demo: "http://knicksnow.com"
+      github: ""
+  ,
+    title: "vsu victims database",
+    description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
+    tags: ["MS Access, Visual Basic"],
+    images:
+      icon: "icon_vsu.gif",
+      screenshots: ["vsu.gif"]
+    links:
+      demo: ""
+      github: ""
+  ,
+
+    title: "memberly",
+    description: "implemented and maintained the front end development for Member.ly. Worked closely with designers to make sure site was pixel perfect implementations of the designs",
+    tags: ["JQuery", "SASS", "HAML", "RoR"],
+    images:
+      icon: "icon_memberly.gif",
+      screenshots: ["memberly.gif"]
+    links:
+      demo: "http://member.ly"
+      github: ""
+  ,
+    title: "shootout",
+    description: "A game developed using Python and pygames. The code isn't anything spectacular but it was my first python creation and I created all the design elements myself.",
+    tags: ["Python", "Pygames"],
+    images:
+      icon: "icon_shootout.gif",
+      screenshots: ["shootout.gif"]
+    links:
+      demo: ""
+      github: ""
+  ,
+      title: "wordz",
+      description: "My first javascript, JQuery creation in collect, also created these design elements myself. This was a collobrative project.",
+      tags: ["HTML", "CSS", "Javascript", "JQuery"],
+      images:
+        icon: "icon_wordz.gif",
+        screenshots: ["wordz.gif"]
+      links:
+        demo: ""
+        github: ""
+  ,
+    title: "playlist creator",
+    description: "Created in Visual Studio this was meant to be a tool for server admins to create playlist for the H2V PC game.",
+    tags: ["C#", "Visual Studio"],
+    images:
+      icon: "icon_playlist-creator.gif",
+      screenshots: ["playlist-creator.gif"]
+    links:
+      demo: ""
+      github: ""
+  ]
+  work
+
+
 # intializing the isotope for the work container
 intializeIsotope= ->
   $container = $('#work-list')
@@ -121,11 +258,12 @@ intializeIsotope= ->
     itemSelector: '.work-list-item'
 
 
+# Call the lifestream object and intialize it on the data structure
 intializeLifeStream=(online) ->
   if online
     $("#lifestream").lifestream list: [
       service: "github"
-      user: "PaigePonzeja"
+      user: "PaigePonzeka"
     ,
       service: "twitter"
       user: "PaigeTPonzeka"
@@ -367,3 +505,5 @@ changeSlideshowPage=(page_num)->
   , 500, ->
   #set the first slide as selected
   false
+
+

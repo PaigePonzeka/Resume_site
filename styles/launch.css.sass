@@ -539,13 +539,29 @@ body
       font-size:  18px
 
   ul#work-list
+    margin-top: 20px
+    width: 950px
+
     li.work-list-item
-      width: 300px
+      border: 2px solid #333
+      width: 290px
       min-height: 200px
       cursor: pointer
       position: relative
+      margin: 5px
+      padding: 5px
 
-      ul.work-list-tools
+      h3
+        text-transform: capitalize
+        font-size: 14px
+        margin-bottom: 5px
+
+
+      .work-list-item-icon
+        float: right
+        padding: 0px 5px 5px 0px
+
+      ul.work-list-item-tags
         position: absolute
         bottom: 5px
         right: 5px
@@ -557,15 +573,7 @@ body
           margin: 0 5px
           font-size: 13px
 
-      p.description, img // Not shown by default
-        display: none
-      img
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 1
-        width: 300px
-        height: 200px
+
 
   /*#slideshow
     +border-radius(15px)

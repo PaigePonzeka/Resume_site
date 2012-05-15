@@ -586,30 +586,34 @@ body {
     width: 300px; }
   #wrapper #about_nav p {
     font-size: 18px; }
-  #wrapper ul#work-list li.work-list-item {
-    width: 300px;
-    min-height: 200px;
-    cursor: pointer;
-    position: relative; }
-    #wrapper ul#work-list li.work-list-item ul.work-list-tools {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      clear: both;
-      overflow: hidden; }
-      #wrapper ul#work-list li.work-list-item ul.work-list-tools li {
-        float: left;
-        margin: 0 5px;
-        font-size: 13px; }
-    #wrapper ul#work-list li.work-list-item p.description, #wrapper ul#work-list li.work-list-item img {
-      display: none; }
-    #wrapper ul#work-list li.work-list-item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 300px;
-      height: 200px; }
+  #wrapper ul#work-list {
+    margin-top: 20px;
+    width: 950px; }
+    #wrapper ul#work-list li.work-list-item {
+      border: 2px solid #333333;
+      width: 290px;
+      min-height: 200px;
+      cursor: pointer;
+      position: relative;
+      margin: 5px;
+      padding: 5px; }
+      #wrapper ul#work-list li.work-list-item h3 {
+        text-transform: capitalize;
+        font-size: 14px;
+        margin-bottom: 5px; }
+      #wrapper ul#work-list li.work-list-item .work-list-item-icon {
+        float: right;
+        padding: 0px 5px 5px 0px; }
+      #wrapper ul#work-list li.work-list-item ul.work-list-item-tags {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        clear: both;
+        overflow: hidden; }
+        #wrapper ul#work-list li.work-list-item ul.work-list-item-tags li {
+          float: left;
+          margin: 0 5px;
+          font-size: 13px; }
 
 .step {
   min-width: 600px;
