@@ -160,7 +160,6 @@
   };
 
   generateAnArrayOfColors = function(currentColor, colorClass) {
-    console.log(class_colors[colorClass]);
     if (class_colors[colorClass]) {
       currentColor = class_colors[colorClass];
     } else {
@@ -308,6 +307,7 @@
 
   intializeIsotope = function() {
     return isotope_container.isotope({
+      layoutMode: 'masonry',
       itemSelector: '.work-list-item'
     });
   };

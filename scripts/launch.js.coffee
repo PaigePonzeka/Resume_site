@@ -179,7 +179,6 @@ intializeWorkIsotope=(container)->
 # updates the color spectrum to generate a new color
 # returns an hexidecimal value for the color
 generateAnArrayOfColors=(currentColor, colorClass) ->
-  console.log(class_colors[colorClass])
   if(class_colors[colorClass])
     currentColor = class_colors[colorClass]
   else
@@ -211,7 +210,6 @@ getWorkDetails = ->
     links:
       demo: "demo.test.html"
       github: "http://github.com/codetestrawr"
-
   ,
     title: "blueshirts united",
     description: "Did some development work and maintanince on this rangers fan site hosted by MSG.",
@@ -243,7 +241,6 @@ getWorkDetails = ->
       demo: ""
       github: ""
   ,
-
     title: "memberly",
     description: "implemented and maintained the front end development for Member.ly. Worked closely with designers to make sure site was pixel perfect implementations of the designs",
     tags: ["JQuery", "SASS", "HAML", "RoR"],
@@ -307,6 +304,7 @@ filterIsotope= (item) ->
 # intializing the isotope for the work container
 intializeIsotope= ->
   isotope_container.isotope
+    layoutMode : 'masonry'
     itemSelector: '.work-list-item'
 
 
