@@ -1,9 +1,11 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
+  var changeDino, changeSlideshowPage, class_colors, createDinoMessagesArray, current_view, dino_messages, generateAnArrayOfColors, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
 
   current_view = "dino";
 
   dino_messages = [];
+
+  class_colors = [];
 
   $(document).ready(function() {
     impress().init();
@@ -101,8 +103,9 @@
   });
 
   intializeWorkIsotope = function(container) {
-    var work_data;
+    var current_color, work_data;
     work_data = getWorkDetails();
+    current_color = 16777215;
     return $(work_data).each(function() {
       var images_folder, item, item_description, item_icon, item_tags_list, item_title, work_icon, work_item, work_item_tags, work_screenshots;
       work_item = $(this)[0];
@@ -122,11 +125,14 @@
       });
       work_item_tags = work_item.tags;
       $(work_item_tags).each(function() {
-        var item_tags_list_item;
+        var color_class, item_tags_list_item;
         item_tags_list_item = $("<li/>", {
           text: "" + this
         });
-        return item_tags_list.append(item_tags_list_item);
+        color_class = "" + (this.toLowerCase());
+        item.addClass("color_class");
+        current_color = generateAnArrayOfColors(current_color, color_class);
+        return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
       });
       images_folder = "images/work/";
       work_icon = work_item.images.icon;
@@ -135,7 +141,6 @@
           "class": "work-list-item-icon",
           src: "" + images_folder + work_icon
         });
-        console.log(item_icon);
       }
       work_screenshots = work_item.images.screenshots;
       if (work_screenshots.length > 0) {
@@ -147,6 +152,17 @@
       item.append(item_icon).append(item_title).append(item_description).append(item_tags_list);
       return container.append(item);
     });
+  };
+
+  generateAnArrayOfColors = function(currentColor, colorClass) {
+    console.log(class_colors[colorClass]);
+    if (class_colors[colorClass]) {
+      currentColor = class_colors[colorClass];
+    } else {
+      currentColor = currentColor - 50000;
+      class_colors[colorClass] = currentColor;
+    }
+    return currentColor;
   };
 
   getWorkDetails = function() {

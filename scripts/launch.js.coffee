@@ -1,5 +1,6 @@
 current_view = "dino"
 dino_messages = []
+class_colors = [] # stores an associative array of color classes for work
 $(document).ready ->
   impress().init() # initialize slideshow
   # intialize life stream
@@ -117,6 +118,7 @@ $(document).ready ->
 # get the json data structure of the work details and populate the isotope
 intializeWorkIsotope=(container)->
   work_data = getWorkDetails()
+  current_color = 16777215
   # for each work item in the work details array
   $(work_data).each ->
     work_item = $(this)[0]
@@ -131,7 +133,11 @@ intializeWorkIsotope=(container)->
     work_item_tags = work_item.tags
     $(work_item_tags).each ->
       item_tags_list_item = $("<li/>", {text: "#{this}"})
-      item_tags_list.append(item_tags_list_item)
+
+      color_class = "#{this.toLowerCase()}"
+      item.addClass("color_class")
+      current_color = generateAnArrayOfColors(current_color, color_class)
+      item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
 
     # images
     images_folder = "images/work/"
@@ -140,7 +146,7 @@ intializeWorkIsotope=(container)->
     # right now assuming blank icon if none
     if (work_icon.length > 0)
       item_icon = $("<img/>",{class: "work-list-item-icon", src: "#{images_folder}#{work_icon}"})
-      console.log(item_icon)
+
 
     work_screenshots = work_item.images.screenshots
     if(work_screenshots.length > 0)
@@ -159,6 +165,19 @@ intializeWorkIsotope=(container)->
 
     # append isotope object to isotope container
     container.append(item)
+
+
+# updates the color spectrum to generate a new color
+# returns an hexidecimal value for the color
+generateAnArrayOfColors=(currentColor, colorClass) ->
+  console.log(class_colors[colorClass])
+  if(class_colors[colorClass])
+    currentColor = class_colors[colorClass]
+  else
+    # generate a new color
+    currentColor = currentColor - 50000
+    class_colors[colorClass] = currentColor
+  return currentColor
 
 
 
