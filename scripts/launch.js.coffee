@@ -119,9 +119,8 @@ $(document).ready ->
 
   # filtering the worklist data
   $('#work-list-filters li a').live('click', ->
-    console.log($(this))
     item = $(this).data('filter')
-    filterIsotope(".#{item}")
+    filterIsotope("#{item}")
     )
 
 
@@ -146,7 +145,7 @@ intializeWorkIsotope=(container)->
 
       color_class = "#{toClass(''+this)}"
       item.addClass(color_class)
-      current_color = generateAnArrayOfColors(current_color, color_class)
+      current_color = generateAnArrayOfColors(current_color, color_class, (""+this))
       item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
 
     # images
@@ -184,23 +183,23 @@ toClass= (item) ->
 
 # updates the color spectrum to generate a new color
 # returns an hexidecimal value for the color
-generateAnArrayOfColors=(currentColor, colorClass) ->
+generateAnArrayOfColors=(currentColor, colorClass, tag) ->
   if(class_colors[colorClass])
     currentColor = class_colors[colorClass]
   else
-    # generate a new color
+    # generate a new color and a new Isotope filter
     currentColor = currentColor - 50000
     class_colors[colorClass] = currentColor
-    generateIsotopeFilter(currentColor, colorClass)
+    generateIsotopeFilter(currentColor, colorClass, tag)
   return currentColor
 
 
 #  color_class item create a new filter where key = title
-generateIsotopeFilter=(currentColor, colorClass)->
+generateIsotopeFilter=(currentColor, colorClass, tag)->
   # create an item and append it to the work list filter
   filter_item = $("<li/>")
-  filter_item_link = $("<a/>", {class: "work-list-filter-item-link", 'data-filter': "#{colorClass}"})
-  filter_item.append(filter_item_link.html(colorClass))
+  filter_item_link = $("<a/>", {class: "work-list-filter-item-link", 'data-filter': ".#{colorClass}"})
+  filter_item.append(filter_item_link.html(tag))
   filter_item.css('background', "##{currentColor.toString(16)}")
   $("#work-list-filters").append(filter_item)
 

@@ -104,9 +104,8 @@
     });
     return $('#work-list-filters li a').live('click', function() {
       var item;
-      console.log($(this));
       item = $(this).data('filter');
-      return filterIsotope("." + item);
+      return filterIsotope("" + item);
     });
   });
 
@@ -139,7 +138,7 @@
         });
         color_class = "" + (toClass('' + this));
         item.addClass(color_class);
-        current_color = generateAnArrayOfColors(current_color, color_class);
+        current_color = generateAnArrayOfColors(current_color, color_class, "" + this);
         return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
       });
       images_folder = "images/work/";
@@ -164,25 +163,25 @@
     return item;
   };
 
-  generateAnArrayOfColors = function(currentColor, colorClass) {
+  generateAnArrayOfColors = function(currentColor, colorClass, tag) {
     if (class_colors[colorClass]) {
       currentColor = class_colors[colorClass];
     } else {
       currentColor = currentColor - 50000;
       class_colors[colorClass] = currentColor;
-      generateIsotopeFilter(currentColor, colorClass);
+      generateIsotopeFilter(currentColor, colorClass, tag);
     }
     return currentColor;
   };
 
-  generateIsotopeFilter = function(currentColor, colorClass) {
+  generateIsotopeFilter = function(currentColor, colorClass, tag) {
     var filter_item, filter_item_link;
     filter_item = $("<li/>");
     filter_item_link = $("<a/>", {
       "class": "work-list-filter-item-link",
-      'data-filter': "" + colorClass
+      'data-filter': "." + colorClass
     });
-    filter_item.append(filter_item_link.html(colorClass));
+    filter_item.append(filter_item_link.html(tag));
     filter_item.css('background', "#" + (currentColor.toString(16)));
     return $("#work-list-filters").append(filter_item);
   };
