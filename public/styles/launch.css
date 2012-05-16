@@ -433,7 +433,15 @@ body {
     padding-top: 100px; }
   #wrapper #dino_container {
     position: relative;
-    height: 300px; }
+    height: 300px;
+    width: 600px;
+    margin: 0 auto; }
+    #wrapper #dino_container #dino_wrapper {
+      width: 226px;
+      padding-top: 50px;
+      height: 209px;
+      float: right;
+      position: relative; }
     #wrapper #dino_container #dino_bubble {
       width: 250px;
       height: 150px;
@@ -465,11 +473,11 @@ body {
         border-color: #afaeae transparent; }
     #wrapper #dino_container #dino_clothes #dino_accessory {
       position: absolute;
-      left: 460px;
-      top: 92px;
+      left: 0;
+      top: 50px;
       z-index: 2;
-      width: 200px;
-      height: 220px;
+      width: 226px;
+      height: 209px;
       background: url(../images/accessory_sprite.png) no-repeat; }
       #wrapper #dino_container #dino_clothes #dino_accessory.acc1 {
         background-position: 0px 0px; }
@@ -487,11 +495,10 @@ body {
         background-position: 0px -1325px; }
     #wrapper #dino_container #dino_clothes #dino_hat {
       position: absolute;
-      left: 460px;
-      top: 50px;
       z-index: 5;
-      width: 200px;
-      height: 150px;
+      width: 226px;
+      height: 209px;
+      top: 0;
       background: url(../images/hat_sprite.png) no-repeat; }
       #wrapper #dino_container #dino_clothes #dino_hat.hat1 {
         background-position: 0px -5px; }
@@ -504,10 +511,7 @@ body {
       #wrapper #dino_container #dino_clothes #dino_hat.hat5 {
         background-position: 0px -900px; }
     #wrapper #dino_container #dino {
-      position: absolute;
       z-index: 1;
-      left: 50%;
-      bottom: 0;
       width: 226px;
       height: 209px;
       background: url(../images/dino_sprite.png) no-repeat top right; }

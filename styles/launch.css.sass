@@ -349,6 +349,18 @@ body
   #dino_container
     position: relative
     height: 300px
+    width: 600px
+    margin: 0 auto
+
+    #dino_wrapper
+      width: 226px // dino plus hat
+      padding-top: 50px
+      height: 209px
+      float: right
+      position: relative
+      //left: 275px
+      //top: 80px
+      //right: 0px*/
 
     #dino_bubble
       width: 250px
@@ -383,11 +395,11 @@ body
     #dino_clothes
       #dino_accessory
         position: absolute
-        left: 460px
-        top: 92px
+        left: 0
+        top: 50px
         z-index: 2
-        width: 200px
-        height: 220px
+        width: 226px
+        height: 209px
         background: url(../images/accessory_sprite.png) no-repeat
 
         &.acc1 /*Bowtie*/
@@ -413,11 +425,10 @@ body
 
       #dino_hat
         position: absolute
-        left: 460px
-        top: 50px
         z-index: 5
-        width: 200px
-        height: 150px
+        width: 226px
+        height: 209px
+        top: 0
         background: url(../images/hat_sprite.png) no-repeat
 
         &.hat1 /*bowler*/
@@ -436,10 +447,7 @@ body
           background-position: 0px -900px
 
     #dino
-      position: absolute
       z-index: 1
-      left: 50%
-      bottom: 0
       width: 226px
       height: 209px
       background: url(../images/dino_sprite.png) no-repeat top right
