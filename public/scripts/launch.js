@@ -1,11 +1,13 @@
 (function() {
-  var changeDino, changeSlideshowPage, class_colors, createDinoMessagesArray, current_view, dino_messages, generateAnArrayOfColors, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
 
   current_view = "dino";
 
   dino_messages = [];
 
-  class_colors = [];
+  window.class_colors = [];
+
+  isotope_container = $('#work-list');
 
   $(document).ready(function() {
     impress().init();
@@ -130,7 +132,7 @@
           text: "" + this
         });
         color_class = "" + (this.toLowerCase());
-        item.addClass("color_class");
+        item.addClass(color_class);
         current_color = generateAnArrayOfColors(current_color, color_class);
         return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
       });
@@ -161,8 +163,21 @@
     } else {
       currentColor = currentColor - 50000;
       class_colors[colorClass] = currentColor;
+      generateIsotopeFilter(currentColor, colorClass);
     }
     return currentColor;
+  };
+
+  generateIsotopeFilter = function(currentColor, colorClass) {
+    var filter_item, onClick;
+    filter_item = $("<li/>", {
+      "class": {
+        "work-list-filter-item": onClick = "filterIsotope('." + colorClass + "')"
+      }
+    });
+    filter_item.html(colorClass);
+    $("#work-list-filters").append(filter_item);
+    return console.log(filter_item);
   };
 
   getWorkDetails = function() {
@@ -267,7 +282,7 @@
       }, {
         title: "Group Commerce",
         description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
-        tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
+        tags: ["C#", "Visual-Studio", "SASS", "HTML", "JQuery"],
         images: {
           icon: "icon_playlist-creator.gif",
           screenshots: ["playlist-creator.gif"]
@@ -281,10 +296,14 @@
     return work;
   };
 
+  filterIsotope = function() {
+    return isotope_container.isotope({
+      filter: '.haml'
+    });
+  };
+
   intializeIsotope = function() {
-    var $container;
-    $container = $('#work-list');
-    return $container.isotope({
+    return isotope_container.isotope({
       itemSelector: '.work-list-item'
     });
   };

@@ -1,6 +1,7 @@
 current_view = "dino"
 dino_messages = []
-class_colors = [] # stores an associative array of color classes for work
+window.class_colors = [] # stores an associative array of color classes for work
+isotope_container =$('#work-list')
 $(document).ready ->
   impress().init() # initialize slideshow
   # intialize life stream
@@ -8,6 +9,8 @@ $(document).ready ->
   intializeLifeStream(false)
 
   intializeIsotope()
+
+  #filterIsotope()
   # generate dino_messages array
   #dino_messages = createDinoMessagesArray()
   # Intilize litte Dino
@@ -135,7 +138,7 @@ intializeWorkIsotope=(container)->
       item_tags_list_item = $("<li/>", {text: "#{this}"})
 
       color_class = "#{this.toLowerCase()}"
-      item.addClass("color_class")
+      item.addClass(color_class)
       current_color = generateAnArrayOfColors(current_color, color_class)
       item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
 
@@ -166,7 +169,6 @@ intializeWorkIsotope=(container)->
     # append isotope object to isotope container
     container.append(item)
 
-
 # updates the color spectrum to generate a new color
 # returns an hexidecimal value for the color
 generateAnArrayOfColors=(currentColor, colorClass) ->
@@ -177,9 +179,16 @@ generateAnArrayOfColors=(currentColor, colorClass) ->
     # generate a new color
     currentColor = currentColor - 50000
     class_colors[colorClass] = currentColor
+    generateIsotopeFilter(currentColor, colorClass)
   return currentColor
 
-
+#  color_class item create a new filter where key = title
+generateIsotopeFilter=(currentColor, colorClass)->
+  # create an item and append it to the work list filter
+  filter_item = $("<li/>", {class: "work-list-filter-item": onClick="filterIsotope('.#{colorClass}')"})
+  filter_item.html(colorClass)
+  $("#work-list-filters").append(filter_item)
+  console.log filter_item
 
 # returns the work details json data structure
 getWorkDetails = ->
@@ -269,7 +278,7 @@ getWorkDetails = ->
   ,
     title: "Group Commerce",
     description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
-    tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
+    tags: ["C#", "Visual-Studio", "SASS", "HTML", "JQuery"],
     images:
       icon: "icon_playlist-creator.gif",
       screenshots: ["playlist-creator.gif"]
@@ -280,12 +289,17 @@ getWorkDetails = ->
   work
 
 
+filterIsotope= ->
+  isotope_container.isotope
+    filter: '.haml'
+
+
 # intializing the isotope for the work container
 intializeIsotope= ->
-  $container = $('#work-list')
-
-  $container.isotope
+  isotope_container.isotope
     itemSelector: '.work-list-item'
+
+
 
 
 # Call the lifestream object and intialize it on the data structure
