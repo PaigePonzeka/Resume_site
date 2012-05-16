@@ -1,0 +1,107 @@
+@import 'isotope.scss'
+
+$gray: #afaeae
+$purple: #90f
+$lime_green: #9f0
+$light_blue: #0fa1ff
+$pink: #f09
+$amber: #ffbc00
+$red: #ff00dd
+$maroon: #a60065
+$yellow: #fffa00
+$dark_blue: #3200ff
+$dark_purple: #6300A6
+$dark_red: #a60010
+$seagreen: #00ffdc
+$clippy_yellow: rgba(255,255, 203, 0.8)
+$clippy_dark_yellow: #c8c598
+$trans_gray: rgba(75,75,75, 0.8)
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+
+@mixin clearfix
+  clear: both
+  overflow: hidden
+
+@mixin boxshadow($horizonal, $vertical, $blur, $spread, $color)
+  -moz-box-shadow:  $horizonal $vertical $blur $spread $color
+  -webkit-box-shadow: $horizonal $vertical $blur $spread $color
+  box-shadow: $horizonal $vertical $blur $spread $color
+
+@mixin linear-gradient($pos, $color1, $color2)
+  background-image: -webkit-linear-gradient($pos, $color1, $color2)
+  background-image: -moz-linear-gradient($pos, $color1, $color2)
+  background-image: -ms-linear-gradient($pos, $color1, $color2)
+  background-image: -o-linear-gradient($pos, $color1, $color2)
+  background-image: linear-gradient($pos, $color1, $color2)
+  /*background-image: -webkit-gradient(linear, left pos, left bottom, color-stop(0%, color1), color-stop(100%, color2))*/
+
+@mixin name-button($color)
+  //&.indent
+  //  background: $color
+  &.active
+    &.indent
+      +linear-gradient(top, darken($color,10%), darken($color,20%))
+    .minimal-indent
+      background: $color
+      color: #fff
+
+@mixin last-name-button($color)
+  &.active
+    .minimal-indent
+      background: $color
+      color: #fff
+
+/* Buttons */
+/* minimal indent */
+
+.indent
+  background-color: #e2e2e2
+  +linear-gradient(top, #e2e2e2, #fafafa)
+  border-bottom: 1px solid #e7e7e7
+  border-left: 1px solid #eaeaea
+  border-right: 1px solid #eaeaea
+  border-top: 1px solid #dfdfdf
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+  margin: 50px auto 0
+  padding: 10px 0
+  width: 100px
+
+.minimal-indent
+  margin: 0 auto
+  background-color: #f3f3f3
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(50%, #dddddd), color-stop(50%, #d2d2d2), color-stop(100%, #dfdfdf))
+  background-image: -webkit-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%)
+  background-image: -moz-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%)
+  background-image: -ms-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%)
+  background-image: -o-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%)
+  background-image: linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%)
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+  color: #666
+  padding: 7px 0
+  text-shadow: 0 1px 1px #fff
+  width: 80px
+  &:hover
+    background-color: #e5e5e5
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #d1d1d1), color-stop(50%, #c4c4c4), color-stop(100%, #b8b8b8))
+    background-image: -webkit-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%)
+    background-image: -moz-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%)
+    background-image: -ms-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%)
+    background-image: -o-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%)
+    background-image: linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%)
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3
+    -moz-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3
+    box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3
+    cursor: pointer
+  &:active
+    -webkit-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white
+    -moz-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white
+    box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white
