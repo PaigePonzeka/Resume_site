@@ -264,6 +264,18 @@
           demo: "",
           github: ""
         }
+      }, {
+        title: "Group Commerce",
+        description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
+        tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
+        images: {
+          icon: "icon_playlist-creator.gif",
+          screenshots: ["playlist-creator.gif"]
+        },
+        links: {
+          demo: "",
+          github: ""
+        }
       }
     ];
     return work;
