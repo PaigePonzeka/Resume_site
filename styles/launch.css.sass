@@ -106,8 +106,6 @@ $trans_gray: rgba(75,75,75, 0.8)
     -moz-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white
     box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white
 
-
-
 a
   text-decoration: none
   border-bottom: 1px dashed $gray
@@ -333,8 +331,6 @@ body
           .minimal-indent
             width: 80px
 
-
-
     #last_name
       width: 500px
       li
@@ -548,6 +544,15 @@ body
     p
       font-size:  18px
 
+
+  ul#work-list-filters
+    li
+      float: left
+      margin: 10px
+      padding: 5px
+      cursor: pointer
+      +border-radius(5px)
+
   ul#work-list
     margin-top: 20px
     width: 800px
@@ -560,6 +565,7 @@ body
       position: relative
       margin: 5px
       padding: 5px
+      +border-radius(20px)
 
       h3
         text-transform: capitalize
