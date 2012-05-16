@@ -1,5 +1,5 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
 
   current_view = "dino";
 
@@ -137,7 +137,7 @@
         item_tags_list_item = $("<li/>", {
           text: "" + this
         });
-        color_class = "" + (this.toLowerCase());
+        color_class = "" + (toClass('' + this));
         item.addClass(color_class);
         current_color = generateAnArrayOfColors(current_color, color_class);
         return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
@@ -157,6 +157,11 @@
       item.append(item_icon).append(item_title).append(item_description).append(item_tags_list);
       return container.append(item);
     });
+  };
+
+  toClass = function(item) {
+    item = item.replace(/\s+/g, "-");
+    return item;
   };
 
   generateAnArrayOfColors = function(currentColor, colorClass) {
@@ -224,7 +229,7 @@
       }, {
         title: "vsu victims database",
         description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
-        tags: ["MS Access, Visual Basic"],
+        tags: ["MS Access", "Visual Basic"],
         images: {
           icon: "icon_vsu.gif",
           screenshots: ["vsu.gif"]
@@ -284,7 +289,7 @@
       }, {
         title: "Group Commerce",
         description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
-        tags: ["C#", "Visual-Studio", "SASS", "HTML", "JQuery"],
+        tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
         images: {
           icon: "icon_playlist-creator.gif",
           screenshots: ["playlist-creator.gif"]
@@ -299,7 +304,6 @@
   };
 
   filterIsotope = function(item) {
-    console.log("Filtering on " + item);
     return isotope_container.isotope({
       filter: item
     });

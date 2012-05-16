@@ -144,7 +144,7 @@ intializeWorkIsotope=(container)->
     $(work_item_tags).each ->
       item_tags_list_item = $("<li/>", {text: "#{this}"})
 
-      color_class = "#{this.toLowerCase()}"
+      color_class = "#{toClass(''+this)}"
       item.addClass(color_class)
       current_color = generateAnArrayOfColors(current_color, color_class)
       item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
@@ -176,6 +176,12 @@ intializeWorkIsotope=(container)->
     # append isotope object to isotope container
     container.append(item)
 
+# helper function to convert a color name to a function
+toClass= (item) ->
+  item = item.replace(/\s+/g, "-")
+  item
+
+
 # updates the color spectrum to generate a new color
 # returns an hexidecimal value for the color
 generateAnArrayOfColors=(currentColor, colorClass) ->
@@ -187,6 +193,7 @@ generateAnArrayOfColors=(currentColor, colorClass) ->
     class_colors[colorClass] = currentColor
     generateIsotopeFilter(currentColor, colorClass)
   return currentColor
+
 
 #  color_class item create a new filter where key = title
 generateIsotopeFilter=(currentColor, colorClass)->
@@ -233,7 +240,7 @@ getWorkDetails = ->
   ,
     title: "vsu victims database",
     description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
-    tags: ["MS Access, Visual Basic"],
+    tags: ["MS Access", "Visual Basic"],
     images:
       icon: "icon_vsu.gif",
       screenshots: ["vsu.gif"]
@@ -284,7 +291,7 @@ getWorkDetails = ->
   ,
     title: "Group Commerce",
     description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
-    tags: ["C#", "Visual-Studio", "SASS", "HTML", "JQuery"],
+    tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
     images:
       icon: "icon_playlist-creator.gif",
       screenshots: ["playlist-creator.gif"]
@@ -296,7 +303,6 @@ getWorkDetails = ->
 
 
 filterIsotope= (item) ->
-  console.log "Filtering on #{item}"
   isotope_container.isotope
     filter: item
 
@@ -306,7 +312,6 @@ intializeIsotope= ->
   isotope_container.isotope
     layoutMode : 'masonry'
     itemSelector: '.work-list-item'
-
 
 
 
@@ -332,6 +337,7 @@ intializeLifeStream=(online) ->
 lifestreamDemo = ->
   offline = "<ul class='lifestream demo'><li class='lifestream-twitter'>Just completed a 2.01 mile run playing <a href='http://search.twitter.com/search?q=%23zombiesrun'>#zombiesrun</a>: collected 22 supplies, outran a zombie mob <a href='http://t.co/tokDeGgN'>http://t.co/tokDeGgN</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/GCpmn'>@GCpmn</a>: <a href='http://search.twitter.com/search?q=%23addittothequoteboard'>#addittothequoteboard</a> 'He's kind of hot for a duck' <a href='http://twitter.com/PaigeTPonzeka'>@PaigeTPonzeka</a></li><li class='lifestream-twitter'><a href='http://t.co/G5MTR86z'>http://t.co/G5MTR86z</a>   Human Behavior Theories That Can be Applied to Web Design From <a href='http://twitter.com/sixrevisions'>@sixrevisions</a></li><li class='lifestream-twitter'><a href='http://twitter.com/GCpmn'>@GCpmn</a> I mean he's just so cool. <a href='http://t.co/945BBXPS'>http://t.co/945BBXPS</a></li><li class='lifestream-twitter'>Request: Rebecca Black Nyan Cat... who do I call about this?</li><li class='lifestream-twitter'><a href='http://t.co/361VGOjc'>http://t.co/361VGOjc</a>  Zombie Apocalypse, the Board Game <a href='http://search.twitter.com/search?q=%23Zombies'>#Zombies</a></li><li class='lifestream-twitter'>'This is my first experience with a baby making situation.' My Boss Re: Someone's wife in Labor. <a href='http://search.twitter.com/search?q=%23GCAdventures'>#GCAdventures</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/CandyNewYork'>@CandyNewYork</a>: Got 10 pitches today related to Shades of Grey. Duane Reade should capitalize and start stocking it next to the KY. <a href='http://search.twitter.com/search?q=%23j'>#j</a> ...</li><li class='lifestream-twitter'>RT <a href='http://twitter.com/frandrescher'>@frandrescher</a>: Dear <a href='http://twitter.com/boyscouts'>@boyscouts</a>, on Mother's Day I support Jennifer &amp; ALL moms, gay &amp; straight! <a href='http://search.twitter.com/search?q=%23scoutsforall'>#scoutsforall</a> <a href='http://t.co/g8xShAHW'>http://t.co/g8xShAHW</a></li><li class='lifestream-twitter'>RT <a href='http://twitter.com/HipChat'>@HipChat</a>: The <a href='http://twitter.com/UserVoice'>@UserVoice</a> team has a great HipChat setup going, check it out: <a href='http://t.co/ir1liZZQ'>http://t.co/ir1liZZQ</a></li></ul></article>"
   offline
+
 
 # Contains all the messages Clippy Dino Can say
 createDinoMessagesArray=->
