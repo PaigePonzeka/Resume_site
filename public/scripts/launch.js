@@ -99,8 +99,14 @@
     $('#little_dino_bubble_buttons_yes').click(function() {
       return console.log("Yes");
     });
-    return $('#little_dino_bubble_buttons_no').click(function() {
+    $('#little_dino_bubble_buttons_no').click(function() {
       return hideLittleDino();
+    });
+    return $('#work-list-filters li a').live('click', function() {
+      var item;
+      console.log($(this));
+      item = $(this).data('filter');
+      return filterIsotope("." + item);
     });
   });
 
@@ -146,10 +152,7 @@
       }
       work_screenshots = work_item.images.screenshots;
       if (work_screenshots.length > 0) {
-        console.log("use it");
-        $(work_screenshots).each(function() {
-          return console.log("" + this);
-        });
+        $(work_screenshots).each(function() {});
       }
       item.append(item_icon).append(item_title).append(item_description).append(item_tags_list);
       return container.append(item);
@@ -169,15 +172,15 @@
   };
 
   generateIsotopeFilter = function(currentColor, colorClass) {
-    var filter_item, onClick;
-    filter_item = $("<li/>", {
-      "class": {
-        "work-list-filter-item": onClick = "filterIsotope('." + colorClass + "')"
-      }
+    var filter_item, filter_item_link;
+    filter_item = $("<li/>");
+    filter_item_link = $("<a/>", {
+      "class": "work-list-filter-item-link",
+      'data-filter': "" + colorClass
     });
-    filter_item.html(colorClass);
-    $("#work-list-filters").append(filter_item);
-    return console.log(filter_item);
+    filter_item.append(filter_item_link.html(colorClass));
+    filter_item.css('background', "#" + (currentColor.toString(16)));
+    return $("#work-list-filters").append(filter_item);
   };
 
   getWorkDetails = function() {
@@ -296,9 +299,10 @@
     return work;
   };
 
-  filterIsotope = function() {
+  filterIsotope = function(item) {
+    console.log("Filtering on " + item);
     return isotope_container.isotope({
-      filter: '.haml'
+      filter: item
     });
   };
 

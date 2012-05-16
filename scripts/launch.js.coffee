@@ -117,6 +117,13 @@ $(document).ready ->
   $('#little_dino_bubble_buttons_no').click ->
     hideLittleDino()
 
+  # filtering the worklist data
+  $('#work-list-filters li a').live('click', ->
+    console.log($(this))
+    item = $(this).data('filter')
+    filterIsotope(".#{item}")
+    )
+
 
 # get the json data structure of the work details and populate the isotope
 intializeWorkIsotope=(container)->
@@ -153,9 +160,9 @@ intializeWorkIsotope=(container)->
 
     work_screenshots = work_item.images.screenshots
     if(work_screenshots.length > 0)
-      console.log("use it")
+      #console.log("use it")
       $(work_screenshots).each ->
-        console.log("#{this}")
+        #console.log("#{this}")
         # TODO Not sure what I'm using screenshots for right now
         #item_screenshot = $("<img/>",{class: "work-list-item-screenshot"})
 
@@ -185,10 +192,12 @@ generateAnArrayOfColors=(currentColor, colorClass) ->
 #  color_class item create a new filter where key = title
 generateIsotopeFilter=(currentColor, colorClass)->
   # create an item and append it to the work list filter
-  filter_item = $("<li/>", {class: "work-list-filter-item": onClick="filterIsotope('.#{colorClass}')"})
-  filter_item.html(colorClass)
+  filter_item = $("<li/>")
+  filter_item_link = $("<a/>", {class: "work-list-filter-item-link", 'data-filter': "#{colorClass}"})
+  filter_item.append(filter_item_link.html(colorClass))
+  filter_item.css('background', "##{currentColor.toString(16)}")
   $("#work-list-filters").append(filter_item)
-  console.log filter_item
+
 
 # returns the work details json data structure
 getWorkDetails = ->
@@ -289,9 +298,10 @@ getWorkDetails = ->
   work
 
 
-filterIsotope= ->
+filterIsotope= (item) ->
+  console.log "Filtering on #{item}"
   isotope_container.isotope
-    filter: '.haml'
+    filter: item
 
 
 # intializing the isotope for the work container

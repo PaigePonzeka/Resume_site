@@ -591,8 +591,7 @@ body {
   #wrapper #about_nav p {
     font-size: 18px; }
   #wrapper ul#work-list {
-    margin-top: 20px;
-    width: 950px; }
+    margin-top: 20px; }
     #wrapper ul#work-list li.work-list-item {
       border: 2px solid #333333;
       width: 290px;
