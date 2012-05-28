@@ -1,13 +1,4 @@
-#top_nav
-  %ul
-    %li.light_blue
-      %a(href="#work") Work
-    %li.lime_green
-      %a(href="#about") About
-    %li.amber
-      %a(href="#contact") Contact
-    %li.purple
-      %a(href="http://hello.ponzeka.com") Blog
+= render 'partials/_nav.html.haml', :locals => { :active => "#dino" }
 
 #name_banner
   %ul#first_name

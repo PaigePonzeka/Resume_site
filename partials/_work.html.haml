@@ -1,6 +1,7 @@
+= render 'partials/_nav.html.haml', :locals => { :active => "#work" }
 %h1 See What I've Done
 %ul#work-list-filters
-  %li
+  %li.active
     %a(data-filter = "*") Show All
 %ul#work-list
 

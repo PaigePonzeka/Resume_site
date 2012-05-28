@@ -10,20 +10,10 @@
   isotope_container = $('#work-list');
 
   $(document).ready(function() {
-    impress().init();
     intializeWorkIsotope($("#work-list"));
-    intializeLifeStream(false);
+    intializeLifeStream(true);
     intializeIsotope();
-    $(window).scroll(function() {
-      var inview_id;
-      inview_id = $('section:in-viewport').attr('id');
-      if (current_view !== inview_id) {
-        current_view = inview_id;
-        $("nav ul li a").removeClass('active');
-        return $("nav ul li." + inview_id + " a").addClass('active');
-      }
-    });
-    $('#top_nav ul li').hover((function() {
+    $('#home #top_nav ul li').hover((function() {
       return changeDino(this);
     }), function() {
       return resetDino();
@@ -105,6 +95,8 @@
     return $('#work-list-filters li a').live('click', function() {
       var item;
       item = $(this).data('filter');
+      $('#work-list-filters li').removeClass("active");
+      $(this).parents('li').addClass('active');
       return filterIsotope("" + item);
     });
   });
@@ -167,7 +159,7 @@
     if (class_colors[colorClass]) {
       currentColor = class_colors[colorClass];
     } else {
-      currentColor = currentColor - 50000;
+      currentColor = currentColor - 15000;
       class_colors[colorClass] = currentColor;
       generateIsotopeFilter(currentColor, colorClass, tag);
     }
@@ -191,7 +183,7 @@
     work = [
       {
         title: "stats2v",
-        description: "This was a collborative project with programmers to develop an application that track player stats from servers and then uploaded them to a database. Stats2V was the user interface for playersto view their stats and compare themselves to other players.",
+        description: "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players.",
         tags: ["PHP", "HTML", "CSS", "JQuery", "Javascript", "C#"],
         images: {
           icon: "icon_stats2v.gif",
@@ -226,7 +218,7 @@
           github: ""
         }
       }, {
-        title: "vsu victims database",
+        title: "VSU victims database",
         description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
         tags: ["MS Access", "Visual Basic"],
         images: {
@@ -290,8 +282,8 @@
         description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
         tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
         images: {
-          icon: "icon_playlist-creator.gif",
-          screenshots: ["playlist-creator.gif"]
+          icon: "icon_gc.png",
+          screenshots: [""]
         },
         links: {
           demo: "",
@@ -310,7 +302,6 @@
 
   intializeIsotope = function() {
     return isotope_container.isotope({
-      layoutMode: 'masonry',
       itemSelector: '.work-list-item'
     });
   };

@@ -34,16 +34,16 @@
     #wrapper
       #impress
 
-        %section#dino.step(data-x="0" data-y="0")
-          = render 'partials/_dino.html.haml'
+        %section#home.step(data-x="0" data-y="0")
+          = render 'partials/_home.html.haml'
 
-        %section#about.step(data-x="-1000" data-y="500")
+        %section#about-me.step(data-x="1500" data-y="0")
           = render 'partials/_about.html.haml'
 
-        %section#work.step(data-x="1000" data-y="-1000" data-rotate="90")
+        %section#work.step(data-x="3500" data-y="800" data-rotate="90")
           = render 'partials/_work.html.haml'
 
-        %section#contact.step(data-x="-2000" data-y="500" data-scale="0.5")
+        %section#social.step(data-x="-500" data-y="-1800" data-rotate="90")
           = render 'partials/_contact.html.haml'
 
   #little_dino_container.hide

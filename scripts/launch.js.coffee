@@ -3,31 +3,31 @@ dino_messages = []
 window.class_colors = [] # stores an associative array of color classes for work
 isotope_container =$('#work-list')
 $(document).ready ->
-  impress().init() # initialize slideshow
+  #impress().init() # initialize slideshow
   # intialize life stream
   intializeWorkIsotope($("#work-list")) # intialize isotop content
-  intializeLifeStream(false)
+  intializeLifeStream(true)
 
   intializeIsotope()
-
+  #impress().init() # initialize slideshow
   #filterIsotope()
   # generate dino_messages array
   #dino_messages = createDinoMessagesArray()
   # Intilize litte Dino
   #showLittleDinoMessage()
   # checking what is is viewpoint and making it as active
-  $(window).scroll ->
-    inview_id = $('section:in-viewport').attr('id')
-    #set the navigation based on what section is in view
-    if (current_view != inview_id)
-      current_view = inview_id
-      $("nav ul li a").removeClass('active')
-      $("nav ul li.#{inview_id} a").addClass('active')
-      #showLittleDino()
+  # $(window).scroll ->
+  #     inview_id = $('section:in-viewport').attr('id')
+  #     #set the navigation based on what section is in view
+  #     if (current_view != inview_id)
+  #       current_view = inview_id
+  #       $("nav ul li a").removeClass('active')
+  #       $("nav ul li.#{inview_id} a").addClass('active')
+  #       #showLittleDino()
 
 
   # hover effects for navigation bar
-  $('#top_nav ul li').hover (->
+  $('#home #top_nav ul li').hover (->
     changeDino(this)
 
   ), ->
@@ -120,6 +120,8 @@ $(document).ready ->
   # filtering the worklist data
   $('#work-list-filters li a').live('click', ->
     item = $(this).data('filter')
+    $('#work-list-filters li').removeClass("active")
+    $(this).parents('li').addClass('active')
     filterIsotope("#{item}")
     )
 
@@ -188,7 +190,7 @@ generateAnArrayOfColors=(currentColor, colorClass, tag) ->
     currentColor = class_colors[colorClass]
   else
     # generate a new color and a new Isotope filter
-    currentColor = currentColor - 50000
+    currentColor = currentColor - 15000
     class_colors[colorClass] = currentColor
     generateIsotopeFilter(currentColor, colorClass, tag)
   return currentColor
@@ -208,7 +210,7 @@ generateIsotopeFilter=(currentColor, colorClass, tag)->
 getWorkDetails = ->
   work = [
     title: "stats2v",
-    description: "This was a collborative project with programmers to develop an application that track player stats from servers and then uploaded them to a database. Stats2V was the user interface for playersto view their stats and compare themselves to other players.",
+    description: "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players.",
     tags: ["PHP","HTML", "CSS", "JQuery", "Javascript", "C#"],
     images:
       icon: "icon_stats2v.gif",
@@ -237,7 +239,7 @@ getWorkDetails = ->
       demo: "http://knicksnow.com"
       github: ""
   ,
-    title: "vsu victims database",
+    title: "VSU victims database",
     description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
     tags: ["MS Access", "Visual Basic"],
     images:
@@ -292,8 +294,8 @@ getWorkDetails = ->
     description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
     tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
     images:
-      icon: "icon_playlist-creator.gif",
-      screenshots: ["playlist-creator.gif"]
+      icon: "icon_gc.png",
+      screenshots: [""]
     links:
       demo: ""
       github: ""
@@ -309,7 +311,6 @@ filterIsotope= (item) ->
 # intializing the isotope for the work container
 intializeIsotope= ->
   isotope_container.isotope
-    layoutMode : 'masonry'
     itemSelector: '.work-list-item'
 
 

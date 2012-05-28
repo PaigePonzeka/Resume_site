@@ -19,6 +19,7 @@ a
 
 body
   font-family: Helvetica, Arial, Arial, sans-serif
+  background: url('../images/bg-main-2.jpg')
 
 .summary
   width: 800px
@@ -28,7 +29,7 @@ body
   width: 960px
   padding: 0 50px
   margin: 0 auto
-  background: url('../images/bg.png') repeat-y top center
+  background: #fff /*url('../images/bg.png') repeat-y top center*/
   section
     margin: 20px
     padding: 100px 0 200px 0
@@ -47,7 +48,7 @@ body
 
   .step
     min-width: 800px
-    max-height: 500px
+    min-height: 500px
 
 
 
@@ -109,9 +110,10 @@ body
 
 #top_nav
   +clearfix
+  padding-bottom: 50px
   ul
     margin: 20px auto 0 auto
-    width: 800px
+    width: 900px
 
     li
       padding-bottom: 5px
@@ -119,28 +121,34 @@ body
       margin: 0 50px
       font-size: 30px
 
+      &.pink a
+        border-color: $pink
+
+        &:hover, &.active
+          color: $pink
+
       &.light_blue a
         border-color: $light_blue
 
-        &:hover
+        &:hover, &.active
           color: $light_blue
 
       &.lime_green a
         border-color: $lime_green
 
-        &:hover
+        &:hover, &.active
           color: $lime_green
 
       &.purple a
         border-color: $purple
 
-        &:hover
+        &:hover, &.active
           color: $purple
 
       &.amber a
         border-color: $amber
 
-        &:hover
+        &:hover, &.active
           color: $amber
 
 #small_nav
@@ -425,7 +433,7 @@ body
 /* Contact & Social Links
  * --------------------------------------------------
  */
-#contact
+#social
   #social_links
     float: left
     li
@@ -456,7 +464,7 @@ body
 
   #lifestream
     float: right
-    width: 400px
+    width: 600px
     padding: 0
 
     .lifestream
@@ -480,19 +488,25 @@ body
       padding: 5px
       cursor: pointer
       +border-radius(5px)
+      +boxshadow(3px, 3px, 0px, 0px, #aaa)
+      a
+        border: none
+
+      &.active
+        +boxshadow(0px, 5px, 0px, 2px, #333)
 
   ul#work-list
     margin-top: 20px
-    width: 800px
+    width: 950px
 
     li.work-list-item
       border: 2px solid #333
       width: 290px
-      min-height: 200px
+      min-height: 150px
       cursor: pointer
       position: relative
       margin: 5px
-      padding: 5px
+      padding: 10px 5px
       +border-radius(20px)
 
       h3
@@ -516,6 +530,8 @@ body
           float: left
           margin: 0 5px
           font-size: 13px
+          +border-radius(4px)
+          padding: 3px
 
 
 

@@ -1,0 +1,13 @@
+
+#top_nav
+  %ul
+    %li.pink
+      %a(href="#home" class="#{locals[:active] == "#dino" ? "active" : ''}") Dino
+    %li.light_blue
+      %a(href="#work" class="#{locals[:active] == "#work" ? "active" : ""}") Work
+    %li.lime_green
+      %a(href="#about-me" class="#{locals[:active] == "#about" ? "active" : ""}") About
+    %li.amber
+      %a(href="#social" class="#{locals[:active] == "#contact" ? "active" : ""}") Contact
+    %li.purple
+      %a(href="http://hello.ponzeka.com" class="#{locals[:active] == "#blog" ? "active" : ""}") Blog
