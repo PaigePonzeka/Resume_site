@@ -1,1 +1,0 @@
-})(modules['./parse-js']);
