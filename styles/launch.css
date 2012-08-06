@@ -84,7 +84,9 @@
     box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white; }
 
 /* General
+ *
  * --------------------------------------------------
+ *
  */
 a {
   text-decoration: none;
@@ -126,7 +128,9 @@ body {
     min-height: 500px; }
 
 /* Navigation
+ *
  * --------------------------------------------------
+ *
  */
 .dino a:hover, .dino a.active {
   color: #ff0099 !important; }
@@ -164,9 +168,9 @@ body {
       background: #666666;
       width: 20px;
       padding: 2px 0;
-      -webkit-border-radius: 20px;
+      border-radius: 20px;
       -moz-border-radius: 20px;
-      border-radius: 20px; }
+      -webkit-border-radius: 20px; }
   #fixed-nav nav {
     float: right; }
   #fixed-nav ul {
@@ -223,7 +227,9 @@ body {
       font-size: 12px; }
 
 /* Dino Version of Clippy
+ *
  * --------------------------------------------------
+ *
  */
 #little_dino_container {
   position: fixed;
@@ -237,9 +243,9 @@ body {
     height: 100px;
     margin-left: -50px;
     background: rgba(255, 255, 203, 0.8);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     position: absolute;
     bottom: 100px;
     right: 80px;
@@ -253,9 +259,9 @@ body {
       position: absolute;
       bottom: 5px; }
       #little_dino_container #little_dino_bubble #little_dino_bubble_buttons li {
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
         border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
         padding: 3px;
         border: 1px solid #c8c598;
         cursor: pointer;
@@ -297,7 +303,9 @@ body {
     background: url(../images/little_dino_sprite.png) no-repeat top right; }
 
 /* Name Banner on Welcome Screen
+ *
  * --------------------------------------------------
+ *
  */
 #name_banner ul {
   margin: 0 auto;
@@ -401,7 +409,9 @@ body {
   padding-top: 100px; }
 
 /* Dino & Accessories on Welcome Page
+ *
  * --------------------------------------------------
+ *
  */
 #dino_container {
   position: relative;
@@ -418,9 +428,9 @@ body {
     width: 250px;
     height: 150px;
     margin-left: -50px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     background: #afaeae;
     position: absolute;
     left: 25%;
@@ -495,7 +505,9 @@ body {
       background-position: bottom right; }
 
 /* Contact & Social Links
+ *
  * --------------------------------------------------
+ *
  */
 #social #social_links {
   float: left; }
@@ -535,16 +547,18 @@ body {
       color: #9900ff; }
 
 /* Work
+ *
  * --------------------------------------------------
+ *
  */
 #work ul#work-list-filters li {
   float: left;
   margin: 10px;
   padding: 5px;
   cursor: pointer;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   -moz-box-shadow: 3px 3px 0px 0px #aaaaaa;
   -webkit-box-shadow: 3px 3px 0px 0px #aaaaaa;
   box-shadow: 3px 3px 0px 0px #aaaaaa; }
@@ -565,9 +579,9 @@ body {
     position: relative;
     margin: 5px;
     padding: 10px 5px;
-    -webkit-border-radius: 20px;
+    border-radius: 20px;
     -moz-border-radius: 20px;
-    border-radius: 20px; }
+    -webkit-border-radius: 20px; }
     #work ul#work-list li.work-list-item h3 {
       text-transform: capitalize;
       font-size: 14px;
@@ -585,7 +599,7 @@ body {
         float: left;
         margin: 0 5px;
         font-size: 13px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
         border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
         padding: 3px; }
