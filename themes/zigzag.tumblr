@@ -1,0 +1,252 @@
+{block:tumblrThemr}
+  <link rel="stylesheet" href="stasis/public/styles/tumblr.css" type="text/css" media="screen"/>
+  <style type="text/css">{CustomCSS}</style>
+
+  <div class="wrapper tumblr4">
+    <div class = "sidebar">
+      <div class = "sidebar-wrapper">
+      <div class = "sidebar-author">
+        <div class = "sidebar-author-image">
+          <img src="{PortraitURL-128}" />
+        </div>
+        {block:Description}
+          <div class = "sidebar-author-description">
+            {Description}
+          </div>
+        {/block:Description}
+      </div>
+        <ul class = "sidebar-navigation">
+          <li class="active"> <a href="/"> Home </a> </li>
+          {block:HasPages}
+            {block:Pages}<li><a href="{URL}" class="page">{Label}</a><li>{/block:Pages}
+          {/block:HasPages}
+          {block:AskEnabled}
+            <li> <a href="/ask"> {AskLabel} </a> </li>
+          {/block:AskEnabled}
+          {block:SubmissionsEnabled}
+            <li>
+              <a href="/submit" class="page">{SubmitLabel}</a>
+            </li>
+          {/block:SubmissionsEnabled}
+          <li><a href="{RSS}">{lang:RSS feed}</a></li>
+          <li><a href="/random">{lang:Random}</a></li>
+          <li>
+            <a href="http://www.tumblr.com/follow/{PlaintextName}"><div class="heading" id="followontumblr">{lang:Follow on Tumblr}</div></a>
+          </li>
+          {block:Following}
+            <li>
+              <div class="heading" id="following">{lang:Following}</div>
+              <div class="content" id="following-avatars">
+                {block:Followed}<a href="{FollowedURL}"><img src="{FollowedPortraitURL-40}" /></a>{/block:Followed}
+              </div>
+            </li>
+          {/block:Following}
+        </ul>
+        <div class = "sidebar-search">
+        <div id="search">
+          <form action="/search" method="get" id="search-form">
+            <input type="hidden" name="t" value="{Name}" />
+            <input type="hidden" name="scope" value="all_of_tumblr" />
+            <input type="text" name="q" class="query" value="{SearchQuery}" />
+            <input type="submit" value="{lang:Search}" class="submit" />
+            <div class="clear"></div>
+          </form>
+        </div>
+        
+        <div class="search-scope">
+          <input type="radio" id="search-scope-me" name="scope" checked onclick="document.getElementById('search-form').action='/search'" /> <label for="search-scope-me" onclick="document.getElementById('search-form').action='/search'">{lang:My blog}</label>
+          <input type="radio" id="search-scope-all" name="scope"><label for="search-scope-all">{lang:All of Tumblr}</label>
+        </div>
+        </div>
+      </div><!-- end of sidebar wrapper -->
+      <div class="sidebar-zigzag"></div>
+    </div> <!-- end of sidebar -->
+    <div class = "main">
+
+      <div id='name_banner'>
+            <ul id='first_name'>
+              <li class='indent blue'>
+                <div class='minimal-indent'>P</div>
+              </li>
+              <li class='indent lime_green'>
+                <div class='minimal-indent'>A</div>
+              </li>
+              <li class='indent purple'>
+                <div class='minimal-indent'>I</div>
+              </li>
+              <li class='indent pink'>
+                <div class='minimal-indent'>G</div>
+              </li>
+              <li class='indent amber'>
+                <div class='minimal-indent'>E</div>
+              </li>
+            </ul>
+            <ul id='last_name'>
+              <li class='indent maroon'>
+                <div class='minimal-indent'>P</div>
+              </li>
+              <li class='indent yellow'>
+                <div class='minimal-indent'>O</div>
+              </li>
+              <li class='indent red'>
+                <div class='minimal-indent'>N</div>
+              </li>
+              <li class='indent dark_blue'>
+                <div class='minimal-indent'>Z</div>
+              </li>
+              <li class='indent dark_purple'>
+                <div class='minimal-indent'>E</div>
+              </li>
+              <li class='indent dark_red'>
+                <div class='minimal-indent'>K</div>
+              </li>
+              <li class='indent seagreen'>
+                <div class='minimal-indent'>A</div>
+              </li>
+            </ul>
+          </div> <!-- End of name banner -->
+
+          <div class = "main-content">
+            <!-- Search Page -->
+            {block:SearchPage}
+              {block:SearchResults}
+                <div id="searchresults">{SearchResultCount} results for {SearchQuery}</div>
+              {/block:SearchResults}
+        
+              {block:NoSearchResults}
+                <div id="searchresults">No search results for {SearchQuery}</div>
+              {/block:NoSearchResults}
+            {/block:SearchPage}
+            <!-- End of Search Page -->
+
+
+            <!-- Posts Page -->
+            {block:Posts}
+              <div class="post">
+                <div class = "post-date">
+                  {block:Date}
+                    <a href="{Permalink}">
+                      <span class="month">{ShortMonth}</span>
+                      <span class="day">{DayOfMonthWithZero}</span>
+                      <span class="year">{Year}</span>
+                    </a>
+                  {/block:Date}
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                {block:Photo}
+                  <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+                  {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+                {/block:Photo}
+                {block:Video}
+                  <div class="media">{Video-500}</div>
+                  {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+                {/block:Video}
+                {block:Audio}
+                  {block:AlbumArt}
+                    <div class="album_art">
+                      <img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" style="margin-bottom:10px;" />
+                    </div>
+                  {/block:AlbumArt}
+                  <div class="audio">
+                    <div class="player">{AudioPlayerWhite}</div>
+                    <div class="meta">{PlayCountWithLabel}{block:ExternalAudio}<span class="download_external_audio"> &bull; <a href="{ExternalAudioURL}">{lang:Download}</a></span>{/block:ExternalAudio}</div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear"></div>
+                  {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+                {/block:Audio}
+                {block:Quote}
+                  <div class="quote {Length}">{Quote}</div>
+                  <div class="copy">
+                    <div class="quotebg">“</div>
+                    {block:Source}
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <td valign="top" style="width:20px;">&mdash;</td>
+                          <td valign="top" class="quote_source">
+                            {Source}
+                          </td>
+                        </tr>
+                      </table>
+                    {/block:Source}
+                  </div>
+                {/block:Quote}
+                {block:Text}
+                  {block:Title}<div class="title">{Title}</div>{/block:Title}
+                  <div class="copy">{Body}</div>
+                {/block:Text}
+                {block:Answer}
+                  <div class="question">
+                    <div class="nipple"></div>
+                    {Question}
+                  </div>
+                  <div class="asker_container"><img src="{AskerPortraitURL-24}">{Asker}</div>
+                  <div class="copy">{Answer}</div>
+                {/block:Answer}
+                {block:Chat}
+                  {block:Title}<div class="title">{Title}</div>{/block:Title}
+                  <div class="chat">
+                    <div class="lines">
+                      {block:Lines}
+                        <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
+                      {/block:Lines}
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                  <div style="height:10px;"></div>
+                {/block:Chat}
+                {block:Link}
+                  <div class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></div>
+                  {block:Description}<div class="copy">{Description}</div>{/block:Description}
+                {/block:Link}
+                
+                <div class="post-footer">
+
+                    {block:HasTags}
+                      <div class="post-footer-tags">
+                        {block:Tags}
+                          <a href="{TagURL}">
+                            {Tag}
+                          </a>
+                          <span class="tag-commas">, </span>
+                        {/block:Tags}
+                      </div>
+                    {/block:HasTags}
+
+                   <div class="post-footer-notes">
+                    <a href="{Permalink}">
+                      {block:NoteCount}
+                        {NoteCountWithLabel}
+                      {/block:NoteCount}
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            {/block:Posts}
+            <!-- End of Posts Page -->
+
+
+            <!-- Pagination-->
+            {block:Pagination}
+              <div id="navigation">
+                {block:PreviousPage}<a href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}
+                {block:NextPage}<a href="{NextPage}">{lang:Next page} &rarr;</a>{/block:NextPage}
+              </div>
+            {/block:Pagination}
+            <!-- End of Pagination -->
+          </div>
+          <div class="footer">
+            <div id="copyright">&copy; 2012 Paige Ponzeka <a href="http://www.tumblr.com">{lang:Powered by Tumblr}</a></div>
+          </div>
+    </div> <!-- end of main -->
+  </div> <!-- End of Wrapper -->
+
+  <script type="text/javascript" src="stasis/public/scripts/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="stasis/public/scripts/tumblr.js"></script>
+{/block:tumblrThemr}

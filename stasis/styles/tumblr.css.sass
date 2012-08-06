@@ -1,0 +1,178 @@
+@import "reset"
+@import "launch.css.sass" 
+// Includes Base import
+
+//@import "tumblrdefault"
+
+= gradient-bg($color1, $color2: darken($color1, 20%))
+	background-color: $color1
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2})
+	background-image: -moz-linear-gradient(center top, $color1, $color2)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))
+
+
+= gradient-button($color)
+	+gradient-bg($color)
+
+	&:hover
+		+gradient-bg(lighten($color, 10%))
+		color: #000
+	&.active
+		+gradient-bg(darken($color, 10%))
+
+.wrapper
+	min-width: 950px
+	background: #fff
+	+clearfix
+.sidebar
+	position: fixed
+	height: 100%
+	top: 0
+	left: 0
+
+.sidebar-wrapper
+	background: #eee
+	float: left
+	width: 250px
+	padding: 10px
+.sidebar-zigzag
+	width: 30px
+	height: 500px
+	background: url('../images/bg-sidebar.png') repeat-y left top
+	float: left
+.sidebar-author
+	margin: 20px 0
+	.sidebar-author-image, 
+	.sidebar-author-description
+		margin: 0 auto
+		width: 128px
+	.sidebar-author-description
+		width: 200px
+.sidebar-navigation
+	width: 100%
+	a
+		+gradient-button(#ccc)
+		display: block
+		width: 90%
+		border: none
+		margin: 5px 0
+		padding: 10px
+		text-align: center
+		&.active
+			background: #ccc
+
+.sidebar-search
+	margin: 20px 0
+	.query
+		width: 175px
+	input[type="radio"]
+		vertical-align: middle
+	label
+		font-size: 10px
+	.search-scope
+		width: 200px
+		margin: 0 auto
+
+
+.main
+	width: 650px
+	margin-left: 320px
+
+	#name_banner
+		width: 530px
+		margin: 0 auto
+
+		#first_name
+			width: 520px
+
+		#last_name
+			width: 400px
+
+.post
+	margin: 20px 0
+	+clearfix
+	background: #f0f
+	.post-date
+		width: 100px
+		float: left
+		font-size: 12px
+		margin-top: 10px
+		margin-right: 30px
+		text-align: right
+		font-weight: bold
+
+		a
+			border: none
+			display: block
+			
+			padding: 10px
+
+			&:hover
+				background: #ccc
+
+		.month
+			color: #666
+		.day
+			color: #333
+		.year
+			color: #999
+	.post-content
+		float: left
+		width: 520px
+
+		.title
+			font-size: 24px
+			margin-bottom: 5px
+		.copy
+			font-size: 12px
+			line-height: 14px
+
+
+			blockquote 
+				margin: 10px 0px 10px 10px
+				padding-left: 15px
+				border-left: solid 4px #dcdcdc
+                           
+				blockquote
+					border-left: solid 4px #cccccc
+                            
+					blockquote
+						border-left: solid 4px #bcbcbc
+                                
+						blockquote 
+							border-left: solid 4px #acacac
+                  
+							blockquote
+								border-left: solid 4px #9c9c9c
+                                        
+								blockquote
+									border-left: solid 4px #8c8c8c
+                                            
+	.post-footer
+		width: 100%
+		clear: both
+		font-size: 12px
+		height: 20px
+		a
+			border: none
+		.post-footer-tags
+			float: left
+			padding-left: 25px
+			background: url('../images/icon-tag.png') left top no-repeat
+			height: 20px
+		.post-footer-notes
+			float: right
+			padding-left: 25px
+			background: url('../images/icon-heart.png') left top no-repeat
+			color: #666
+			height: 20px
+			span
+				color: #333
+
+
+@import "tumblr-content"
+
+.footer
+	margin: 40px auto
+	width: 400px
+	font-size: 10px
