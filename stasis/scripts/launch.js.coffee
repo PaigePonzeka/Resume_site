@@ -166,7 +166,8 @@ intializeWorkIsotope=(container)->
       color_class = "#{toClass(''+this)}"
       item.addClass(color_class)
       current_color = generateAnArrayOfColors(current_color, color_class, (""+this))
-      item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
+      #item_tags_list.append(item_tags_list_item.css('background', "#{current_color.toString(16)}"))
+      item_tags_list.append(item_tags_list_item.addClass(toClass(''+this.toLowerCase())))
 
     # images
     images_folder = "images/work/"
@@ -218,9 +219,9 @@ generateAnArrayOfColors=(currentColor, colorClass, tag) ->
 generateIsotopeFilter=(currentColor, colorClass, tag)->
   # create an item and append it to the work list filter
   filter_item = $("<li/>")
-  filter_item_link = $("<a/>", {class: "work-list-filter-item-link", 'data-filter': ".#{colorClass}"})
+  filter_item_link = $("<a/>", {class: "work-list-filter-item-link #{toClass(colorClass.toLowerCase())}", 'data-filter': ".#{colorClass}"})
   filter_item.append(filter_item_link.html(tag))
-  filter_item.css('background', "##{currentColor.toString(16)}")
+  #filter_item.css('background', "##{currentColor.toString(16)}")
   $("#work-list-filters").append(filter_item)
 
 

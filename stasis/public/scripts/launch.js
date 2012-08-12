@@ -146,7 +146,7 @@
         color_class = "" + (toClass('' + this));
         item.addClass(color_class);
         current_color = generateAnArrayOfColors(current_color, color_class, "" + this);
-        return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
+        return item_tags_list.append(item_tags_list_item.addClass(toClass('' + this.toLowerCase())));
       });
       images_folder = "images/work/";
       work_icon = work_item.images.icon;
@@ -185,11 +185,10 @@
     var filter_item, filter_item_link;
     filter_item = $("<li/>");
     filter_item_link = $("<a/>", {
-      "class": "work-list-filter-item-link",
+      "class": "work-list-filter-item-link " + (toClass(colorClass.toLowerCase())),
       'data-filter': "." + colorClass
     });
     filter_item.append(filter_item_link.html(tag));
-    filter_item.css('background', "#" + (currentColor.toString(16)));
     return $("#work-list-filters").append(filter_item);
   };
 

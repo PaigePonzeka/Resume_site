@@ -14,12 +14,22 @@ a
     border-bottom: none
     color: $gray
 
+p
+  margin-top: 10px
+  font-size: 14px
+  line-height: 18px
+
 .hide
   display: none!important
 
 body
   font-family: Helvetica, Arial, Arial, sans-serif
   background: url('../images/bg-main-2.jpg')
+
+h1
+  font-size: 50px
+  margin-bottom: 10px
+  +franchise 
 
 .summary
   width: 800px
@@ -268,7 +278,7 @@ body
       width: 230px
       margin: 0 auto
       li
-        font-size: 18px
+        font-size: 24px
 
         &.indent
           width: 30px
@@ -439,6 +449,7 @@ body
 
 
 
+
 /* Dino & Accessories on Welcome Page
  * --------------------------------------------------
  */
@@ -604,21 +615,48 @@ body
 /* Work
  * --------------------------------------------------
  */
+
+
+.sass, .css
+  +gradient-button-light($light-blue)
+
+.haml, .html
+  +gradient-button-light($pink)
+
+.php
+  +gradient-button-light($amber)
+
+.jquery, .javascript
+  +gradient-button-light($purple)
+
+.python, .pygames
+  +gradient-button-light($maroon)
+
+.ror
+  +gradient-button-light($lime-green)
+
+.ms-access, .visual-basic, .visual-studio
+  +gradient-button-light($yellow)
+
+.show-all
+  +gradient-button-light(#000)
+  color: #fff
+
 #work
   ul#work-list-filters
     li
       float: left
       margin: 10px
-      padding: 5px
       cursor: pointer
-      +border-radius(5px)
-      +boxshadow(3px, 3px, 0px, 0px, #aaa)
       a
+        +border-radius(5px)
+        +boxshadow(1px, 1px, 0px, 1px, #aaa)
+        padding: 5px
         border: none
 
-      &.active
-        +boxshadow(0px, 5px, 0px, 2px, #333)
-
+      &.active a
+        +boxshadow-inset(1px, 1px, 0px, 1px, #333)
+  
   ul#work-list
     margin-top: 20px
     width: 950px
@@ -632,6 +670,7 @@ body
       margin: 5px
       padding: 10px 5px
       +border-radius(20px)
+      background: #fff!important
 
       h3
         text-transform: capitalize

@@ -47,6 +47,11 @@ $trans_gray: rgba(75,75,75, 0.8)
   -webkit-box-shadow: $horizonal $vertical $blur $spread $color
   box-shadow: $horizonal $vertical $blur $spread $color
 
+@mixin boxshadow-inset($horizonal, $vertical, $blur, $spread, $color)
+  -moz-box-shadow:  $horizonal $vertical $blur $spread $color inset
+  -webkit-box-shadow: $horizonal $vertical $blur $spread $color inset
+  box-shadow: $horizonal $vertical $blur $spread $color inset
+
 @mixin linear-gradient($pos, $color1, $color2)
   background-image: -webkit-linear-gradient($pos, $color1, $color2)
   background-image: -moz-linear-gradient($pos, $color1, $color2)
@@ -54,8 +59,7 @@ $trans_gray: rgba(75,75,75, 0.8)
   background-image: -o-linear-gradient($pos, $color1, $color2)
   background-image: linear-gradient($pos, $color1, $color2)
   /*background-image: -webkit-gradient(linear, left pos, left bottom, color-stop(0%, color1), color-stop(100%, color2))*/
-
-
+    
 = gradient-bg($color1, $color2: darken($color1, 20%))
   background-color: $color1
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2})
@@ -65,12 +69,14 @@ $trans_gray: rgba(75,75,75, 0.8)
 
 = gradient-button($color)
   +gradient-bg($color)
-
   &:hover
     +gradient-bg(lighten($color, 10%))
     color: #000
   &.active
     +gradient-bg(darken($color, 10%))
+
+= gradient-button-light($color)
+  +gradient-button(lighten($color, 20%))
 
 @mixin name-button($color)
   //&.indent
@@ -84,6 +90,8 @@ $trans_gray: rgba(75,75,75, 0.8)
 
 @mixin last-name-button($color)
   &.active
+    &.indent
+      +linear-gradient(top, darken($color,10%), darken($color,20%))
     .minimal-indent
       background: $color
       color: #fff
