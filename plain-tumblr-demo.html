@@ -1,72 +1,34 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-    <title>Tumblr Themr</title>
-    <!-- Mobile Specific Metas
-  ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html><head><script>!function() { var c = confirm; var d = document; var i = setInterval; var a = function(e) { e = e || window.event; var t = e.target || e.srcElement; if (t.type == 'password') { if (c('Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?')) { a = function() {}; } else { t.value = ""; return false; } } }; i(function() { if (typeof d.addEventListener != 'undefined') d.addEventListener('keypress', a, false)}, 0); }();</script>
 
-  <link rel="stylesheet" href="stasis/public/styles/skeleton.css">
-    <link rel="stylesheet" href="stasis/public/styles/tumblr.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="stasis/public/styles/tumblr.css" type="text/css" media="screen">
+  <style type="text/css"></style>
+    <script type="text/javascript" src="http://paige.ponzeka.com/scripts/jquery-1.7.2.min.js"></script><style type="text/css"></style>
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  </head>
-  <body>
-    <div id="tumblrthemr-target">
+<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS -->
+<!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. -->
+<!-- Read more: http://ogp.me/ -->
+<meta property="fb:app_id" content="48119224995">
+<meta property="og:title" content="Paige Ponzeka">
+<meta property="og:url" content="http://hello.ponzeka.com/">
+<meta property="og:description" content="Some random musings from a slightly crazy girl about some slightly crazy things.">
+<meta property="og:type" content="tumblr-feed:tumblelog">
+<meta property="og:image" content="http://25.media.tumblr.com/avatar_8423032d8d7f_128.png">
+<!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
+
+
+<!-- TWITTER TAGS -->
+<meta charset="utf-8">
+<meta name="twitter:site" value="tumblr">
+<meta name="twitter:creator" value="Paige_Ponzeka">
+
+
+<meta http-equiv="x-dns-prefetch-control" content="off"></head>
+<body>
   <div class="wrapper tumblr4">
-    <div class="sidebar">
-      <div class="sidebar-wrapper">
-        <div class="sidebar-author">
-          <div class="sidebar-author-image">
-            <img src="http://assets.tumblr.com/images/default_avatar_128.gif">
-          </div>
-          
-            <div class="sidebar-author-description">
-              Blog Description Goes Here
-            </div>
-          </div>
-          
-
-          <ul class="sidebar-navigation">
-            <li> <a href="/" class="active"> Home </a> </li>
-            
-            
-              <li> <a href="/ask"> Ask me anything </a> </li>
-            
-            
-            <li><a href="http://testblog12345123.tumblr.com/rss"> RSS feed</a></li>
-            <li><a href="/random"> Random</a></li>
-            <li>
-              <a href="http://www.tumblr.com/follow/testblog12345123"><div class="heading" id="followontumblr"> Follow on Tumblr</div></a>
-            </li>
-            
-          </ul>
-          <div class="sidebar-search">
-            <div class="search" id="search">
-              <form action="/search" method="get" id="search-form">
-                <input type="hidden" name="t" value="Test Blog">
-                <input type="hidden" name="scope" value="all_of_tumblr">
-                <input type="text" name="q" class="query" value="">
-                <input type="submit" value=" Search" class="submit">
-                <div class="clear"></div>
-              </form>
-            </div>
-            <div class="search-scope">
-              <input type="radio" id="search-scope-me" name="scope" checked="" onclick="document.getElementById('search-form').action='/search'"> <label for="search-scope-me" onclick="document.getElementById('search-form').action='/search'"> My blog</label>
-              <input type="radio" id="search-scope-all" name="scope"><label for="search-scope-all"> All of Tumblr</label>
-            </div>
-        </div> <!-- End of Search Box -->
-      </div> <!-- End of Sidebar Wrapper -->
-      <div class="sidebar-zigzag"> </div>
-    </div> <!-- end of sidebar -->
-    <div class="main">
-
-      <div id="name_banner">
+    <div class="sidebar" style="height: 214px; ">
+      <div class="sidebar-wrapper" style="height: 214px; ">
+        <div id="name_banner">
             <ul id="first_name">
               <li class="indent blue">
                 <div class="minimal-indent">P</div>
@@ -108,6 +70,28 @@
               </li>
             </ul>
           </div> <!-- End of name banner -->
+          <div class="sidebar-logo">
+            <div class="sidebar-logo-wrapper">
+              <div class="sidebar-logo-dino">
+                <img src="images/dino.png"/>
+              </div>
+            </div>
+          </div>
+
+        <ul class="sidebar-navigation">
+          <li class="home active"> <a href="http://paige.ponzeka.com"> Home </a></li>
+          <li class="about"> <a href="http://paige.ponzeka.com#about"> About </a></li>
+          <li class="blog"> <a href="http://hello.ponzeka.com"> Blog </a> </li>
+          <li class="work"><a href="http://paige.ponzeka.com#work">Work</a></li>
+          <li class="contact"><a href="http://paige.ponzeka.com#contact">Contact</a></li>
+        </ul>
+       
+      </div><!-- end of sidebar wrapper -->
+      <div class="sidebar-zigzag" style="height: 214px; "></div>
+    </div> <!-- end of sidebar -->
+    <div class="main">
+
+      
 
           <div class="main-content">
             <!-- Search Page -->
@@ -118,378 +102,145 @@
             <!-- Posts Page -->
             
               <div class="post">
-                
                 <div class="post-date">
-                  <a href="http://testblog12345123.tumblr.com/post/28782367130/text-post">
-                      Posted 1 hour ago 
-                  </a>
-                </div>
+                  
+                    <a href="http://hello.ponzeka.com/post/28835557522/my-dino-case-via-http-www-gelaskins-com">
+                      <span class="month">Aug</span>
+                      <span class="day">06</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
                 <div class="post-content">
-                  <div class="title">Text Post</div>
-                  <div class="copy"><div class="post_title">This is a Text Post</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non massa nec sapien euismod ullamcorper varius ac neque. Morbi nisi ante, congue eget fermentum non, gravida nec tellus. Proin sit amet interdum nunc. Pellentesque in nisi urna, non ultrices lacus. In eget purus at libero placerat laoreet non id leo. Donec vitae erat ac sem malesuada scelerisque. Proin et eros libero, in pellentesque magna. Mauris laoreet rhoncus blandit. Curabitur tincidunt hendrerit posuere. Integer vel vestibulum ante. Donec at justo odio. Vestibulum sed ante et tellus malesuada faucibus. Quisque rhoncus odio quis nibh consectetur accumsan. Phasellus bibendum luctus malesuada. Curabitur consectetur mauris eget mi elementum quis placerat erat blandit. Suspendisse ultricies odio eget mauris auctor a laoreet lorem fermentum.</p><p>Integer urna dui, dictum ut mattis vitae, ultricies in lorem. Nullam scelerisque odio at neque pulvinar aliquam. Integer ac ullamcorper sapien. Donec nisl ipsum, molestie et fermentum quis, condimentum sed dui. Etiam vitae dui risus, eu vulputate urna. Morbi feugiat molestie enim, quis hendrerit enim mattis vitae. Donec ac dolor urna. Nam ullamcorper aliquam molestie.</p><p>Integer pellentesque porttitor nisi, auctor malesuada diam tincidunt vitae. Vestibulum velit ipsum, rutrum ac mollis sit amet, consequat et ipsum. Aliquam condimentum augue eu felis elementum quis feugiat leo consequat. Maecenas egestas condimentum lorem at pellentesque. Proin euismod ultricies ipsum, nec ornare turpis mollis in. Duis dolor lorem, ultrices malesuada condimentum vitae, auctor ac risus. Vestibulum scelerisque sollicitudin ullamcorper. Phasellus ut orci quis justo consectetur suscipit. Pellentesque porttitor, lectus vel convallis ultricies, nunc arcu lobortis magna, sit amet pharetra libero risus ac ipsum. Proin adipiscing vulputate turpis quis suscipit.</p><p>Praesent quis turpis nunc. Sed commodo velit ac augue dictum fermentum. Ut tortor eros, molestie ac placerat at, vehicula sit amet dui. Phasellus enim leo, sagittis eu porttitor sed, lacinia vel nisi. Vestibulum id gravida dui. Quisque aliquam hendrerit neque blandit euismod. Donec sit amet tortor non mauris hendrerit pellentesque.</p><p>Aenean sit amet tincidunt enim. Nunc eleifend erat sed urna iaculis consequat. Curabitur ut sem vel diam laoreet cursus. Ut quis blandit augue. Proin et quam est, ac scelerisque nibh. Vivamus quis ante mauris, at faucibus nulla. Maecenas convallis quam a magna consequat hendrerit.</p></div>
+                
+                  <div class="media"><img src="http://24.media.tumblr.com/tumblr_m89o13InQx1qho41ho1_r1_500.png" alt="My Dino Case Via&nbsp;http://www.gelaskins.com/"></div>
+                  <div class="copy"><p>My Dino Case Via&nbsp;<a href="http://www.gelaskins.com/"></a><a href="http://www.gelaskins.com/">http://www.gelaskins.com/</a></p></div>
+                
+                
+                
+                
+            
+                
+                
+                <div class="post-footer">
 
-                  <div class="post-footer">
-                    <div class="post-footer-tags">
-                      <a href="http://testblog12345123.tumblr.com/tagged/text">text</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/test">test</a><span class="tag-commas">, </span>.</div>
-                    <div class="post-footer-notes"><a href="#"><span class="note-count">8</span> Notes</div>
-                  </div> <!-- End of Post Footer -->
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/iphone">
+                            iphone
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/design">
+                            design
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
 
-                </div> <!-- End of Post Content -->
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/28835557522/my-dino-case-via-http-www-gelaskins-com">
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
                 
                 
-                  
-                  
-                
-                
-                
-                
-                
-                
-                
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
+               
             
               <div class="post">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16191613152">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes">828 notes</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
+                <div class="post-date">
                   
+                    <a href="http://hello.ponzeka.com/post/28441620251/hollygolight1y-silvermoon424-this-is">
+                      <span class="month">Jul</span>
+                      <span class="day">31</span>
+                      <span class="year">2012</span>
+                    </a>
                   
-                ">
-                  
-                  
-                  
-                  <div class="clear"></div>
-                </div>
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
                 
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
                 
+                  <div class="media"><script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?5b0c19dd926e9b5970955ea02394925c"></script> <span id="video_player_28441620251"><embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/video_player.swf?22" bgcolor="#000000" quality="high" class="video_player" wmode="transparent" allowfullscreen="true" height="375" width="500" flashvars="file=http%3A%2F%2Fhello.ponzeka.com%2Fvideo_file%2F28441620251%2Ftumblr_m8057cKYTv1r6ego3&amp;poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame5.jpg"></span><script type="text/javascript">renderVideo("video_player_28441620251",'http://hello.ponzeka.com/video_file/28441620251/tumblr_m8057cKYTv1r6ego3',500,375,'poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m8057cKYTv1r6ego3_r1_frame5.jpg')</script></div>
+                  <div class="copy"><p><a class="tumblr_blog" href="http://hollygolight1y.tumblr.com/post/28385907638">hollygolight1y</a>:</p>
+<blockquote>
+<p><a class="tumblr_blog" href="http://silvermoon424.tumblr.com/post/28385721483/this-is-fyugihkjhvgcuihkbjm-i-cant-even-cannot">silvermoon424</a>:</p>
+<blockquote>
+<p>THIS IS FYUGIHKJHVGCUIHKBJM</p>
+<p>I can’t even cannot. I love how all the other goats (I think that’s what they are…?) are just looking around like “I cannot believe this bitch.” AND THE GOAT KEEPS KNOCKING OVER THAT ONE BLACK ONE. It’s like somebody injected speed into that animal.&nbsp;</p>
+<p>I love animals. I will love them until the day I die.</p>
+</blockquote>
+<p>I WANT THEM</p>
+</blockquote>
+<p>Love thisss</p><p>(Source: <a href="http://videohall.tumblr.com/post/28379230782/buttermilk-the-baby-goat-is-a-bully-thats-one" title="videohall">videohall</a>, via <a href="http://onlylolgifs.net/post/28429788527/hollygolight1y-silvermoon424-this-is">onlylolgifs</a>)</p></div>
                 
                 
                 
                 
                 
-                  <div class="question">
-                    <div class="nipple"></div>
-                    This is a question that I am asking!?!?!
-                  </div>
-                  <div class="asker_container"><img src="http://25.media.tumblr.com/avatar_8423032d8d7f_24.png"><a href="http://hello.ponzeka.com/" class="asker">paigeponzeka</a></div>
-                  <div class="copy"><p>Derpy derpy derpy derpy derpy</p></div>
                 
                 
                 
-                
-                <a href="http://testblog12345123.tumblr.com/post/16190385932/this-is-a-question-that-i-am-asking">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes"></div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
-                  
-                  
-                ">
-                  
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
-                
-                
-                
-                  
-                  <div class="audio">
-                    <div class="player"><span id="audio_player_16190261687">[<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Flash 9</a> is required to listen to audio.]</span></div>
-                    <div class="meta">0 plays</div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="clear"></div>
-                  <div class="copy"><p><a class="tumblr_blog" href="http://testblog12345123.tumblr.com/post/16014440914/test-audio">testblog12345123</a>:</p><blockquote><p>Test Audio</p></blockquote></div>
-                
-                
-                
-                
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16190261687/testblog12345123-test-audio">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes">2 notes</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
-                  
-                  
-                ">
-                  
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
-                
-                
-                
-                  
-                  <div class="audio">
-                    <div class="player"><span id="audio_player_16014440914">[<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Flash 9</a> is required to listen to audio.]</span></div>
-                    <div class="meta">0 plays</div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="clear"></div>
-                  <div class="copy"><p>Test Audio</p></div>
-                
-                
-                
-                
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16014440914/test-audio">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes">2 notes</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag1">tag1</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag2">tag2</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
-                
-                
-                  <div class="media"><iframe width="500" height="281" src="http://www.youtube.com/embed/k8FJ3IcF9IA?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe></div>
-                  <div class="copy"><p>Stupid Video from Black Ops</p></div>
-                
-                
-                
-                
-                
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16014459831/stupid-video-from-black-ops">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes"></div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag1">tag1</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag2">tag2</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
-                
-                
-                
-                
-                
-                
-                
-                  <div class="title">Overhead Chat</div>
-                  <div class="chat">
-                    <div class="lines">
-                      
-                        <div class="line odd"><strong>Me:</strong> Hey</div>
-                      
-                        <div class="line even"><strong>You:</strong> Hey How are you?</div>
-                      
-                        <div class="line odd"><strong>Me:</strong> Good, good, you?</div>
-                      
-                        <div class="line even"><strong>You:</strong> Same</div>
-                      
-                    </div>
-                  </div>
-                  <div class="clear"></div>
-                  <div style="height:10px;"></div>
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16014385067/overhead-chat">
-                  <div class="footer for_permalink">
-                    <div class="date">
-                      
-                      &nbsp;
-                      
-                      Posted 6 months ago from 
-                      
-                    </div>
-                    <div class="notes">1 note</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
-                
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag1">tag1</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag2">tag2</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
-                
-              </div>
-              <div class="bottom"></div>
-            
-              <div class="post">
-                
-                
-                
-                
-                  <div class="quote short">Donec ac dolor urna. Nam ullamcorper aliquam molestie.</div>
-                  <div class="copy">
-                    <div class="quotebg">“</div>
+                <div class="post-footer">
+
                     
-                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                        <tbody><tr>
-                          <td valign="top" style="width:20px;">—</td>
-                          <td valign="top" class="quote_source">
-                            <span>Lorem ipsum</span>
-                          </td>
-                        </tr>
-                      </tbody></table>
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/goat">
+                            goat
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/video">
+                            video
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/lol">
+                            lol
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
                     
-                  </div>
-                
-                
-                
-                
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16014357678/donec-ac-dolor-urna-nam-ullamcorper-aliquam">
-                  <div class="footer for_permalink">
-                    <div class="date">
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/28441620251/hollygolight1y-silvermoon424-this-is">
                       
-                      &nbsp;
+                        95,945 notes
                       
-                      Posted 6 months ago from 
-                      
+                    </a>
                     </div>
-                    <div class="notes"></div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
                 
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag1">tag1</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag2">tag2</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
                 
-              </div>
-              <div class="bottom"></div>
+               
             
               <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/27501516125/i-love-that-someone-has-taken-the-time-out-of">
+                      <span class="month">Jul</span>
+                      <span class="day">18</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
                 
-                  <div class="media"><a href="http://testblog12345123.tumblr.com/image/16014329477"><img src="http://25.media.tumblr.com/tumblr_lxygesrvOH1rnyj34o1_500.jpg" alt="Integer urna dui, dictum ut mattis vitae, ultricies in lorem. Nullam scelerisque odio at neque pulvinar aliquam. Integer ac ullamcorper sapien. Donec nisl ipsum, molestie et fermentum quis, condimentum sed dui. Etiam vitae dui risus, eu vulputate urna. Morbi feugiat molestie enim, quis hendrerit enim mattis vitae.&nbsp;"></a></div>
-                  <div class="copy"><p><span>Integer urna dui, dictum ut mattis vitae, ultricies in lorem. Nullam scelerisque odio at neque pulvinar aliquam. Integer ac ullamcorper sapien. Donec nisl ipsum, molestie et fermentum quis, condimentum sed dui. Etiam vitae dui risus, eu vulputate urna. Morbi feugiat molestie enim, quis hendrerit enim mattis vitae.&nbsp;</span></p></div>
+                  <div class="media"><img src="http://24.media.tumblr.com/tumblr_m7dhbu0aF11qho41ho1_250.gif" alt="I love that someone has taken the time out of their day to animate Starry Night. Not only is it one of my favorites but artistic animated gifs are always fantastic."></div>
+                  <div class="copy"><p>I love that someone has taken the time out of their day to animate Starry Night. Not only is it one of my favorites but artistic animated gifs are always fantastic.</p></div>
                 
                 
                 
@@ -499,74 +250,480 @@
                 
                 
                 
-                <a href="http://testblog12345123.tumblr.com/post/16014329477/integer-urna-dui-dictum-ut-mattis-vitae">
-                  <div class="footer for_permalink">
-                    <div class="date">
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/gif">
+                            gif
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/starry-night">
+                            starry night
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/art">
+                            art
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/27501516125/i-love-that-someone-has-taken-the-time-out-of">
                       
-                      &nbsp;
+                        6 notes
                       
-                      Posted 6 months ago from 
-                      
+                    </a>
                     </div>
-                    <div class="notes">2 notes</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
                 
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag4">tag4</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag5">tag5</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
                 
-              </div>
-              <div class="bottom"></div>
+               
             
               <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/26151579843/laughingsquid-my-drunk-kitchen-american">
+                      <span class="month">Jun</span>
+                      <span class="day">29</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                
+                  <div class="media"><iframe width="500" height="281" src="http://www.youtube.com/embed/OsJd8QARaR0?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe></div>
+                  <div class="copy"><p><a class="tumblr_blog" href="http://links.laughingsquid.com/post/26148840687/my-drunk-kitchen-american-strudel">laughingsquid</a>:</p>
+<blockquote>
+<p><a href="http://mydrunkkitchen.tumblr.com/post/26074380075/most-inventions-start-out-like-this-a-lot-of">My Drunk Kitchen: American Strudel</a></p>
+</blockquote></div>
                 
                 
                 
                 
                 
-                  <div class="title">This is a Text Post</div>
-                  <div class="copy"><p><span></span></p><div id="lipsum"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non massa nec sapien euismod ullamcorper varius ac neque. Morbi nisi ante, congue eget fermentum non, gravida nec tellus. Proin sit amet interdum nunc. Pellentesque in nisi urna, non ultrices lacus. In eget purus at libero placerat laoreet non id leo. Donec vitae erat ac sem malesuada scelerisque. Proin et eros libero, in pellentesque magna. Mauris laoreet rhoncus blandit. Curabitur tincidunt hendrerit posuere. Integer vel vestibulum ante. Donec at justo odio. Vestibulum sed ante et tellus malesuada faucibus. Quisque rhoncus odio quis nibh consectetur accumsan. Phasellus bibendum luctus malesuada. Curabitur consectetur mauris eget mi elementum quis placerat erat blandit. Suspendisse ultricies odio eget mauris auctor a laoreet lorem fermentum.</p><p>Integer urna dui, dictum ut mattis vitae, ultricies in lorem. Nullam scelerisque odio at neque pulvinar aliquam. Integer ac ullamcorper sapien. Donec nisl ipsum, molestie et fermentum quis, condimentum sed dui. Etiam vitae dui risus, eu vulputate urna. Morbi feugiat molestie enim, quis hendrerit enim mattis vitae. Donec ac dolor urna. Nam ullamcorper aliquam molestie.</p><p>Integer pellentesque porttitor nisi, auctor malesuada diam tincidunt vitae. Vestibulum velit ipsum, rutrum ac mollis sit amet, consequat et ipsum. Aliquam condimentum augue eu felis elementum quis feugiat leo consequat. Maecenas egestas condimentum lorem at pellentesque. Proin euismod ultricies ipsum, nec ornare turpis mollis in. Duis dolor lorem, ultrices malesuada condimentum vitae, auctor ac risus. Vestibulum scelerisque sollicitudin ullamcorper. Phasellus ut orci quis justo consectetur suscipit. Pellentesque porttitor, lectus vel convallis ultricies, nunc arcu lobortis magna, sit amet pharetra libero risus ac ipsum. Proin adipiscing vulputate turpis quis suscipit.</p><p>Praesent quis turpis nunc. Sed commodo velit ac augue dictum fermentum. Ut tortor eros, molestie ac placerat at, vehicula sit amet dui. Phasellus enim leo, sagittis eu porttitor sed, lacinia vel nisi. Vestibulum id gravida dui. Quisque aliquam hendrerit neque blandit euismod. Donec sit amet tortor non mauris hendrerit pellentesque.</p><p>Aenean sit amet tincidunt enim. Nunc eleifend erat sed urna iaculis consequat. Curabitur ut sem vel diam laoreet cursus. Ut quis blandit augue. Proin et quam est, ac scelerisque nibh. Vivamus quis ante mauris, at faucibus nulla. Maecenas convallis quam a magna consequat hendrerit.</p><div></div></div><p></p></div>
                 
                 
                 
-                
-                
-                <a href="http://testblog12345123.tumblr.com/post/16014311117/this-is-a-text-post">
-                  <div class="footer for_permalink">
-                    <div class="date">
+                <div class="post-footer">
+
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/26151579843/laughingsquid-my-drunk-kitchen-american">
                       
-                      &nbsp;
+                        770 notes
                       
-                      Posted 6 months ago from 
-                      
+                    </a>
                     </div>
-                    <div class="notes">1 note</div>
-                    <div class="clear"></div>
-                  </div>
-                </a>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
                 
-                <div class="footer " style="
-                  display:none;
-                  display:block;
-                  
-                ">
-                  <div class="tags"> Tagged: <a href="http://testblog12345123.tumblr.com/tagged/tag1">tag1</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag3">tag3</a><span class="tag-commas">, </span><a href="http://testblog12345123.tumblr.com/tagged/tag4">tag4</a><span class="tag-commas">, </span>.</div>
-                  
-                  
-                  <div class="clear"></div>
-                </div>
                 
-              </div>
-              <div class="bottom"></div>
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/24127369433/makey-makey-make-anything-into-a-key">
+                      <span class="month">May</span>
+                      <span class="day">31</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                
+                  <div class="media"><span id="video_player_24127369433"><embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/video_player.swf?22" bgcolor="#000000" quality="high" class="video_player" wmode="transparent" allowfullscreen="true" height="281" width="500" flashvars="file=http%3A%2F%2Fhello.ponzeka.com%2Fvideo_file%2F24127369433%2Ftumblr_m4sj91yH9V1r6ego3&amp;poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame5.jpg"></span><script type="text/javascript">renderVideo("video_player_24127369433",'http://hello.ponzeka.com/video_file/24127369433/tumblr_m4sj91yH9V1r6ego3',500,281,'poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m4sj91yH9V1r6ego3_r1_frame5.jpg')</script></div>
+                  <div class="copy"><p><a href="http://www.kickstarter.com/projects/joylabs/makey-makey-an-invention-kit-for-everyone" title="Makey Makey On Kickstarter" target="_blank">Makey Makey</a> - Make Anything into a Key</p><p>(Source: <a href="http://videohall.tumblr.com/post/23999351706/wow-thats-amazing-i-thought-it-was-fake-after" title="videohall">videohall</a>, via <a href="http://jkimisyellow.me/post/24117820422/blinkraven-prunoandkoolaid-wow-man-i-want">jkimisyellow</a>)</p></div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/technology">
+                            technology
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/cool">
+                            cool
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/kickstarter">
+                            kickstarter
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/24127369433/makey-makey-make-anything-into-a-key">
+                      
+                        200,649 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/23869778526/found-dino-a-girlfriend-frederatorbooks-lucy">
+                      <span class="month">May</span>
+                      <span class="day">27</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                  <div class="media"><img src="http://25.media.tumblr.com/tumblr_m4k3eb9lvr1r54633o1_r1_500.gif" alt="Found Dino a Girlfriend!
+
+frederatorbooks:
+
+Lucy the Dinosaur! by Joey.
+-Zoë
+"></div>
+                  <div class="copy"><p>Found Dino a Girlfriend!</p>
+
+<p><a class="tumblr_blog" href="http://frederatorbooks.frederator.com/post/23733994221/lucy-the-dinosaur-by-joey-zoe">frederatorbooks</a>:</p>
+<blockquote>
+<p><strong>Lucy the Dinosaur!</strong> by <a href="http://www.joeyahlbum.com">Joey</a>.</p>
+<p>-<a href="http://frederator.com/zoe-barton/">Zoë</a></p>
+</blockquote></div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/dino">
+                            dino
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/gif">
+                            gif
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/23869778526/found-dino-a-girlfriend-frederatorbooks-lucy">
+                      
+                        27,813 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/23618586269">
+                      <span class="month">May</span>
+                      <span class="day">23</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                  <div class="media"><a href="http://hello.ponzeka.com/image/23618586269"><img src="http://25.media.tumblr.com/tumblr_m0h5d5Uk4v1qhajmxo1_500.jpg" alt=""></a></div>
+                  <div class="copy"><p>(Source: <a href="http://pauladeenridingthings.com/post/18880570827" title="pauladeenridingthings">pauladeenridingthings</a>)</p></div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/paula-deen">
+                            paula deen
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/butter">
+                            butter
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/dino">
+                            dino
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/submission">
+                            submission
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/23618586269">
+                      
+                        1,075 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/23548039429/5-stages-of-developing-through-cats">
+                      <span class="month">May</span>
+                      <span class="day">22</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                
+                
+                
+                
+                  <div class="title">5 Stages of Developing (Through Cats)</div>
+                  <div class="copy"><p>Stage 1: The Moment You Realize You Underestimated how Hard it was going to be.&nbsp;</p>
+<p><img src="http://dl.dropbox.com/u/76664499/gif/tumblr/45.gif"></p>
+<p>Stage 2: Where You ignore what you learned in Stage one and just keep trying…. (You’re just so close)</p>
+<p><img src="http://dl.dropbox.com/u/76664499/gif/tumblr/catgifpage96.gif"></p>
+
+<p>Stage 3: Where you keep doing the same thing Over and Over again.</p>
+<p><img src="http://media.tumblr.com/tumblr_m4fm36Bq0x1qgnuwx.gif"></p>
+
+<p>Stage 4: When It Finally Works.</p>
+<p><img src="http://media.tumblr.com/tumblr_m4fm7eWbzo1qgnuwx.gif"></p>
+
+<p>Stage 5: After You’ve Finished Coding.</p>
+<p><img src="http://dl.dropbox.com/u/76664499/gif/tumblr/5.gif"></p></div>
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/gif">
+                            gif
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/lol">
+                            lol
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/cats">
+                            cats
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/23548039429/5-stages-of-developing-through-cats">
+                      
+                        3 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/22201385540">
+                      <span class="month">May</span>
+                      <span class="day">01</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                
+                  <div class="media"><span id="video_player_22201385540"><embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/video_player.swf?22" bgcolor="#000000" quality="high" class="video_player" wmode="transparent" allowfullscreen="true" height="375" width="500" flashvars="file=http%3A%2F%2Fhello.ponzeka.com%2Fvideo_file%2F22201385540%2Ftumblr_l886mbMBne1qdw13k&amp;poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame5.jpg"></span><script type="text/javascript">renderVideo("video_player_22201385540",'http://hello.ponzeka.com/video_file/22201385540/tumblr_l886mbMBne1qdw13k',500,375,'poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_l886mbMBne1qdw13k_frame5.jpg')</script></div>
+                  <div class="copy"><p>(Source: <a href="http://kaynayan.tumblr.com/post/1064028689" title="kaynayan">kaynayan</a>, via <a href="http://coldlunchkids.tumblr.com/post/22196293916/the-vashta-nerada-t0mdelongestpenis-this-is">coldlunchkids</a>)</p></div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/video">
+                            video
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/kitty">
+                            kitty
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/cat">
+                            cat
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                          <a href="http://hello.ponzeka.com/tagged/lol">
+                            lol
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/22201385540">
+                      
+                        168,200 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
+            
+              <div class="post">
+                <div class="post-date">
+                  
+                    <a href="http://hello.ponzeka.com/post/21806742454">
+                      <span class="month">Apr</span>
+                      <span class="day">25</span>
+                      <span class="year">2012</span>
+                    </a>
+                  
+
+                </div> <!-- End of Post Date -->
+                <div class="post-content">
+                
+                
+                  <div class="media"><div id="photoset_21806742454" class="html_photoset">    <iframe class="photoset" scrolling="no" frameborder="0" height="1510" width="500" style="border:0px; background-color:transparent; overflow:hidden;" src="http://hello.ponzeka.com/post/21797528962/photoset_iframe/thefrogman/tumblr_m31ip3pglR1qzrlhg/500"></iframe></div></div>
+                  <div class="copy"><p>(Source: <a href="http://thefrogman.me/post/21797528962/original-images" title="thefrogman">thefrogman</a>, via <a href="http://tumblr.tastefullyoffensive.com/post/21798016555">tastefullyoffensive</a>)</p></div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="post-footer">
+
+                    
+                      <div class="post-footer-tags">
+                        
+                          <a href="http://hello.ponzeka.com/tagged/lol">
+                            lol
+                          </a>
+                          <span class="tag-commas">, </span>
+                        
+                      </div>
+                    
+
+                   <div class="post-footer-notes">
+                    <a href="http://hello.ponzeka.com/post/21806742454">
+                      
+                        26,900 notes
+                      
+                    </a>
+                    </div>
+                </div> <!-- End of Post Footer -->
+                </div> <!-- End of Post Content-->
+          </div>
+
+                
+                
+               
             
             <!-- End of Posts Page -->
 
@@ -575,20 +732,39 @@
             
               <div id="navigation">
                 
-                <a href="/page/2"> Next page →</a>
+                <a href="/page/2">Next page →</a>
               </div>
             
             <!-- End of Pagination -->
           </div>
-          <div id="copyright">© 2012 Paige Ponzeka <a href="http://www.tumblr.com"> Powered by Tumblr</a></div>
+          <div class="footer">
+            <div id="copyright">© 2012 Paige Ponzeka <a href="http://www.tumblr.com">Powered by Tumblr</a></div>
+          </div>
     </div> <!-- end of main -->
   </div> <!-- End of Wrapper -->
+  
+  <script type="text/javascript">
+      (function() {
+  var setSidebarHeight;
 
-  
-  
-</div>
-  
-<script src="stasis/public/scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
-<script src="stasis/public/scripts/tumblr.js" type="text/javascript"></script>
-</body>
-</html>
+  $(document).ready(function() {
+    return setSidebarHeight();
+  });
+
+  $(window).resize(function() {
+    return setSidebarHeight();
+  });
+
+  setSidebarHeight = function() {
+    return $('.sidebar, .sidebar-wrapper, .sidebar-zigzag').css('height', $(window).height());
+  };
+
+}).call(this);
+
+      
+  </script>
+
+
+<!-- BEGIN TUMBLR CODE --><iframe src="http://assets.tumblr.com/iframe.html?10&amp;src=http%3A%2F%2Fhello.ponzeka.com%2F&amp;lang=en_US&amp;name=paigeponzeka" scrolling="no" width="330" height="25" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><script type="text/javascript">_qoptions={qacct:"p-19UtqE8ngoZbM"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script><noscript>&lt;img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif" style="display:none; border-width:0px; height:1px; width:1px;" alt=""/&gt;</noscript><!-- END TUMBLR CODE -->
+
+</body></html>

@@ -1,5 +1,5 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
 
   current_view = "dino";
 
@@ -9,9 +9,16 @@
 
   isotope_container = $('#work-list');
 
+  $(window).resize(function() {
+    setSidebarHeight();
+    return setSectionHeight();
+  });
+
   $(document).ready(function() {
     intializeWorkIsotope($("#work-list"));
     intializeLifeStream(true);
+    setSidebarHeight();
+    setSectionHeight();
     intializeIsotope();
     $('#home #top_nav ul li').hover((function() {
       return changeDino(this);
@@ -100,6 +107,14 @@
       return filterIsotope("" + item);
     });
   });
+
+  setSidebarHeight = function() {
+    return $('.sidebar, .sidebar-wrapper, .sidebar-zigzag').css('height', $(window).height());
+  };
+
+  setSectionHeight = function() {
+    return $('section').css('min-height', $(window).height());
+  };
 
   intializeWorkIsotope = function(container) {
     var current_color, work_data;

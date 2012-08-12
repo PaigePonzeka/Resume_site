@@ -5,35 +5,58 @@
     %link(href="styles/launch.css" media="screen" rel="stylesheet" type="text/css" )
 
 
-  %body.impress-not-supported
-    .fallback-message.hide
-      %p Your browser doesn't support the features requiredby impress.js.
+  %body
+    .sidebar
+      .sidebar-wrapper
+        #name_banner
+          %ul#first_name
+            %li.indent.blue
+              .minimal-indent P
+            %li.indent.lime_green
+              .minimal-indent A
+            %li.indent.purple
+              .minimal-indent I
+            %li.indent.pink
+              .minimal-indent G
+            %li.indent.amber
+              .minimal-indent E
+          %ul#last_name
+            %li.indent.maroon
+              .minimal-indent P
+            %li.indent.yellow
+              .minimal-indent O
+            %li.indent.red
+              .minimal-indent N
+            %li.indent.dark_blue
+              .minimal-indent Z
+            %li.indent.dark_purple
+              .minimal-indent E
+            %li.indent.dark_red
+              .minimal-indent K
+            %li.indent.seagreen
+              .minimal-indent A
+        
+        .sidebar-logo
+          .sidebar-logo-wrapper
+            .sidebar-logo-dino
+              %img{:src => "images/dino.png"}/
+        
+        %ul.sidebar-navigation
+          %li.home.active
+            %a{:href => "#home"} Home
+          %li.about
+            %a{:href => "#about"} About
+          %li.blog
+            %a{:href => "http://hello.ponzeka.com"} Blog
+          %li.work
+            %a{:href => "#work"} Work
+          %li.contact
+            %a{:href => "#contact"} Contact
+      .sidebar-zigzag
 
-    -#fixed-nav
-      #fixed-nav_wrapper
-        %ul#fixed-nav_logo
-          %li P
-          %li A
-          %li I
-          %li G
-          %li E
-        %nav
-          %ul
-            %li.dino
-              %a.active(href="#dino") Dino
-            %li.about
-              %a(href="#about") About
-            %li.work
-              %a(href="#work") Work
-            %li.contact
-              %a(href="#contact") Contact
-            %li.blog
-              %a(href="http://hello.ponzeka.com") Blog
 
-
-    #wrapper
-      #impress
-
+    .main
+      .main-content      
         %section#home.step(data-x="0" data-y="0")
           = render 'partials/_home.html.haml'
 

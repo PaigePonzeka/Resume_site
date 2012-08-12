@@ -310,6 +310,188 @@ body {
     height: 69px;
     background: url(../images/little_dino_sprite.png) no-repeat top right; }
 
+/* Sidebar
+ *
+ * --------------------------------------------------
+ *
+ */
+.sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0; }
+  .sidebar #name_banner #first_name {
+    width: 235px;
+    margin: 0 auto; }
+    .sidebar #name_banner #first_name li {
+      font-size: 24px; }
+      .sidebar #name_banner #first_name li.indent {
+        width: 40px;
+        padding: 0px;
+        margin: 0 2px; }
+        .sidebar #name_banner #first_name li.indent .minimal-indent {
+          width: 40px; }
+  .sidebar #name_banner #last_name {
+    width: 230px;
+    margin: 0 auto; }
+    .sidebar #name_banner #last_name li {
+      font-size: 18px; }
+      .sidebar #name_banner #last_name li.indent {
+        width: 30px;
+        padding: 0px; }
+        .sidebar #name_banner #last_name li.indent .minimal-indent {
+          width: 35px; }
+
+.sidebar-wrapper {
+  background: #eeeeee;
+  float: left;
+  width: 250px;
+  padding: 10px; }
+
+.sidebar-zigzag {
+  width: 30px;
+  height: 500px;
+  background: url("../images/bg-sidebar.png") repeat-y left top;
+  float: left; }
+
+.sidebar-author {
+  margin: 20px 0; }
+  .sidebar-author .sidebar-author-image,
+  .sidebar-author .sidebar-author-description {
+    margin: 0 auto;
+    width: 128px; }
+  .sidebar-author .sidebar-author-description {
+    width: 200px;
+    font-size: 12px; }
+  .sidebar-author .sidebar-author-image {
+    overflow: hidden;
+    width: 64px; }
+    .sidebar-author .sidebar-author-image img {
+      width: 100%; }
+
+.sidebar-navigation li {
+  border: 2px solid #cccccc; }
+  .sidebar-navigation li a {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    text-align: center;
+    color: black;
+    font-weight: bold; }
+    .sidebar-navigation li a:hover {
+      color: white !important; }
+  .sidebar-navigation li.active, .sidebar-navigation li:hover {
+    color: white; }
+    .sidebar-navigation li.active.home, .sidebar-navigation li:hover.home {
+      background-color: #ff0099;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff0099, endColorstr=#99005c);
+      background-image: -moz-linear-gradient(center top, #ff0099, #99005c);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff0099), to(#99005c)); }
+      .sidebar-navigation li.active.home:hover, .sidebar-navigation li:hover.home:hover {
+        background-color: #ff33ad;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff33ad, endColorstr=#cc007a);
+        background-image: -moz-linear-gradient(center top, #ff33ad, #cc007a);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff33ad), to(#cc007a));
+        color: black; }
+      .sidebar-navigation li.active.home.active, .sidebar-navigation li:hover.home.active {
+        background-color: #cc007a;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#cc007a, endColorstr=#66003d);
+        background-image: -moz-linear-gradient(center top, #cc007a, #66003d);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc007a), to(#66003d)); }
+    .sidebar-navigation li.active.about, .sidebar-navigation li:hover.about {
+      background-color: #99ff00;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#99ff00, endColorstr=#5c9900);
+      background-image: -moz-linear-gradient(center top, #99ff00, #5c9900);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#99ff00), to(#5c9900)); }
+      .sidebar-navigation li.active.about:hover, .sidebar-navigation li:hover.about:hover {
+        background-color: #adff33;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#adff33, endColorstr=#7acc00);
+        background-image: -moz-linear-gradient(center top, #adff33, #7acc00);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#adff33), to(#7acc00));
+        color: black; }
+      .sidebar-navigation li.active.about.active, .sidebar-navigation li:hover.about.active {
+        background-color: #7acc00;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7acc00, endColorstr=#3d6600);
+        background-image: -moz-linear-gradient(center top, #7acc00, #3d6600);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7acc00), to(#3d6600)); }
+    .sidebar-navigation li.active.blog, .sidebar-navigation li:hover.blog {
+      background-color: #9900ff;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#9900ff, endColorstr=#5c0099);
+      background-image: -moz-linear-gradient(center top, #9900ff, #5c0099);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9900ff), to(#5c0099)); }
+      .sidebar-navigation li.active.blog:hover, .sidebar-navigation li:hover.blog:hover {
+        background-color: #ad33ff;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ad33ff, endColorstr=#7a00cc);
+        background-image: -moz-linear-gradient(center top, #ad33ff, #7a00cc);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ad33ff), to(#7a00cc));
+        color: black; }
+      .sidebar-navigation li.active.blog.active, .sidebar-navigation li:hover.blog.active {
+        background-color: #7a00cc;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7a00cc, endColorstr=#3d0066);
+        background-image: -moz-linear-gradient(center top, #7a00cc, #3d0066);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7a00cc), to(#3d0066)); }
+    .sidebar-navigation li.active.work, .sidebar-navigation li:hover.work {
+      background-color: #0fa1ff;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#0fa1ff, endColorstr=#0066a8);
+      background-image: -moz-linear-gradient(center top, #0fa1ff, #0066a8);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0fa1ff), to(#0066a8)); }
+      .sidebar-navigation li.active.work:hover, .sidebar-navigation li:hover.work:hover {
+        background-color: #42b5ff;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#42b5ff, endColorstr=#0085db);
+        background-image: -moz-linear-gradient(center top, #42b5ff, #0085db);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#42b5ff), to(#0085db));
+        color: black; }
+      .sidebar-navigation li.active.work.active, .sidebar-navigation li:hover.work.active {
+        background-color: #0085db;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#0085db, endColorstr=#004775);
+        background-image: -moz-linear-gradient(center top, #0085db, #004775);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0085db), to(#004775)); }
+    .sidebar-navigation li.active.contact, .sidebar-navigation li:hover.contact {
+      background-color: #ffbc00;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffbc00, endColorstr=#997100);
+      background-image: -moz-linear-gradient(center top, #ffbc00, #997100);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffbc00), to(#997100)); }
+      .sidebar-navigation li.active.contact:hover, .sidebar-navigation li:hover.contact:hover {
+        background-color: #ffc933;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffc933, endColorstr=#cc9600);
+        background-image: -moz-linear-gradient(center top, #ffc933, #cc9600);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffc933), to(#cc9600));
+        color: black; }
+      .sidebar-navigation li.active.contact.active, .sidebar-navigation li:hover.contact.active {
+        background-color: #cc9600;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#cc9600, endColorstr=#664b00);
+        background-image: -moz-linear-gradient(center top, #cc9600, #664b00);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc9600), to(#664b00)); }
+  .sidebar-navigation li.active a {
+    color: white;
+    background: url("../images/icon-left-arrow.png") 220px 5px no-repeat; }
+
+.sidebar-logo {
+  margin: 15px 0; }
+  .sidebar-logo .sidebar-logo-dino {
+    width: 150px;
+    overflow: hidden;
+    margin: 0 auto; }
+    .sidebar-logo .sidebar-logo-dino img {
+      width: 100%; }
+
+.main {
+  min-width: 650px;
+  padding-left: 320px;
+  background: white; }
+  .main section {
+    margin: 100px 0;
+    padding-top: 50px; }
+    .main section .section-link {
+      border: none;
+      padding-top: 50px;
+      display: block; }
+    .main section:first-child {
+      margin-top: 0px; }
+    .main section:last-child {
+      margin-bottom: 0px; }
+
 /* Name Banner on Welcome Screen
  *
  * --------------------------------------------------
@@ -413,10 +595,6 @@ body {
         width: 55px; }
         #name_banner #last_name li.indent .minimal-indent {
           width: 40px; }
-
-#home {
-  padding-bottom: 250px;
-  padding-top: 100px; }
 
 /* Dino & Accessories on Welcome Page
  *

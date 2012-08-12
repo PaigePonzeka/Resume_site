@@ -2,12 +2,20 @@ current_view = "dino"
 dino_messages = []
 window.class_colors = [] # stores an associative array of color classes for work
 isotope_container =$('#work-list')
+
+$(window).resize ->
+  setSidebarHeight()
+  setSectionHeight()
+
 $(document).ready ->
   #impress().init() # initialize slideshow
   # intialize life stream
   intializeWorkIsotope($("#work-list")) # intialize isotop content
   intializeLifeStream(true)
 
+  setSidebarHeight()
+  setSectionHeight()
+  
   intializeIsotope()
   #impress().init() # initialize slideshow
   #filterIsotope()
@@ -124,6 +132,16 @@ $(document).ready ->
     $(this).parents('li').addClass('active')
     filterIsotope("#{item}")
     )
+
+
+# sets the height of the scroll bar   
+setSidebarHeight= ->
+  $('.sidebar, .sidebar-wrapper, .sidebar-zigzag').css('height', $(window).height())  
+
+# sets the height of the scroll bar   
+setSectionHeight = ->
+  $('section').css('min-height', $(window).height())  
+  
 
 
 # get the json data structure of the work details and populate the isotope

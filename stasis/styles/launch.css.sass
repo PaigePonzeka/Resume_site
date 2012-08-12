@@ -240,6 +240,133 @@ body
     background: url(../images/little_dino_sprite.png) no-repeat top right
 
 
+/* Sidebar
+ * --------------------------------------------------
+ */
+.sidebar
+  position: fixed
+  height: 100%
+  top: 0
+  left: 0
+
+  #name_banner
+
+    #first_name
+      width: 235px
+      margin: 0 auto
+
+      li
+        font-size: 24px
+
+        &.indent
+          width: 40px
+          padding: 0px
+          margin: 0 2px
+          .minimal-indent
+            width: 40px
+    #last_name
+      width: 230px
+      margin: 0 auto
+      li
+        font-size: 18px
+
+        &.indent
+          width: 30px
+          padding: 0px
+
+          .minimal-indent
+            width: 35px
+            
+
+
+.sidebar-wrapper
+  background: #eee
+  float: left
+  width: 250px
+  padding: 10px
+.sidebar-zigzag
+  width: 30px
+  height: 500px
+  background: url('../images/bg-sidebar.png') repeat-y left top
+  float: left
+.sidebar-author
+  margin: 20px 0
+  .sidebar-author-image, 
+  .sidebar-author-description
+    margin: 0 auto
+    width: 128px
+  .sidebar-author-description
+    width: 200px
+    font-size: 12px
+  .sidebar-author-image
+    overflow: hidden
+    width: 64px
+    img
+      width: 100%
+.sidebar-navigation
+  li
+    border: 2px solid #ccc
+    
+    a
+      display: block
+      width: 100%
+      border: none
+      padding: 10px 0
+      text-align: center
+      color: #000
+      font-weight: bold
+
+      &:hover
+        color: #fff!important
+
+    &.active, &:hover
+      color: #fff
+      &.home
+        +gradient-button($pink)
+      &.about
+        +gradient-button($lime-green)
+
+      &.blog
+        +gradient-button($purple)
+
+      &.work
+        +gradient-button($light_blue)
+
+      &.contact
+        +gradient-button($amber)
+
+    &.active
+      a
+        color: #fff
+        background: url('../images/icon-left-arrow.png') 220px 5px no-repeat
+
+.sidebar-logo
+  margin: 15px 0
+  .sidebar-logo-dino
+    width: 150px
+    overflow: hidden
+    margin: 0 auto
+    img
+      width: 100%
+
+.main
+  min-width: 650px
+  padding-left: 320px
+  background: #fff
+  section
+    margin: 100px 0
+    padding-top: 50px
+
+    .section-link
+      border: none
+      padding-top: 50px
+      display: block
+
+    &:first-child
+      margin-top: 0px
+
+    &:last-child
+      margin-bottom: 0px
 
 /* Name Banner on Welcome Screen
  * --------------------------------------------------
@@ -309,10 +436,6 @@ body
         .minimal-indent
           width: 40px
 
-
-#home
-  padding-bottom: 250px
-  padding-top: 100px
 
 
 

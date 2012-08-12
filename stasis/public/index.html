@@ -4,32 +4,82 @@
     <link href='styles/reset.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='styles/launch.css' media='screen' rel='stylesheet' type='text/css' />
   </head>
-  <body class='impress-not-supported'>
-    <div class='fallback-message hide'>
-      <p>Your browser doesn't support the features requiredby impress.js.</p>
-    </div>
-    <div id='wrapper'>
-      <div id='impress'>
-        <section class='step' data-x='0' data-y='0' id='home'>
-          <div id='top_nav'>
-            <ul>
-              <li class='pink'>
-                <a class='active' href='#home'>Dino</a>
-              </li>
-              <li class='light_blue'>
-                <a class='' href='#work'>Work</a>
-              </li>
-              <li class='lime_green'>
-                <a class='' href='#about-me'>About</a>
-              </li>
-              <li class='amber'>
-                <a class='' href='#social'>Contact</a>
-              </li>
-              <li class='purple'>
-                <a class='' href='http://hello.ponzeka.com'>Blog</a>
-              </li>
-            </ul>
+  <body>
+    <div class='sidebar'>
+      <div class='sidebar-wrapper'>
+        <div id='name_banner'>
+          <ul id='first_name'>
+            <li class='indent blue'>
+              <div class='minimal-indent'>P</div>
+            </li>
+            <li class='indent lime_green'>
+              <div class='minimal-indent'>A</div>
+            </li>
+            <li class='indent purple'>
+              <div class='minimal-indent'>I</div>
+            </li>
+            <li class='indent pink'>
+              <div class='minimal-indent'>G</div>
+            </li>
+            <li class='indent amber'>
+              <div class='minimal-indent'>E</div>
+            </li>
+          </ul>
+          <ul id='last_name'>
+            <li class='indent maroon'>
+              <div class='minimal-indent'>P</div>
+            </li>
+            <li class='indent yellow'>
+              <div class='minimal-indent'>O</div>
+            </li>
+            <li class='indent red'>
+              <div class='minimal-indent'>N</div>
+            </li>
+            <li class='indent dark_blue'>
+              <div class='minimal-indent'>Z</div>
+            </li>
+            <li class='indent dark_purple'>
+              <div class='minimal-indent'>E</div>
+            </li>
+            <li class='indent dark_red'>
+              <div class='minimal-indent'>K</div>
+            </li>
+            <li class='indent seagreen'>
+              <div class='minimal-indent'>A</div>
+            </li>
+          </ul>
+        </div>
+        <div class='sidebar-logo'>
+          <div class='sidebar-logo-wrapper'>
+            <div class='sidebar-logo-dino'>
+              <img src='images/dino.png' />
+            </div>
           </div>
+        </div>
+        <ul class='sidebar-navigation'>
+          <li class='home active'>
+            <a href='#home'>Home</a>
+          </li>
+          <li class='about'>
+            <a href='#about'>About</a>
+          </li>
+          <li class='blog'>
+            <a href='http://hello.ponzeka.com'>Blog</a>
+          </li>
+          <li class='work'>
+            <a href='#work'>Work</a>
+          </li>
+          <li class='contact'>
+            <a href='#contact'>Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class='sidebar-zigzag'></div>
+    </div>
+    <div class='main'>
+      <div class='main-content'>
+        <section class='step' data-x='0' data-y='0' id='home'>
+          <a class='section-link' name='home'></a>
           <div id='name_banner'>
             <ul id='first_name'>
               <li class='indent blue'>
@@ -107,25 +157,7 @@
           </div>
         </section>
         <section class='step' data-x='1500' data-y='0' id='about-me'>
-          <div id='top_nav'>
-            <ul>
-              <li class='pink'>
-                <a class='' href='#home'>Dino</a>
-              </li>
-              <li class='light_blue'>
-                <a class='' href='#work'>Work</a>
-              </li>
-              <li class='lime_green'>
-                <a class='active' href='#about-me'>About</a>
-              </li>
-              <li class='amber'>
-                <a class='' href='#social'>Contact</a>
-              </li>
-              <li class='purple'>
-                <a class='' href='http://hello.ponzeka.com'>Blog</a>
-              </li>
-            </ul>
-          </div>
+          <a class='section-link' name='about'></a>
           <h1>A Little Sumptin' Sumptin' About Me</h1>
           <article>
             <p>
@@ -140,25 +172,7 @@
           </article>
         </section>
         <section class='step' data-rotate='90' data-x='3500' data-y='800' id='work'>
-          <div id='top_nav'>
-            <ul>
-              <li class='pink'>
-                <a class='' href='#home'>Dino</a>
-              </li>
-              <li class='light_blue'>
-                <a class='active' href='#work'>Work</a>
-              </li>
-              <li class='lime_green'>
-                <a class='' href='#about-me'>About</a>
-              </li>
-              <li class='amber'>
-                <a class='' href='#social'>Contact</a>
-              </li>
-              <li class='purple'>
-                <a class='' href='http://hello.ponzeka.com'>Blog</a>
-              </li>
-            </ul>
-          </div>
+          <a class='section-link' name='work'></a>
           <h1>See What I've Done</h1>
           <ul id='work-list-filters'>
             <li class='active'>
@@ -168,25 +182,7 @@
           <ul id='work-list'></ul>
         </section>
         <section class='step' data-rotate='90' data-x='-500' data-y='-1800' id='social'>
-          <div id='top_nav'>
-            <ul>
-              <li class='pink'>
-                <a class='' href='#home'>Dino</a>
-              </li>
-              <li class='light_blue'>
-                <a class='' href='#work'>Work</a>
-              </li>
-              <li class='lime_green'>
-                <a class='' href='#about-me'>About</a>
-              </li>
-              <li class='amber'>
-                <a class='active' href='#social'>Contact</a>
-              </li>
-              <li class='purple'>
-                <a class='' href='http://hello.ponzeka.com'>Blog</a>
-              </li>
-            </ul>
-          </div>
+          <a class='section-link' name='contact'></a>
           <h1>Talk to Me</h1>
           <article>
             <ul id='social_links'>
