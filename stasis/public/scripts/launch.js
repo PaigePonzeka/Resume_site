@@ -14,6 +14,16 @@
     return setSectionHeight();
   });
 
+  $(window).scroll(function() {
+    var current_view_link;
+    current_view = $("section>div:in-viewport").attr('id');
+    current_view_link = $("#" + current_view + "-link");
+    if (!current_view_link.parents('li').hasClass('active')) {
+      $('.sidebar-navigation li').removeClass('active');
+      return current_view_link.parents('li').addClass('active');
+    }
+  });
+
   $(document).ready(function() {
     intializeWorkIsotope($("#work-list"));
     intializeLifeStream(true);
@@ -69,9 +79,13 @@
         return $('#dino_accessory').addClass('hide');
       }
     });
-    $("nav a, #top_nav a").bind("click", function(event) {
+    $(".sidebar-navigation a").bind("click", function(event) {
       var $anchor;
+      $(".sidebar-navigation li").removeClass('active');
+      $(this).parents('li').addClass("active");
       $anchor = $(this);
+      console.log($(this));
+      console.log($($anchor.attr('href')));
       $("html, body").stop().animate({
         scrollTop: $($anchor.attr('href')).offset().top
       }, 1000);

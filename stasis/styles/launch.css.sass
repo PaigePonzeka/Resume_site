@@ -258,6 +258,7 @@ h1
   height: 100%
   top: 0
   left: 0
+  z-index: 9999
 
   #name_banner
 
@@ -568,7 +569,7 @@ h1
 /* Contact & Social Links
  * --------------------------------------------------
  */
-#social
+#contact
   #social_links
     float: left
     li
@@ -599,7 +600,7 @@ h1
 
   #lifestream
     float: right
-    width: 600px
+    width: 500px
     padding: 0
 
     .lifestream
@@ -609,6 +610,10 @@ h1
 
         a
           color: $purple
+          border-bottom: none
+
+          &:hover
+            color: darken($purple, 20%)
 
 
 

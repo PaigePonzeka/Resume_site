@@ -7,6 +7,14 @@ $(window).resize ->
   setSidebarHeight()
   setSectionHeight()
 
+$(window).scroll ->
+  current_view = $("section>div:in-viewport").attr('id')
+  #set the current div as selected
+  current_view_link = $("##{current_view}-link")
+  if !current_view_link.parents('li').hasClass('active')
+    $('.sidebar-navigation li').removeClass('active')
+    current_view_link.parents('li').addClass('active')
+
 $(document).ready ->
   #impress().init() # initialize slideshow
   # intialize life stream
@@ -17,6 +25,7 @@ $(document).ready ->
   setSectionHeight()
   
   intializeIsotope()
+
   #impress().init() # initialize slideshow
   #filterIsotope()
   # generate dino_messages array
@@ -86,9 +95,12 @@ $(document).ready ->
       $('#dino_accessory').addClass('hide')
 
   ########  Scrolling Navigation  ########
-  $("nav a, #top_nav a").bind "click", (event) ->
+  $(".sidebar-navigation a").bind "click", (event) ->
+    $(".sidebar-navigation li").removeClass('active')
+    $(this).parents('li').addClass("active")
     $anchor = $(this)
-
+    console.log($(this))
+    console.log($($anchor.attr('href')))
     $("html, body").stop().animate
      scrollTop: $($anchor.attr('href')).offset().top
     , 1000

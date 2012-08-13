@@ -329,7 +329,8 @@ h1 {
   position: fixed;
   height: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 9999; }
   .sidebar #name_banner #first_name {
     width: 235px;
     margin: 0 auto; }
@@ -756,42 +757,45 @@ h1 {
  * --------------------------------------------------
  *
  */
-#social #social_links {
+#contact #social_links {
   float: left; }
-  #social #social_links li {
+  #contact #social_links li {
     height: 50px;
     margin: 10px 0;
     cursor: pointer; }
-    #social #social_links li:hover {
+    #contact #social_links li:hover {
       cursor: pointer; }
-      #social #social_links li:hover img {
+      #contact #social_links li:hover img {
         cursor: pointer;
         -webkit-transform: rotate(-360deg);
         -moz-transform: rotate(-360deg);
         -webkit-transition: -webkit-transform 0.5s ease-in;
         -moz-transition: -moz-transform 0.5s ease-in; }
-      #social #social_links li:hover a {
+      #contact #social_links li:hover a {
         color: black;
         cursor: pointer; }
-    #social #social_links li a {
+    #contact #social_links li a {
       cursor: pointer;
       color: #707070;
       border: none;
       font-size: 30px;
       padding: 10px 0 10px 0;
       background: left top no-repeat; }
-    #social #social_links li img {
+    #contact #social_links li img {
       cursor: pointer;
       vertical-align: middle; }
-#social #lifestream {
+#contact #lifestream {
   float: right;
-  width: 600px;
+  width: 500px;
   padding: 0; }
-  #social #lifestream .lifestream li {
+  #contact #lifestream .lifestream li {
     margin-bottom: 10px;
     font-size: 16px; }
-    #social #lifestream .lifestream li a {
-      color: #9900ff; }
+    #contact #lifestream .lifestream li a {
+      color: #9900ff;
+      border-bottom: none; }
+      #contact #lifestream .lifestream li a:hover {
+        color: #5c0099; }
 
 /* Work
  *
