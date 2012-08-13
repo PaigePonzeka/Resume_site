@@ -1,5 +1,5 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
 
   current_view = "dino";
 
@@ -9,9 +9,26 @@
 
   isotope_container = $('#work-list');
 
+  $(window).resize(function() {
+    setSidebarHeight();
+    return setSectionHeight();
+  });
+
+  $(window).scroll(function() {
+    var current_view_link;
+    current_view = $("section>div:in-viewport").attr('id');
+    current_view_link = $("#" + current_view + "-link");
+    if (!current_view_link.parents('li').hasClass('active')) {
+      $('.sidebar-navigation li').removeClass('active');
+      return current_view_link.parents('li').addClass('active');
+    }
+  });
+
   $(document).ready(function() {
     intializeWorkIsotope($("#work-list"));
     intializeLifeStream(true);
+    setSidebarHeight();
+    setSectionHeight();
     intializeIsotope();
     $('#home #top_nav ul li').hover((function() {
       return changeDino(this);
@@ -62,9 +79,13 @@
         return $('#dino_accessory').addClass('hide');
       }
     });
-    $("nav a, #top_nav a").bind("click", function(event) {
+    $(".sidebar-navigation a").bind("click", function(event) {
       var $anchor;
+      $(".sidebar-navigation li").removeClass('active');
+      $(this).parents('li').addClass("active");
       $anchor = $(this);
+      console.log($(this));
+      console.log($($anchor.attr('href')));
       $("html, body").stop().animate({
         scrollTop: $($anchor.attr('href')).offset().top
       }, 1000);
@@ -101,6 +122,14 @@
     });
   });
 
+  setSidebarHeight = function() {
+    return $('.sidebar, .sidebar-wrapper, .sidebar-zigzag').css('height', $(window).height());
+  };
+
+  setSectionHeight = function() {
+    return $('section').css('min-height', $(window).height());
+  };
+
   intializeWorkIsotope = function(container) {
     var current_color, work_data;
     work_data = getWorkDetails();
@@ -131,7 +160,7 @@
         color_class = "" + (toClass('' + this));
         item.addClass(color_class);
         current_color = generateAnArrayOfColors(current_color, color_class, "" + this);
-        return item_tags_list.append(item_tags_list_item.css('background', "" + (current_color.toString(16))));
+        return item_tags_list.append(item_tags_list_item.addClass(toClass('' + this.toLowerCase())));
       });
       images_folder = "images/work/";
       work_icon = work_item.images.icon;
@@ -170,11 +199,10 @@
     var filter_item, filter_item_link;
     filter_item = $("<li/>");
     filter_item_link = $("<a/>", {
-      "class": "work-list-filter-item-link",
+      "class": "work-list-filter-item-link " + (toClass(colorClass.toLowerCase())),
       'data-filter': "." + colorClass
     });
     filter_item.append(filter_item_link.html(tag));
-    filter_item.css('background', "#" + (currentColor.toString(16)));
     return $("#work-list-filters").append(filter_item);
   };
 
