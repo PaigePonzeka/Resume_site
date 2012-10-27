@@ -1,0 +1,707 @@
+@import "reset"
+@import 'base'
+
+
+
+/* General
+ * --------------------------------------------------
+ */
+a
+  text-decoration: none
+  border-bottom: 1px dashed $gray
+  color: #000
+
+  &:hover
+    border-bottom: none
+    color: $gray
+
+p
+  margin-top: 10px
+  font-size: 14px
+  line-height: 18px
+
+.hide
+  display: none!important
+
+body
+  font-family: Helvetica, Arial, Arial, sans-serif
+  background: url('../images/bg-main-2.jpg')
+
+h1
+  font-size: 50px
+  margin-bottom: 10px
+  +franchise 
+
+.summary
+  width: 800px
+  margin: 20px auto
+
+#wrapper
+  width: 960px
+  padding: 0 50px
+  margin: 0 auto
+  background: #fff /*url('../images/bg.png') repeat-y top center*/
+  section
+    margin: 20px
+    padding: 100px 0 200px 0
+
+    &#dino
+      padding-top: 20px
+
+    h1
+      font-size: 30px
+
+    article
+      padding: 20px
+
+      p
+        margin-top: 15px
+
+  .step
+    min-width: 800px
+    min-height: 500px
+
+
+
+/* Navigation
+ * --------------------------------------------------
+ */
+.dino
+  a:hover, a.active
+    color: $pink!important
+
+.about
+  a:hover, a.active
+    color: $lime_green!important
+
+.work
+  a:hover, a.active
+    color: $light_blue!important
+
+.contact
+  a:hover, a.active
+    color: $amber!important
+
+.blog
+  a:hover, a.active
+    color: $purple!important
+
+#fixed-nav
+  width: 100%
+  background: rgba( 0, 0, 0, 0.7)
+  height: 40px
+  color: #fff
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  #fixed-nav_wrapper
+    width: 940px
+    margin: 0 auto
+  ul#fixed-nav_logo
+    margin-top: 10px
+    float: left
+    li
+      margin: 0 5px
+      text-align: center
+      background: #666
+      width: 20px
+      padding: 2px 0
+      +border-radius(20px)
+  nav
+    float: right
+  ul
+    +clearfix
+    li
+      float: left
+      margin: 20px 10px 0
+
+      a
+        color: #fff
+
+#top_nav
+  +clearfix
+  padding-bottom: 50px
+  ul
+    margin: 20px auto 0 auto
+    width: 900px
+
+    li
+      padding-bottom: 5px
+      float: left
+      margin: 0 50px
+      font-size: 30px
+
+      &.pink a
+        border-color: $pink
+
+        &:hover, &.active
+          color: $pink
+
+      &.light_blue a
+        border-color: $light_blue
+
+        &:hover, &.active
+          color: $light_blue
+
+      &.lime_green a
+        border-color: $lime_green
+
+        &:hover, &.active
+          color: $lime_green
+
+      &.purple a
+        border-color: $purple
+
+        &:hover, &.active
+          color: $purple
+
+      &.amber a
+        border-color: $amber
+
+        &:hover, &.active
+          color: $amber
+
+#small_nav
+  +clearfix
+  width: 800px
+  margin: 40px auto 0 auto
+  ul li
+    float: left
+
+    p
+      color: $gray
+      font-size: 12px
+
+
+
+/* Dino Version of Clippy
+ * --------------------------------------------------
+ */
+#little_dino_container
+  position: fixed
+  z-index: 100
+  left: 80%
+  bottom: 0px
+  width: 200px
+  height: 200px
+
+  #little_dino_bubble
+    width: 150px
+    height: 100px
+    margin-left: -50px
+    background: $clippy_yellow
+    +border-radius(10px)
+    position: absolute
+    bottom: 100px
+    right: 80px
+    border: 1px solid $clippy_dark_yellow
+
+    #little_dino_bubble_content
+      padding: 5px
+      font-size: 14px
+      line-height: 16px
+
+    #little_dino_bubble_buttons
+      margin: 0 10px
+      position: absolute
+      bottom: 5px
+      li
+        +border-radius(5px)
+        padding: 3px
+        border: 1px solid $clippy_dark_yellow
+        cursor: pointer
+        margin: 0 15px
+
+        &.left
+          float: left
+        &.right
+          float: right
+        &:hover
+          +boxshadow(inset, 0, 0, 1px, #666)
+
+    #little_dino_bubble_triangle
+      content: ""
+      display: block /* reduce the damage in FF3.0 */
+      position: absolute
+      left: 95px
+      bottom: -15px
+      width: 0
+      border-width: 15px 15px 0px 15px
+      border-style: solid
+      border-color: $clippy_yellow transparent
+
+  #little_dino_bubble_triangle_border
+    content: ""
+    display: block /* reduce the damage in FF3.0 */
+    position: absolute
+    left: 94px
+    bottom: -16px
+    width: 0
+    border-width: 16px 16px 0px 16px
+    border-style: solid
+    border-color: $clippy_dark_yellow transparent
+
+  #little_dino
+    position: absolute
+    bottom: 20px
+    right: 20px
+    width: 86px
+    height: 69px
+    background: url(../images/little_dino_sprite.png) no-repeat top right
+
+
+/* Sidebar
+ * --------------------------------------------------
+ */
+.sidebar
+  position: fixed
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 9999
+
+  #name_banner
+
+    #first_name
+      width: 235px
+      margin: 0 auto
+
+      li
+        font-size: 24px
+
+        &.indent
+          width: 40px
+          padding: 0px
+          margin: 0 2px
+          .minimal-indent
+            width: 40px
+    #last_name
+      width: 230px
+      margin: 0 auto
+      li
+        font-size: 24px
+
+        &.indent
+          width: 30px
+          padding: 0px
+
+          .minimal-indent
+            width: 35px
+            
+
+
+.sidebar-wrapper
+  background: #eee
+  float: left
+  width: 250px
+  padding: 10px
+.sidebar-zigzag
+  width: 30px
+  height: 500px
+  background: url('../images/bg-sidebar.png') repeat-y left top
+  float: left
+.sidebar-author
+  margin: 20px 0
+  .sidebar-author-image, 
+  .sidebar-author-description
+    margin: 0 auto
+    width: 128px
+  .sidebar-author-description
+    width: 200px
+    font-size: 12px
+  .sidebar-author-image
+    overflow: hidden
+    width: 64px
+    img
+      width: 100%
+.sidebar-navigation
+  li
+    border: 2px solid #ccc
+    
+    a
+      display: block
+      width: 100%
+      border: none
+      padding: 10px 0
+      text-align: center
+      color: #000
+      font-weight: bold
+
+      &:hover
+        color: #fff!important
+
+    &.active, &:hover
+      color: #fff
+      &.home
+        +gradient-button($pink)
+      &.about
+        +gradient-button($lime-green)
+
+      &.blog
+        +gradient-button($purple)
+
+      &.work
+        +gradient-button($light_blue)
+
+      &.contact
+        +gradient-button($amber)
+
+    &.active
+      a
+        color: #fff
+        background: url('../images/icon-left-arrow.png') 220px 5px no-repeat
+
+.sidebar-logo
+  margin: 15px 0
+  .sidebar-logo-dino
+    width: 150px
+    overflow: hidden
+    margin: 0 auto
+    img
+      width: 100%
+
+.main
+  min-width: 650px
+  padding-left: 320px
+  background: #fff
+  section
+    margin: 100px 0
+    padding-top: 50px
+
+    .section-link
+      border: none
+      padding-top: 50px
+      display: block
+
+    &:first-child
+      margin-top: 0px
+
+    &:last-child
+      margin-bottom: 0px
+
+/* Name Banner on Welcome Screen
+ * --------------------------------------------------
+ */
+#name_banner
+  +franchise
+  ul
+    margin: 0 auto
+    +clearfix
+    li
+      float: left
+      margin-top: 10px
+      text-align: center
+      cursor: pointer
+
+      &.blue
+        +name-button($light_blue)
+
+      &.purple
+        +name-button($purple)
+
+      &.lime_green
+        +name-button($lime_green)
+
+      &.pink
+        +name-button($pink)
+
+      &.amber
+        +name-button($amber)
+
+      &.maroon
+        +last-name-button($maroon)
+
+      &.yellow
+        +last-name-button(darken($amber, 10%))
+
+      &.red
+        +last-name-button($red)
+
+      &.dark_blue
+        +last-name-button($dark_blue)
+
+      &.dark_purple
+        +last-name-button($dark_purple)
+
+      &.dark_red
+        +last-name-button($dark_red)
+
+      &.seagreen
+        +last-name-button(darken($lime_green, 20%))
+
+  #first_name
+    width: 600px
+    li
+      font-size: 60px
+      &.indent
+        width: 100px
+        .minimal-indent
+          width: 80px
+
+  #last_name
+    width: 500px
+    li
+      font-size: 30px
+      &.indent
+        width: 55px
+        .minimal-indent
+          width: 40px
+
+
+
+
+
+/* Dino & Accessories on Welcome Page
+ * --------------------------------------------------
+ */
+#dino_container
+  position: relative
+  height: 300px
+  width: 600px
+  margin: 0 auto
+
+  #dino_wrapper
+    width: 226px // dino plus hat
+    padding-top: 50px
+    height: 209px
+    float: right
+    position: relative
+
+  #dino_bubble
+    width: 250px
+    height: 150px
+    margin-left: -50px
+    +border-radius(20px)
+    background: $gray
+    position: absolute
+    left: 25%
+    top: 30px
+
+    #dino_bubble_content
+      padding: 15px 10px 0px 10px
+      .rawr
+        font-size: 30px
+        text-align: center
+      p
+        font-size: 16px
+        line-height: 18px
+
+    #dino_bubble_triangle
+      content: ""
+      display: block /* reduce the damage in FF3.0 */
+      position: absolute
+      right: -15px
+      bottom: 20px
+      width: 0
+      border-width: 0 15px 15px
+      border-style: solid
+      border-color: $gray transparent
+
+  #dino_clothes
+    #dino_accessory
+      position: absolute
+      left: 0
+      top: 50px
+      z-index: 2
+      width: 226px
+      height: 209px
+      background: url(../images/accessory_sprite.png) no-repeat
+
+      &.acc1 /*Bowtie*/
+        background-position: 0px 0px
+
+      &.acc2 /*Tie*/
+        background-position: 0px -224px
+
+      &.acc3 /*Mustache*/
+        background-position: 0px -448px
+
+      &.acc4 /*iPhone*/
+        background-position: 0px -672px
+
+      &.acc5 /*Cat*/
+        background-position: 0px -890px
+
+      &.acc6 /*Guitar*/
+        background-position: 0px -1100px
+
+      &.acc7 /*Bracelet*/
+        background-position: 0px -1325px
+
+    #dino_hat
+      position: absolute
+      z-index: 5
+      width: 226px
+      height: 209px
+      top: 5px
+      background: url(../images/hat_sprite.png) no-repeat
+
+      &.hat1 /*bowler*/
+        background-position: 0px -5px
+
+      &.hat2 /*snow*/
+        background-position: 0px -230px
+
+      &.hat3 /*emo*/
+        background-position: 0px -460px
+
+      &.hat4 /*fedora*/
+        background-position: 0px -670px
+
+      &.hat5 /*grade*/
+        background-position: 0px -900px
+
+  #dino
+    z-index: 1
+    width: 226px
+    height: 209px
+    background: url(../images/dino_sprite.png) no-repeat top right
+
+    &.purple
+      background-position: 0px -225px
+    &.lime_green
+      background-position: 0px -448px
+    &.light_blue
+      background-position: bottom right
+
+
+
+/* Contact & Social Links
+ * --------------------------------------------------
+ */
+#contact
+  #social_links
+    float: left
+    li
+      height: 50px
+      margin: 10px 0
+      cursor: pointer
+      &:hover
+        cursor: pointer
+        img
+          cursor: pointer
+          -webkit-transform: rotate(-360deg)
+          -moz-transform: rotate(-360deg)
+          -webkit-transition: -webkit-transform 0.5s ease-in
+          -moz-transition: -moz-transform 0.5s ease-in
+        a
+          color: #000
+          cursor: pointer
+      a
+        cursor: pointer
+        color: #707070
+        border: none
+        font-size: 30px
+        padding: 10px 0 10px 0
+        background: left top no-repeat
+      img
+        cursor: pointer
+        vertical-align: middle
+
+  #lifestream
+    float: right
+    width: 500px
+    padding: 0
+
+    .lifestream
+      li
+        margin-bottom: 10px
+        font-size: 16px
+
+        a
+          color: $purple
+          border-bottom: none
+
+          &:hover
+            color: darken($purple, 20%)
+
+
+
+/* Work
+ * --------------------------------------------------
+ */
+
+
+.sass, .css
+  +gradient-button-light($light-blue)
+
+.haml, .html
+  +gradient-button-light($pink)
+
+.php
+  +gradient-button-light($amber)
+
+.jquery, .javascript
+  +gradient-button-light($purple)
+
+.python, .pygames
+  +gradient-button-light($maroon)
+
+.ror
+  +gradient-button-light($lime-green)
+
+.ms-access, .visual-basic, .visual-studio
+  +gradient-button-light($yellow)
+
+.show-all
+  +gradient-button-light(#000)
+  color: #fff
+
+#work
+  ul#work-list-filters
+    li
+      float: left
+      margin: 10px
+      cursor: pointer
+      a
+        +border-radius(5px)
+        +boxshadow(1px, 1px, 0px, 1px, #aaa)
+        padding: 5px
+        border: none
+
+      &.active a
+        +boxshadow-inset(1px, 1px, 0px, 1px, #333)
+  
+  ul#work-list
+    margin-top: 20px
+    width: 950px
+
+    li.work-list-item
+      border: 2px solid #333
+      width: 290px
+      min-height: 150px
+      cursor: pointer
+      position: relative
+      margin: 5px
+      padding: 10px 5px
+      +border-radius(20px)
+      background: #fff!important
+
+      h3
+        text-transform: capitalize
+        font-size: 14px
+        margin-bottom: 5px
+
+
+      .work-list-item-icon
+        float: right
+        padding: 0px 5px 5px 0px
+
+      ul.work-list-item-tags
+        position: absolute
+        bottom: 5px
+        right: 5px
+        clear: both
+        overflow: hidden
+
+        li
+          float: left
+          margin: 0 5px
+          font-size: 13px
+          +border-radius(4px)
+          padding: 3px
+
+
+
+
