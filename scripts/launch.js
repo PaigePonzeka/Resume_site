@@ -1,13 +1,13 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
-
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, $isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
+  var $tags = [];
   current_view = "dino";
 
   dino_messages = [];
 
   window.class_colors = [];
 
-  isotope_container = $('#work-list');
+  $isotope_container;
 
   $(window).resize(function() {
     setSidebarHeight();
@@ -30,6 +30,21 @@
     setSidebarHeight();
     setSectionHeight();
     intializeIsotope();
+
+    /* resizing and relayouting the list */
+    $isotope_container.on('click', '.isotope-item', function(){
+        $this = $(this);
+        if($this.hasClass('large')){
+           $this.removeClass('large')
+        }
+        else{
+          $isotope_container.find('.isotope-item').removeClass('large');
+          $this.addClass('large')
+        }
+        $isotope_container.isotope('reLayout');
+        
+    });
+
     $('#home #top_nav ul li').hover((function() {
       return changeDino(this);
     }), function() {
@@ -120,6 +135,8 @@
       $(this).parents('li').addClass('active');
       return filterIsotope("" + item);
     });
+
+    
   });
 
   setSidebarHeight = function() {
@@ -133,56 +150,24 @@
   intializeWorkIsotope = function(container) {
     var current_color, work_data;
     work_data = getWorkDetails();
-    current_color = 16777215;
-    return $(work_data).each(function() {
-      var images_folder, item, item_description, item_icon, item_tags_list, item_title, work_icon, work_item, work_item_tags, work_screenshots;
-      work_item = $(this)[0];
-      item = $("<li/>", {
-        "class": "work-list-item"
-      });
-      item_title = $("<h3/>", {
-        "class": "work-list-item-title",
-        text: work_item.title
-      });
-      item_description = $("<p/>", {
-        "class": "work-list-item-description",
-        text: work_item.description
-      });
-      item_tags_list = $("<ul/>", {
-        "class": "work-list-item-tags"
-      });
-      work_item_tags = work_item.tags;
-      $(work_item_tags).each(function() {
-        var color_class, item_tags_list_item;
-        item_tags_list_item = $("<li/>", {
-          text: "" + this
-        });
-        color_class = "" + (toClass('' + this));
-        item.addClass(color_class);
-        current_color = generateAnArrayOfColors(current_color, color_class, "" + this);
-        return item_tags_list.append(item_tags_list_item.addClass(toClass('' + this.toLowerCase())));
-      });
-      images_folder = "images/work/";
-      work_icon = work_item.images.icon;
-      if (work_icon.length > 0) {
-        item_icon = $("<img/>", {
-          "class": "work-list-item-icon",
-          src: "" + images_folder + work_icon
-        });
-      }
-      work_screenshots = work_item.images.screenshots;
-      if (work_screenshots.length > 0) {
-        $(work_screenshots).each(function() {});
-      }
-      item.append(item_icon).append(item_title).append(item_description).append(item_tags_list);
-      return container.append(item);
-    });
+
+    var source   = $("#work-template").html();
+    var template = Handlebars.compile(source);
+    var html    = template(work_data);
+    $('#work-content').html(html);
+    $isotope_container= $('#work-list');
   };
 
   toClass = function(item) {
     item = item.replace(/\s+/g, "-");
     return item;
   };
+
+
+  Handlebars.registerHelper('toClassName', function(tag) {
+    var new_tag = tag.toLowerCase().replace(/\s/g, '-');
+    return new_tag;
+  });
 
   generateAnArrayOfColors = function(currentColor, colorClass, tag) {
     if (class_colors[colorClass]) {
@@ -195,20 +180,12 @@
     return currentColor;
   };
 
-  generateIsotopeFilter = function(currentColor, colorClass, tag) {
-    var filter_item, filter_item_link;
-    filter_item = $("<li/>");
-    filter_item_link = $("<a/>", {
-      "class": "work-list-filter-item-link " + (toClass(colorClass.toLowerCase())),
-      'data-filter': "." + colorClass
-    });
-    filter_item.append(filter_item_link.html(tag));
-    return $("#work-list-filters").append(filter_item);
-  };
 
   getWorkDetails = function() {
     var work;
-    work = [
+    work = {
+      'tag':["SASS", "HAML","JQuery", "Javascript", "RoR", "Visual Basic", "Python", "Visual Studio"],
+      "work" :[ 
       {
         title: "stats2v",
         description: "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players.",
@@ -318,18 +295,19 @@
           github: ""
         }
       }
-    ];
+    ]};
     return work;
   };
 
   filterIsotope = function(item) {
-    return isotope_container.isotope({
+    return $isotope_container.isotope({
       filter: item
     });
   };
 
   intializeIsotope = function() {
-    return isotope_container.isotope({
+    console.log($isotope_container);
+    return $isotope_container.isotope({
       itemSelector: '.work-list-item'
     });
   };

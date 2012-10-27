@@ -29,12 +29,16 @@ body
 
 h1
   font-size: 50px
-  margin-bottom: 10px
+  margin-bottom: 15px
   +franchise 
+  text-align: center
 
 .summary
   width: 800px
   margin: 20px auto
+
+article
+  @include clearfix
 
 #wrapper
   width: 960px
@@ -572,12 +576,18 @@ h1
  * --------------------------------------------------
  */
 #contact
+  .contact-section
+    width: 800px
+    margin: 0 auto
+
   #social_links
     float: left
     li
       height: 50px
       margin: 10px 0
       cursor: pointer
+      &:first-child
+        margin-top: 0
       &:hover
         cursor: pointer
         img
@@ -601,21 +611,23 @@ h1
         vertical-align: middle
 
   #lifestream
-    float: right
+    float: left
     width: 500px
-    padding: 0
+    border: 1px solid #ccc
+    padding: 20px
+    margin: 10px 0 10px 50px
 
     .lifestream
       li
         margin-bottom: 10px
-        font-size: 16px
+        font-size: 14px
 
         a
-          color: $purple
+          color: darken($amber, 10%)
           border-bottom: none
 
           &:hover
-            color: darken($purple, 20%)
+            color: $amber
 
 
 
@@ -651,6 +663,7 @@ h1
 
 #work
   ul#work-list-filters
+    +clearfix
     li
       float: left
       margin: 10px
@@ -666,24 +679,33 @@ h1
   
   ul#work-list
     margin-top: 20px
-    width: 950px
+    min-width: 750px
 
+    $work-list-width: 290px
+    $work-list-height: 150px
+    $work-list-margin: 5px
     li.work-list-item
       border: 2px solid #333
-      width: 290px
-      min-height: 150px
+      width: $work-list-width
+      min-height: $work-list-height
       cursor: pointer
       position: relative
-      margin: 5px
+      margin: $work-list-margin
       padding: 10px 5px
-      +border-radius(20px)
+      +border-radius(10px)
       background: #fff!important
+
+      &.large
+        width: 920px
+        min-height: $work-list-height * 3
 
       h3
         text-transform: capitalize
         font-size: 14px
         margin-bottom: 5px
 
+      .work-list-item-description
+        font-size: 12px  
 
       .work-list-item-icon
         float: right
@@ -694,6 +716,8 @@ h1
         bottom: 5px
         right: 5px
         clear: both
+        overflow: hidden
+        height: 20px
         overflow: hidden
 
         li
