@@ -1,6 +1,6 @@
 @import "reset"
 @import 'base'
-
+@import 'slider'
 
 
 /* General
@@ -662,6 +662,11 @@ article
   color: #fff
 
 #work
+
+
+
+  #work-content
+    width: 95%
   ul#work-list-filters
     +clearfix
     li
@@ -695,9 +700,24 @@ article
       +border-radius(10px)
       background: #fff!important
 
+      .slider-wrapper
+        width: 0
+        height: 0
+        overflow: hidden
+        margin: 0 auto
+        
+        .img-container 
+          width: 600px
+          height: 400px
+          overflow: hidden
+          img
+            width: 100%
       &.large
-        width: 920px
+        width: 95%
         min-height: $work-list-height * 3
+        .slider-wrapper
+          width: 600px
+          height: auto
 
       h3
         text-transform: capitalize

@@ -1,5 +1,5 @@
 (function() {
-  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateAnArrayOfColors, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, $isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
+  var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, $isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
   var $tags = [];
   current_view = "dino";
 
@@ -35,7 +35,7 @@
     $isotope_container.on('click', '.isotope-item', function(){
         $this = $(this);
         if($this.hasClass('large')){
-           $this.removeClass('large')
+           //$this.removeClass('large')
         }
         else{
           $isotope_container.find('.isotope-item').removeClass('large');
@@ -106,7 +106,7 @@
       }, 1000);
       return event.preventDefault();
     });
-    $('#slideshow_controls_previous').click(function() {
+    /*$('#slideshow_controls_previous').click(function() {
       return slideshow_previous();
     });
     $('#slideshow_controls_next').click(function() {
@@ -121,7 +121,7 @@
       page_num = parseInt($(this).html());
       changeSlideshowPage(page_num);
       return false;
-    });
+    });*/
     $('#little_dino_bubble_buttons_yes').click(function() {
       return console.log("Yes");
     });
@@ -156,6 +156,8 @@
     var html    = template(work_data);
     $('#work-content').html(html);
     $isotope_container= $('#work-list');
+
+    $('.js-slider').nivoSlider({ manualAdvance:true});
   };
 
   toClass = function(item) {
@@ -169,16 +171,6 @@
     return new_tag;
   });
 
-  generateAnArrayOfColors = function(currentColor, colorClass, tag) {
-    if (class_colors[colorClass]) {
-      currentColor = class_colors[colorClass];
-    } else {
-      currentColor = currentColor - 15000;
-      class_colors[colorClass] = currentColor;
-      generateIsotopeFilter(currentColor, colorClass, tag);
-    }
-    return currentColor;
-  };
 
 
   getWorkDetails = function() {
@@ -306,7 +298,6 @@
   };
 
   intializeIsotope = function() {
-    console.log($isotope_container);
     return $isotope_container.isotope({
       itemSelector: '.work-list-item'
     });
@@ -427,7 +418,7 @@
     return $('#dino_bubble_content').find("." + show_class).removeClass('hide');
   };
 
-  setSlideSelected = function(slide) {
+  /*setSlideSelected = function(slide) {
     var slide_index, slide_width;
     slide_width = -700;
     $("#slides li").removeClass('selected');
@@ -446,9 +437,9 @@
     } else {
       return slideshowEnableNext();
     }
-  };
+  };*/
 
-  slideshowDisableNext = function() {
+ /* slideshowDisableNext = function() {
     return $('#slideshow_controls_next').addClass('hide');
   };
 
@@ -462,8 +453,9 @@
 
   slideshowEnableNext = function() {
     return $('#slideshow_controls_next').removeClass('hide');
-  };
+  };*/
 
+/*
   slideshow_next = function() {
     var current_margin, current_selected, slide_set, slide_width, slide_window_width, slides_margin, slideshow_content;
     slideshowEnablePrevious();
@@ -531,6 +523,6 @@
       marginLeft: "" + slides_margin
     }, 500, function() {});
     return false;
-  };
+  };*/
 
 }).call(this);
