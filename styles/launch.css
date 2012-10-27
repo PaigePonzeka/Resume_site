@@ -235,7 +235,6 @@ p {
 /* line 26, ../sass/launch.sass */
 body {
   font-family: Helvetica, Arial, Arial, sans-serif;
-  background: url("../images/bg-main-2.jpg");
 }
 
 /* line 30, ../sass/launch.sass */
@@ -587,7 +586,7 @@ h1 {
 
 /* line 294, ../sass/launch.sass */
 .sidebar-wrapper {
-  background: #eeeeee;
+  background: url("../images/bg-sidebar-alt.png") repeat;
   float: left;
   width: 250px;
   padding: 10px;
@@ -595,7 +594,7 @@ h1 {
 
 /* line 299, ../sass/launch.sass */
 .sidebar-zigzag {
-  width: 30px;
+  width: 17px;
   height: 500px;
   background: url("../images/bg-sidebar.png") repeat-y left top;
   float: left;
@@ -629,6 +628,7 @@ h1 {
 /* line 319, ../sass/launch.sass */
 .sidebar-navigation li {
   border: 2px solid #cccccc;
+  background: white;
 }
 /* line 322, ../sass/launch.sass */
 .sidebar-navigation li a {
@@ -640,15 +640,15 @@ h1 {
   color: black;
   font-weight: bold;
 }
-/* line 331, ../sass/launch.sass */
+/* line 332, ../sass/launch.sass */
 .sidebar-navigation li a:hover {
   color: white !important;
 }
-/* line 334, ../sass/launch.sass */
+/* line 335, ../sass/launch.sass */
 .sidebar-navigation li.active, .sidebar-navigation li:hover {
   color: white;
 }
-/* line 336, ../sass/launch.sass */
+/* line 337, ../sass/launch.sass */
 .sidebar-navigation li.active.home, .sidebar-navigation li:hover.home {
   background-color: #ff0099;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff0099, endColorstr=#99005c);
@@ -670,7 +670,7 @@ h1 {
   background-image: -moz-linear-gradient(center top, #cc007a, #66003d);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc007a), to(#66003d));
 }
-/* line 338, ../sass/launch.sass */
+/* line 339, ../sass/launch.sass */
 .sidebar-navigation li.active.about, .sidebar-navigation li:hover.about {
   background-color: #99ff00;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#99ff00, endColorstr=#5c9900);
@@ -692,7 +692,7 @@ h1 {
   background-image: -moz-linear-gradient(center top, #7acc00, #3d6600);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7acc00), to(#3d6600));
 }
-/* line 341, ../sass/launch.sass */
+/* line 342, ../sass/launch.sass */
 .sidebar-navigation li.active.blog, .sidebar-navigation li:hover.blog {
   background-color: #9900ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#9900ff, endColorstr=#5c0099);
@@ -714,7 +714,7 @@ h1 {
   background-image: -moz-linear-gradient(center top, #7a00cc, #3d0066);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7a00cc), to(#3d0066));
 }
-/* line 344, ../sass/launch.sass */
+/* line 345, ../sass/launch.sass */
 .sidebar-navigation li.active.work, .sidebar-navigation li:hover.work {
   background-color: #0fa1ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#0fa1ff, endColorstr=#0066a8);
@@ -736,7 +736,7 @@ h1 {
   background-image: -moz-linear-gradient(center top, #0085db, #004775);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0085db), to(#004775));
 }
-/* line 347, ../sass/launch.sass */
+/* line 348, ../sass/launch.sass */
 .sidebar-navigation li.active.contact, .sidebar-navigation li:hover.contact {
   background-color: #ffbc00;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffbc00, endColorstr=#997100);
@@ -758,49 +758,49 @@ h1 {
   background-image: -moz-linear-gradient(center top, #cc9600, #664b00);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc9600), to(#664b00));
 }
-/* line 351, ../sass/launch.sass */
+/* line 352, ../sass/launch.sass */
 .sidebar-navigation li.active a {
   color: white;
   background: url("../images/icon-left-arrow.png") 220px 5px no-repeat;
 }
 
-/* line 355, ../sass/launch.sass */
+/* line 356, ../sass/launch.sass */
 .sidebar-logo {
   margin: 15px 0;
 }
-/* line 357, ../sass/launch.sass */
+/* line 358, ../sass/launch.sass */
 .sidebar-logo .sidebar-logo-dino {
   width: 150px;
   overflow: hidden;
   margin: 0 auto;
 }
-/* line 361, ../sass/launch.sass */
+/* line 362, ../sass/launch.sass */
 .sidebar-logo .sidebar-logo-dino img {
   width: 100%;
 }
 
-/* line 364, ../sass/launch.sass */
+/* line 365, ../sass/launch.sass */
 .main {
   min-width: 650px;
   padding-left: 320px;
   background: white;
 }
-/* line 368, ../sass/launch.sass */
+/* line 369, ../sass/launch.sass */
 .main section {
   margin: 100px 0;
   padding-top: 50px;
 }
-/* line 372, ../sass/launch.sass */
+/* line 373, ../sass/launch.sass */
 .main section .section-link {
   border: none;
   padding-top: 50px;
   display: block;
 }
-/* line 377, ../sass/launch.sass */
+/* line 378, ../sass/launch.sass */
 .main section:first-child {
   margin-top: 0px;
 }
-/* line 380, ../sass/launch.sass */
+/* line 381, ../sass/launch.sass */
 .main section:last-child {
   margin-bottom: 0px;
 }
@@ -808,17 +808,17 @@ h1 {
 /* Name Banner on Welcome Screen
  * --------------------------------------------------
  */
-/* line 386, ../sass/launch.sass */
+/* line 387, ../sass/launch.sass */
 #name_banner {
   font-family: 'franchiseregular';
 }
-/* line 388, ../sass/launch.sass */
+/* line 389, ../sass/launch.sass */
 #name_banner ul {
   margin: 0 auto;
   clear: both;
   overflow: hidden;
 }
-/* line 391, ../sass/launch.sass */
+/* line 392, ../sass/launch.sass */
 #name_banner ul li {
   float: left;
   margin-top: 10px;
@@ -993,35 +993,35 @@ h1 {
   background: #5c9900;
   color: white;
 }
-/* line 433, ../sass/launch.sass */
+/* line 434, ../sass/launch.sass */
 #name_banner #first_name {
   width: 600px;
 }
-/* line 435, ../sass/launch.sass */
+/* line 436, ../sass/launch.sass */
 #name_banner #first_name li {
   font-size: 60px;
 }
-/* line 437, ../sass/launch.sass */
+/* line 438, ../sass/launch.sass */
 #name_banner #first_name li.indent {
   width: 100px;
 }
-/* line 439, ../sass/launch.sass */
+/* line 440, ../sass/launch.sass */
 #name_banner #first_name li.indent .minimal-indent {
   width: 80px;
 }
-/* line 442, ../sass/launch.sass */
+/* line 443, ../sass/launch.sass */
 #name_banner #last_name {
   width: 500px;
 }
-/* line 444, ../sass/launch.sass */
+/* line 445, ../sass/launch.sass */
 #name_banner #last_name li {
   font-size: 30px;
 }
-/* line 446, ../sass/launch.sass */
+/* line 447, ../sass/launch.sass */
 #name_banner #last_name li.indent {
   width: 55px;
 }
-/* line 448, ../sass/launch.sass */
+/* line 449, ../sass/launch.sass */
 #name_banner #last_name li.indent .minimal-indent {
   width: 40px;
 }
@@ -1029,14 +1029,14 @@ h1 {
 /* Dino & Accessories on Welcome Page
  * --------------------------------------------------
  */
-/* line 458, ../sass/launch.sass */
+/* line 459, ../sass/launch.sass */
 #dino_container {
   position: relative;
   height: 300px;
   width: 600px;
   margin: 0 auto;
 }
-/* line 464, ../sass/launch.sass */
+/* line 465, ../sass/launch.sass */
 #dino_container #dino_wrapper {
   width: 226px;
   padding-top: 50px;
@@ -1044,7 +1044,7 @@ h1 {
   float: right;
   position: relative;
 }
-/* line 471, ../sass/launch.sass */
+/* line 472, ../sass/launch.sass */
 #dino_container #dino_bubble {
   width: 250px;
   height: 150px;
@@ -1057,21 +1057,21 @@ h1 {
   left: 25%;
   top: 30px;
 }
-/* line 481, ../sass/launch.sass */
+/* line 482, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content {
   padding: 15px 10px 0px 10px;
 }
-/* line 483, ../sass/launch.sass */
+/* line 484, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content .rawr {
   font-size: 30px;
   text-align: center;
 }
-/* line 486, ../sass/launch.sass */
+/* line 487, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content p {
   font-size: 16px;
   line-height: 18px;
 }
-/* line 490, ../sass/launch.sass */
+/* line 491, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_triangle {
   content: "";
   display: block;
@@ -1083,7 +1083,7 @@ h1 {
   border-style: solid;
   border-color: #afaeae transparent;
 }
-/* line 502, ../sass/launch.sass */
+/* line 503, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory {
   position: absolute;
   left: 0;
@@ -1093,35 +1093,35 @@ h1 {
   height: 209px;
   background: url(../images/accessory_sprite.png) no-repeat;
 }
-/* line 511, ../sass/launch.sass */
+/* line 512, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc1 {
   background-position: 0px 0px;
 }
-/* line 514, ../sass/launch.sass */
+/* line 515, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc2 {
   background-position: 0px -224px;
 }
-/* line 517, ../sass/launch.sass */
+/* line 518, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc3 {
   background-position: 0px -448px;
 }
-/* line 520, ../sass/launch.sass */
+/* line 521, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc4 {
   background-position: 0px -672px;
 }
-/* line 523, ../sass/launch.sass */
+/* line 524, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc5 {
   background-position: 0px -890px;
 }
-/* line 526, ../sass/launch.sass */
+/* line 527, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc6 {
   background-position: 0px -1100px;
 }
-/* line 529, ../sass/launch.sass */
+/* line 530, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc7 {
   background-position: 0px -1325px;
 }
-/* line 532, ../sass/launch.sass */
+/* line 533, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat {
   position: absolute;
   z-index: 5;
@@ -1130,42 +1130,42 @@ h1 {
   top: 5px;
   background: url(../images/hat_sprite.png) no-repeat;
 }
-/* line 540, ../sass/launch.sass */
+/* line 541, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat1 {
   background-position: 0px -5px;
 }
-/* line 543, ../sass/launch.sass */
+/* line 544, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat2 {
   background-position: 0px -230px;
 }
-/* line 546, ../sass/launch.sass */
+/* line 547, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat3 {
   background-position: 0px -460px;
 }
-/* line 549, ../sass/launch.sass */
+/* line 550, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat4 {
   background-position: 0px -670px;
 }
-/* line 552, ../sass/launch.sass */
+/* line 553, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat5 {
   background-position: 0px -900px;
 }
-/* line 555, ../sass/launch.sass */
+/* line 556, ../sass/launch.sass */
 #dino_container #dino {
   z-index: 1;
   width: 226px;
   height: 209px;
   background: url(../images/dino_sprite.png) no-repeat top right;
 }
-/* line 561, ../sass/launch.sass */
+/* line 562, ../sass/launch.sass */
 #dino_container #dino.purple {
   background-position: 0px -225px;
 }
-/* line 563, ../sass/launch.sass */
+/* line 564, ../sass/launch.sass */
 #dino_container #dino.lime_green {
   background-position: 0px -448px;
 }
-/* line 565, ../sass/launch.sass */
+/* line 566, ../sass/launch.sass */
 #dino_container #dino.light_blue {
   background-position: bottom right;
 }
@@ -1173,21 +1173,21 @@ h1 {
 /* Contact & Social Links
  * --------------------------------------------------
  */
-/* line 574, ../sass/launch.sass */
+/* line 575, ../sass/launch.sass */
 #contact #social_links {
   float: left;
 }
-/* line 576, ../sass/launch.sass */
+/* line 577, ../sass/launch.sass */
 #contact #social_links li {
   height: 50px;
   margin: 10px 0;
   cursor: pointer;
 }
-/* line 580, ../sass/launch.sass */
+/* line 581, ../sass/launch.sass */
 #contact #social_links li:hover {
   cursor: pointer;
 }
-/* line 582, ../sass/launch.sass */
+/* line 583, ../sass/launch.sass */
 #contact #social_links li:hover img {
   cursor: pointer;
   -webkit-transform: rotate(-360deg);
@@ -1195,12 +1195,12 @@ h1 {
   -webkit-transition: -webkit-transform 0.5s ease-in;
   -moz-transition: -moz-transform 0.5s ease-in;
 }
-/* line 588, ../sass/launch.sass */
+/* line 589, ../sass/launch.sass */
 #contact #social_links li:hover a {
   color: black;
   cursor: pointer;
 }
-/* line 591, ../sass/launch.sass */
+/* line 592, ../sass/launch.sass */
 #contact #social_links li a {
   cursor: pointer;
   color: #707070;
@@ -1209,28 +1209,28 @@ h1 {
   padding: 10px 0 10px 0;
   background: left top no-repeat;
 }
-/* line 598, ../sass/launch.sass */
+/* line 599, ../sass/launch.sass */
 #contact #social_links li img {
   cursor: pointer;
   vertical-align: middle;
 }
-/* line 602, ../sass/launch.sass */
+/* line 603, ../sass/launch.sass */
 #contact #lifestream {
   float: right;
   width: 500px;
   padding: 0;
 }
-/* line 608, ../sass/launch.sass */
+/* line 609, ../sass/launch.sass */
 #contact #lifestream .lifestream li {
   margin-bottom: 10px;
   font-size: 16px;
 }
-/* line 612, ../sass/launch.sass */
+/* line 613, ../sass/launch.sass */
 #contact #lifestream .lifestream li a {
   color: #9900ff;
   border-bottom: none;
 }
-/* line 616, ../sass/launch.sass */
+/* line 617, ../sass/launch.sass */
 #contact #lifestream .lifestream li a:hover {
   color: #5c0099;
 }
@@ -1238,7 +1238,7 @@ h1 {
 /* Work
  * --------------------------------------------------
  */
-/* line 626, ../sass/launch.sass */
+/* line 627, ../sass/launch.sass */
 .sass, .css {
   background-color: #75c9ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#75c9ff, endColorstr=#0fa1ff);
@@ -1261,7 +1261,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#42b5ff), to(#0085db));
 }
 
-/* line 629, ../sass/launch.sass */
+/* line 630, ../sass/launch.sass */
 .haml, .html {
   background-color: #ff66c2;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff66c2, endColorstr=#ff0099);
@@ -1284,7 +1284,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff33ad), to(#cc007a));
 }
 
-/* line 632, ../sass/launch.sass */
+/* line 633, ../sass/launch.sass */
 .php {
   background-color: #ffd766;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffd766, endColorstr=#ffbc00);
@@ -1307,7 +1307,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffc933), to(#cc9600));
 }
 
-/* line 635, ../sass/launch.sass */
+/* line 636, ../sass/launch.sass */
 .jquery, .javascript {
   background-color: #c266ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c266ff, endColorstr=#9900ff);
@@ -1330,7 +1330,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ad33ff), to(#7a00cc));
 }
 
-/* line 638, ../sass/launch.sass */
+/* line 639, ../sass/launch.sass */
 .python, .pygames {
   background-color: #ff0da0;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff0da0, endColorstr=#a60065);
@@ -1353,7 +1353,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d90084), to(#730046));
 }
 
-/* line 641, ../sass/launch.sass */
+/* line 642, ../sass/launch.sass */
 .ror {
   background-color: #c2ff66;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c2ff66, endColorstr=#99ff00);
@@ -1376,7 +1376,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#adff33), to(#7acc00));
 }
 
-/* line 644, ../sass/launch.sass */
+/* line 645, ../sass/launch.sass */
 .ms-access, .visual-basic, .visual-studio {
   background-color: #fffc66;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fffc66, endColorstr=#fffa00);
@@ -1399,7 +1399,7 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fffb33), to(#ccc800));
 }
 
-/* line 647, ../sass/launch.sass */
+/* line 648, ../sass/launch.sass */
 .show-all {
   background-color: #333333;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#333333, endColorstr=black);
@@ -1423,13 +1423,13 @@ h1 {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a1a1a), to(black));
 }
 
-/* line 653, ../sass/launch.sass */
+/* line 654, ../sass/launch.sass */
 #work ul#work-list-filters li {
   float: left;
   margin: 10px;
   cursor: pointer;
 }
-/* line 657, ../sass/launch.sass */
+/* line 658, ../sass/launch.sass */
 #work ul#work-list-filters li a {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1440,18 +1440,18 @@ h1 {
   padding: 5px;
   border: none;
 }
-/* line 663, ../sass/launch.sass */
+/* line 664, ../sass/launch.sass */
 #work ul#work-list-filters li.active a {
   -moz-box-shadow: 1px 1px 0px 1px #333333 inset;
   -webkit-box-shadow: 1px 1px 0px 1px #333333 inset;
   box-shadow: 1px 1px 0px 1px #333333 inset;
 }
-/* line 666, ../sass/launch.sass */
+/* line 667, ../sass/launch.sass */
 #work ul#work-list {
   margin-top: 20px;
   width: 950px;
 }
-/* line 670, ../sass/launch.sass */
+/* line 671, ../sass/launch.sass */
 #work ul#work-list li.work-list-item {
   border: 2px solid #333333;
   width: 290px;
@@ -1465,18 +1465,18 @@ h1 {
   -webkit-border-radius: 20px;
   background: white !important;
 }
-/* line 681, ../sass/launch.sass */
+/* line 682, ../sass/launch.sass */
 #work ul#work-list li.work-list-item h3 {
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 5px;
 }
-/* line 687, ../sass/launch.sass */
+/* line 688, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-icon {
   float: right;
   padding: 0px 5px 5px 0px;
 }
-/* line 691, ../sass/launch.sass */
+/* line 692, ../sass/launch.sass */
 #work ul#work-list li.work-list-item ul.work-list-item-tags {
   position: absolute;
   bottom: 5px;
@@ -1484,7 +1484,7 @@ h1 {
   clear: both;
   overflow: hidden;
 }
-/* line 698, ../sass/launch.sass */
+/* line 699, ../sass/launch.sass */
 #work ul#work-list li.work-list-item ul.work-list-item-tags li {
   float: left;
   margin: 0 5px;
