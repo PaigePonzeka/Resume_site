@@ -184,7 +184,12 @@
         tags: ["PHP", "HTML", "CSS", "JQuery", "Javascript", "C#"],
         images: {
           icon: "icon_stats2v.gif",
-          screenshots: ["stats2v.gif"]
+          screenshots: [
+            {
+              image: "stats2v.gif",
+              description:  "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players."
+            }
+          ]
         },
         links: {
           demo: "demo.test.html",
@@ -196,7 +201,12 @@
         tags: ["SASS", "HAML", "JQuery", "Javascript", "RoR"],
         images: {
           icon: "icon_bsu.gif",
-          screenshots: ["bsu.gif"]
+          screenshots: [
+            {
+              image: "bsu.gif",
+              description: "Did some development work and maintanince on this rangers fan site hosted by MSG.",
+            }
+          ]
         },
         links: {
           demo: "http://blueshirtsunited.com",
@@ -208,7 +218,12 @@
         tags: ["SASS", "HAML", "JQuery", "Javascript", "RoR"],
         images: {
           icon: "icon_knicks.gif",
-          screenshots: ["knicks.gif"]
+          screenshots: [
+            {
+              image: "knicks.gif",
+              description: "Did some development work and maintanince on this Knicks fan site hosted by MSG."
+            }
+          ]
         },
         links: {
           demo: "http://knicksnow.com",
@@ -220,7 +235,12 @@
         tags: ["MS Access", "Visual Basic"],
         images: {
           icon: "icon_vsu.gif",
-          screenshots: ["vsu.gif"]
+           screenshots: [
+            {
+              image: "vsu.gif",
+              description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients."
+            }
+          ]
         },
         links: {
           demo: "",
@@ -232,7 +252,12 @@
         tags: ["JQuery", "SASS", "HAML", "RoR"],
         images: {
           icon: "icon_memberly.gif",
-          screenshots: ["memberly.gif"]
+           screenshots: [
+            {
+              image: "memberly.gif",
+              description: "implemented and maintained the front end development for Member.ly. Worked closely with designers to make sure site was pixel perfect implementations of the designs"
+            }
+          ]
         },
         links: {
           demo: "http://member.ly",
@@ -244,7 +269,12 @@
         tags: ["Python", "Pygames"],
         images: {
           icon: "icon_shootout.gif",
-          screenshots: ["shootout.gif"]
+          screenshots: [
+            {
+              image: "shootout.gif",
+              description: "A game developed using Python and pygames. The code isn't anything spectacular but it was my first python creation and I created all the design elements myself."
+            }
+          ]
         },
         links: {
           demo: "",
@@ -256,7 +286,12 @@
         tags: ["HTML", "CSS", "Javascript", "JQuery"],
         images: {
           icon: "icon_wordz.gif",
-          screenshots: ["wordz.gif"]
+           screenshots: [
+            {
+              image: "wordz.gif",
+              description: "My first javascript, JQuery creation in collect, also created these design elements myself. This was a collobrative project."
+            }
+          ]
         },
         links: {
           demo: "",
@@ -268,7 +303,12 @@
         tags: ["C#", "Visual Studio"],
         images: {
           icon: "icon_playlist-creator.gif",
-          screenshots: ["playlist-creator.gif"]
+          screenshots: [
+            {
+              image: "playlist-creator.gif",
+              description: "Created in Visual Studio this was meant to be a tool for server admins to create playlist for the H2V PC game."
+            }
+          ]
         },
         links: {
           demo: "",
@@ -280,7 +320,12 @@
         tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
         images: {
           icon: "icon_gc.png",
-          screenshots: [""]
+           screenshots: [
+            {
+              image: "",
+              description: ""
+            }
+          ]
         },
         links: {
           demo: "",

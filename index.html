@@ -200,17 +200,12 @@
                     <p class="work-list-item-description">{{description}}</p>
                     <div class="slider-wrapper theme-default">
                       <div class="nivoSlider js-slider img-container">
-                          {{#each images}}
-
-                          {{each}}
-                          <img src="http://planetill.com/wp-content/uploads/2010/11/toy-story-cast.jpg" data-thumb="http://planetill.com/wp-content/uploads/2010/11/toy-story-cast.jpg" alt="" />
-                          <img src="http://www.dan-dare.org/FreeFun/Images/CartoonsMoviesTV/ToyStory2Wallpaper3800.jpg" data-thumb="http://www.dan-dare.org/FreeFun/Images/CartoonsMoviesTV/ToyStory2Wallpaper3800.jpg" alt="" title="This is an example of a caption" />
-                          <img src="http://www.thisblogrules.com/wp-content/uploads/2011/01/toy_story2.jpg" data-thumb="http://www.thisblogrules.com/wp-content/uploads/2011/01/toy_story2.jpg" alt="" data-transition="slideInLeft" />
-                          <img src="http://images.fanpop.com/images/image_uploads/Toy-Story-pixar-67347_1024_768.jpg" data-thumb="http://images.fanpop.com/images/image_uploads/Toy-Story-pixar-67347_1024_768.jpg" alt="" title="#htmlcaption" />
+                          {{#each images.screenshots}}
+                            <img src="images/work/screenshots/{{image}}" alt="" title="{{description}}" data-transition="slideInLeft" />
+                          {{/each}}
+                          
                       </div>
-                      <div id="htmlcaption" class="nivo-html-caption">
-                          <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
-                      </div>
+                      
                     </div>
                     <ul class="work-list-item-tags">
                       {{#each tags}}
