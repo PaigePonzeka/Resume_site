@@ -1,5 +1,7 @@
 (function() {
   var changeDino, changeSlideshowPage, createDinoMessagesArray, current_view, dino_messages, filterIsotope, generateIsotopeFilter, getAccessoryClass, getHatClass, getMessage, getMessageClass, getRandomMessage, getWorkDetails, intializeIsotope, intializeLifeStream, intializeWorkIsotope, $isotope_container, lifestreamDemo, resetDino, setDinoAccessory, setDinoColor, setDinoHat, setSectionHeight, setSidebarHeight, setSlideSelected, setSlideshowPages, setSpeechBubble, slideshowDisableNext, slideshowDisablePrevious, slideshowEnableNext, slideshowEnablePrevious, slideshow_next, slideshow_previous, toClass;
+
+
   var $tags = [];
   current_view = "dino";
 
@@ -27,6 +29,7 @@
   $(document).ready(function() {
     intializeWorkIsotope($("#work-list"));
     intializeLifeStream(true);
+
     setSidebarHeight();
     setSectionHeight();
     intializeIsotope();
@@ -142,6 +145,8 @@
   setSidebarHeight = function() {
     return $('.sidebar, .sidebar-wrapper, .sidebar-zigzag').css('height', $(window).height());
   };
+
+
 
   setSectionHeight = function() {
     return $('section').css('min-height', $(window).height());
@@ -475,16 +480,8 @@
       return $("#lifestream").html(lifestreamDemo());
     }
   };
-  
-  intializeTwitterStream = function(online){
-     return $("#lifestream").lifestream({
-        list: [{
-            service: "twitter",
-            user: "PaigeTPonzeka"
-          }
-        ]
-      });
-  }
+
+
 
   lifestreamDemo = function() {
     var offline;
