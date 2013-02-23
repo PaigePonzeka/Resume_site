@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>i4Ni - Player Stats</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="subpage.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/ajax-dynamic-list.js">	
+	</script>
+	
+</head>
+<body>
+<center>
+<div id="wrapper">
+<div id="banner"><img src="images/animated_banner.gif" /></div>
+
+	<div id="header">
+		<div id="logo">
+        <p>“But if there is serious injury, you are to take life for life, <em>eye for eye</em>, tooth for tooth, hand for hand, foot for foot,  burn for burn, wound for wound, bruise for bruise."-Exodus 21:23-25</p>
+			
+		</div>
+		<!-- end #logo -->
+        </div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html">Go To Stats Home Page</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	
+	<!-- end #header -->
+	<div id="page">
+		<div id="bgtop">
+			<div id="bgbottom">
+				<div id="content">
+					<div class="post">
+						<div class="title">
+							<h2><a href="#">View Player Stats</a></h2>
+						</div>
+						<div class="entry">
+		<form action="gamertag.php" method="get">
+		
+			<center><table border="0">
+				<tr>
+					<td><label for="country">Insert GamerTag: </label></td>
+					<td><input type="text" id="country" name="country" value="" onkeyup="ajax_showOptions(this,'getCountriesByLetters',event)">
+					<input type="hidden" id="country_hidden" name="country_ID"><!-- THE ID OF the country will be inserted into this hidden input --></td>
+                    <td><input type="submit" name="submit" value="Submit" /></td>
+				</tr>	
+			</table></center>	
+
+		
+		</form>
+
+				
+                      
+
+                           
+						</div>
+					</div>
+					
+				</div>
+				<!-- end #content -->
+				
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>Copyright (c) 2010 thei4niclan.com. 
+	</div>
+	<!-- end #footer -->
+</div>
+<!-- end #wrapper -->
+
+</body>
+</html>

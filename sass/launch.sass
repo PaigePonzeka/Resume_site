@@ -1,6 +1,8 @@
 @import "reset"
 @import 'base'
 @import 'slider'
+@import "compass/css3/box-shadow"
+@import "compass/typography/lists"
 
 
 /* General
@@ -25,12 +27,12 @@ p
 
 body
   font-family: Helvetica, Arial, Arial, sans-serif
-  
+
 
 h1
   font-size: 50px
   margin-bottom: 15px
-  +franchise 
+  +franchise
   text-align: center
 
 .summary
@@ -292,7 +294,7 @@ article
 
           .minimal-indent
             width: 35px
-            
+
 
 
 .sidebar-wrapper
@@ -307,7 +309,7 @@ article
   float: left
 .sidebar-author
   margin: 20px 0
-  .sidebar-author-image, 
+  .sidebar-author-image,
   .sidebar-author-description
     margin: 0 auto
     width: 128px
@@ -645,7 +647,7 @@ article
 .php
   +gradient-button-light($amber)
 
-.jquery, .javascript
+.jquery, .javascript, .d3js
   +gradient-button-light($purple)
 
 .python, .pygames
@@ -659,10 +661,15 @@ article
 
 .show-all
   +gradient-button-light(#000)
-  color: #fff
+  a
+    color: #fff
 
 #work
+  a
+    color: $light_blue
 
+    &:hover
+      color: #333
 
 
   #work-content
@@ -678,10 +685,14 @@ article
         +boxshadow(1px, 1px, 0px, 1px, #aaa)
         padding: 5px
         border: none
+        color: #000
+
+        &.show-all
+          color: #fff
 
       &.active a
         +boxshadow-inset(1px, 1px, 0px, 1px, #333)
-  
+
   ul#work-list
     margin-top: 20px
     min-width: 750px
@@ -690,23 +701,27 @@ article
     $work-list-height: 150px
     $work-list-margin: 5px
     li.work-list-item
-      border: 2px solid #333
+      border: 2px solid #ccc
       width: $work-list-width
       min-height: $work-list-height
       cursor: pointer
       position: relative
       margin: $work-list-margin
       padding: 10px 5px
-      +border-radius(10px)
-      background: #fff!important
+      +border-radius(5px)
+      background: #fff
+
+      &:hover
+        @include single-box-shadow
+        border-color: #666
 
       .slider-wrapper
         width: 0
         height: 0
         overflow: hidden
         margin: 0 auto
-        
-        .img-container 
+
+        .img-container
           width: 600px
           height: 400px
           overflow: hidden
@@ -719,17 +734,50 @@ article
           width: 600px
           height: auto
 
+        .work-list-item-links
+          display: block
+
+          .link-icon
+            display: none
+
+          .work-list-item-links-expanded
+            display: block
+
       h3
         text-transform: capitalize
         font-size: 14px
         margin-bottom: 5px
 
       .work-list-item-description
-        font-size: 12px  
+        font-size: 12px
 
       .work-list-item-icon
         float: right
         padding: 0px 5px 5px 0px
+
+      .work-list-item-links
+        position: absolute
+        bottom: 5px
+        left: 5px
+        .link-icon
+          text-indent: -9999px
+          display: block
+          background: url(../images/icon-link.png)
+          width: 15px
+          height: 15px
+          text-decoration: none
+          border: none
+          float: left
+          margin: 0 5px
+        .work-list-item-links-expanded
+          display: none
+
+
+        .work-list-item-links-list
+          float: left
+          +horizontal-list
+          font-size: 11px
+
 
       ul.work-list-item-tags
         position: absolute

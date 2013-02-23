@@ -1,0 +1,20 @@
+
+RewriteEngine on
+
+ErrorDocument 404 http://www.thei4niclan.com/404.php 
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 208.54.4.57
+deny from 72.130.121.113
+
+RewriteCond %{HTTP_HOST} ^thei4niclan.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.thei4niclan.com$
+RewriteRule ^/?$ "http\:\/\/www\.thei4Nicommunity\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^thei4niclan.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.thei4niclan.com$
+RewriteRule ^forums\/?$ "http\:\/\/www\.thei4Nicommunity\.com\/forums" [R=301,L]
+

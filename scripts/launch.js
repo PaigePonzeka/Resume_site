@@ -42,7 +42,7 @@
           $this.addClass('large')
         }
         $isotope_container.isotope('reLayout');
-        
+
     });
 
     $('#home #top_nav ul li').hover((function() {
@@ -136,7 +136,7 @@
       return filterIsotope("" + item);
     });
 
-    
+
   });
 
   setSidebarHeight = function() {
@@ -177,7 +177,7 @@
     var work;
     work = {
       'tag':["SASS", "HAML","JQuery", "Javascript", "RoR", "Visual Basic", "Python", "Visual Studio"],
-      "work" :[ 
+      "work" :[
       {
         title: "stats2v",
         description: "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players.",
@@ -186,14 +186,29 @@
           icon: "icon_stats2v.gif",
           screenshots: [
             {
-              image: "stats2v.gif",
+              image: "stats2v/1.png",
               description:  "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players."
+            },
+            {
+              image: "stats2v/2.png",
+              description:  "This was a collborative project with programmers to develop an application that track player stats from servers. Stats2V was the site for players to view their stats and compare themselves to other players."
+            },
+            {
+              image: "stats2v/3.png"
+            },
+            {
+              image: "stats2v/4.png"
+            },
+            {
+              image: "stats2v/5.png"
+            },
+            {
+              image: "stats2v/6.png"
+            },
+            {
+              image: "stats2v/7.png"
             }
           ]
-        },
-        links: {
-          demo: "demo.test.html",
-          github: "http://github.com/codetestrawr"
         }
       }, {
         title: "blueshirts united",
@@ -208,10 +223,12 @@
             }
           ]
         },
-        links: {
-          demo: "http://blueshirtsunited.com",
-          github: ""
-        }
+        links: [
+            {
+              name: "Live",
+              href: "http://blueshirtsunited.com"
+            }
+          ]
       }, {
         title: "knicksnow",
         description: "Did some development work and maintanince on this Knicks fan site hosted by MSG.",
@@ -225,10 +242,12 @@
             }
           ]
         },
-        links: {
-          demo: "http://knicksnow.com",
-          github: ""
-        }
+        links: [
+            {
+              name: "Live",
+              href: "http://knicksnow.com"
+            }
+          ]
       }, {
         title: "VSU victims database",
         description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients.",
@@ -237,32 +256,42 @@
           icon: "icon_vsu.gif",
            screenshots: [
             {
-              image: "vsu.gif",
+              image: "vsu/2.png",
               description: "Implemented and maintained software to help the Social Works of the Victims Services Unit of the Brookyln DA's office maintain paperwork and statistical data about clients."
+            },
+            {
+              image: "vsu/1.png"
             }
           ]
-        },
-        links: {
-          demo: "",
-          github: ""
         }
       }, {
         title: "memberly",
         description: "implemented and maintained the front end development for Member.ly. Worked closely with designers to make sure site was pixel perfect implementations of the designs",
-        tags: ["JQuery", "SASS", "HAML", "RoR"],
+        tags: ["JQuery", "SASS", "HAML", "Coffeescript", "RoR"],
         images: {
           icon: "icon_memberly.gif",
            screenshots: [
             {
-              image: "memberly.gif",
+              image: "memberly/1.png",
               description: "implemented and maintained the front end development for Member.ly. Worked closely with designers to make sure site was pixel perfect implementations of the designs"
+            },
+            {
+              image: "memberly/2.png"
+            },
+            {
+              image: "memberly/3.png"
+            },
+            {
+              image: "memberly/4.png"
             }
           ]
         },
-        links: {
-          demo: "http://member.ly",
-          github: ""
-        }
+        links: [
+            {
+              name: "Live",
+              href: "http://member.ly"
+            }
+          ]
       }, {
         title: "shootout",
         description: "A game developed using Python and pygames. The code isn't anything spectacular but it was my first python creation and I created all the design elements myself.",
@@ -271,15 +300,23 @@
           icon: "icon_shootout.gif",
           screenshots: [
             {
-              image: "shootout.gif",
+              image: "shootout/1.png",
               description: "A game developed using Python and pygames. The code isn't anything spectacular but it was my first python creation and I created all the design elements myself."
-            }
+            },
+            {
+              image: "shootout/2.png"
+            },
+            {
+              image: "shootout/3.png"
+            },
           ]
         },
-        links: {
-          demo: "",
-          github: ""
-        }
+        links: [
+            {
+              name: "Demo",
+              href: ""
+            }
+          ]
       }, {
         title: "wordz",
         description: "My first javascript, JQuery creation in collect, also created these design elements myself. This was a collobrative project.",
@@ -288,15 +325,23 @@
           icon: "icon_wordz.gif",
            screenshots: [
             {
-              image: "wordz.gif",
+              image: "wordz/1.png",
               description: "My first javascript, JQuery creation in collect, also created these design elements myself. This was a collobrative project."
-            }
+            },
+            {
+              image: "wordz/2.png"
+            },
+            {
+              image: "wordz/3.png"
+            },
           ]
         },
-        links: {
-          demo: "",
-          github: ""
-        }
+        links: [
+            {
+              name: "Demo",
+              href: "demos/wordz/index.html"
+            }
+          ]
       }, {
         title: "playlist creator",
         description: "Created in Visual Studio this was meant to be a tool for server admins to create playlist for the H2V PC game.",
@@ -305,31 +350,57 @@
           icon: "icon_playlist-creator.gif",
           screenshots: [
             {
-              image: "playlist-creator.gif",
+              image: "playlistcreator/1.png",
               description: "Created in Visual Studio this was meant to be a tool for server admins to create playlist for the H2V PC game."
+            },
+            {
+              image: "playlistcreator/2.png"
+            },
+            {
+              image: "playlistcreator/3.png"
             }
           ]
-        },
-        links: {
-          demo: "",
-          github: ""
         }
       }, {
         title: "Group Commerce",
         description: "Front-end Engineer, Worked on the implementation of websites and updating the platform service.",
-        tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery"],
+        tags: ["C#", "Visual Studio", "SASS", "HTML", "JQuery", "D3js"],
         images: {
           icon: "icon_gc.png",
            screenshots: [
-            {
-              image: "",
-              description: ""
-            }
-          ]
-        },
-        links: {
-          demo: "",
-          github: ""
+             {
+               image: "gc/home.png",
+               description: "Reimplemented the entire front-end site with the help of a product team and a designer to create a better user interface."
+             },
+             {
+                 image: "gc/grid-fullscreen.png",
+                 description: "Created a new grid display plugin using D3.js. Created a Fullscreen mode as pictured above."
+             },
+             {
+                  image: "gc/contracts.png",
+                  description: "Created a display contracts so users can browse for specific contracts, provided filters to find specific contracts."
+              },
+              {
+                   image: "gc/contracts-hover.png",
+                   description: "Users can edit or create contracts from this grid."
+               },
+               {
+                    image: "gc/offers.png",
+                    description: "Users can see their created offers and schedule them and run them as they want."
+                },
+             {
+                image: "gc/calendar.png",
+                description: "Users can view their running offers."
+              },
+              {
+                  image: "gc/calendar-list.png",
+                  description: "Users can edit the running time of their offers."
+              },
+              {
+                  image: "gc/notifications.png",
+                  description: "Users can manage their notifications for generated, ending offers and other such details."
+              }
+           ]
         }
       }
     ]};
