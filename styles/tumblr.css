@@ -1407,6 +1407,13 @@ article {
   margin: 0 auto;
 }
 /* line 471, ../sass/launch.sass */
+#dino_container .twitter-account {
+  position: absolute;
+  top: 190px;
+  left: 25%;
+  color: #0fa1ff;
+}
+/* line 477, ../sass/launch.sass */
 #dino_container #dino_wrapper {
   width: 226px;
   padding-top: 50px;
@@ -1414,7 +1421,7 @@ article {
   float: right;
   position: relative;
 }
-/* line 478, ../sass/launch.sass */
+/* line 484, ../sass/launch.sass */
 #dino_container #dino_bubble {
   width: 250px;
   height: 150px;
@@ -1427,21 +1434,21 @@ article {
   left: 25%;
   top: 30px;
 }
-/* line 488, ../sass/launch.sass */
+/* line 494, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content {
   padding: 15px 10px 0px 10px;
 }
-/* line 490, ../sass/launch.sass */
+/* line 496, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content .rawr {
   font-size: 30px;
   text-align: center;
 }
-/* line 493, ../sass/launch.sass */
+/* line 499, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_content p {
   font-size: 16px;
   line-height: 18px;
 }
-/* line 497, ../sass/launch.sass */
+/* line 503, ../sass/launch.sass */
 #dino_container #dino_bubble #dino_bubble_triangle {
   content: "";
   display: block;
@@ -1453,7 +1460,7 @@ article {
   border-style: solid;
   border-color: #afaeae transparent;
 }
-/* line 509, ../sass/launch.sass */
+/* line 515, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory {
   position: absolute;
   left: 0;
@@ -1463,35 +1470,35 @@ article {
   height: 209px;
   background: url(../images/accessory_sprite.png) no-repeat;
 }
-/* line 518, ../sass/launch.sass */
+/* line 524, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc1 {
   background-position: 0px 0px;
 }
-/* line 521, ../sass/launch.sass */
+/* line 527, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc2 {
   background-position: 0px -224px;
 }
-/* line 524, ../sass/launch.sass */
+/* line 530, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc3 {
   background-position: 0px -448px;
 }
-/* line 527, ../sass/launch.sass */
+/* line 533, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc4 {
   background-position: 0px -672px;
 }
-/* line 530, ../sass/launch.sass */
+/* line 536, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc5 {
   background-position: 0px -890px;
 }
-/* line 533, ../sass/launch.sass */
+/* line 539, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc6 {
   background-position: 0px -1100px;
 }
-/* line 536, ../sass/launch.sass */
+/* line 542, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_accessory.acc7 {
   background-position: 0px -1325px;
 }
-/* line 539, ../sass/launch.sass */
+/* line 545, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat {
   position: absolute;
   z-index: 5;
@@ -1500,42 +1507,42 @@ article {
   top: 5px;
   background: url(../images/hat_sprite.png) no-repeat;
 }
-/* line 547, ../sass/launch.sass */
+/* line 553, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat1 {
   background-position: 0px -5px;
 }
-/* line 550, ../sass/launch.sass */
+/* line 556, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat2 {
   background-position: 0px -230px;
 }
-/* line 553, ../sass/launch.sass */
+/* line 559, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat3 {
   background-position: 0px -460px;
 }
-/* line 556, ../sass/launch.sass */
+/* line 562, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat4 {
   background-position: 0px -670px;
 }
-/* line 559, ../sass/launch.sass */
+/* line 565, ../sass/launch.sass */
 #dino_container #dino_clothes #dino_hat.hat5 {
   background-position: 0px -900px;
 }
-/* line 562, ../sass/launch.sass */
+/* line 568, ../sass/launch.sass */
 #dino_container #dino {
   z-index: 1;
   width: 226px;
   height: 209px;
   background: url(../images/dino_sprite.png) no-repeat top right;
 }
-/* line 568, ../sass/launch.sass */
+/* line 574, ../sass/launch.sass */
 #dino_container #dino.purple {
   background-position: 0px -225px;
 }
-/* line 570, ../sass/launch.sass */
+/* line 576, ../sass/launch.sass */
 #dino_container #dino.lime_green {
   background-position: 0px -448px;
 }
-/* line 572, ../sass/launch.sass */
+/* line 578, ../sass/launch.sass */
 #dino_container #dino.light_blue {
   background-position: bottom right;
 }
@@ -1543,30 +1550,30 @@ article {
 /* Contact & Social Links
  * --------------------------------------------------
  */
-/* line 581, ../sass/launch.sass */
+/* line 587, ../sass/launch.sass */
 #contact .contact-section {
   width: 800px;
   margin: 0 auto;
 }
-/* line 585, ../sass/launch.sass */
+/* line 591, ../sass/launch.sass */
 #contact #social_links {
   float: left;
 }
-/* line 587, ../sass/launch.sass */
+/* line 593, ../sass/launch.sass */
 #contact #social_links li {
   height: 50px;
   margin: 10px 0;
   cursor: pointer;
 }
-/* line 591, ../sass/launch.sass */
+/* line 597, ../sass/launch.sass */
 #contact #social_links li:first-child {
   margin-top: 0;
 }
-/* line 593, ../sass/launch.sass */
+/* line 599, ../sass/launch.sass */
 #contact #social_links li:hover {
   cursor: pointer;
 }
-/* line 595, ../sass/launch.sass */
+/* line 601, ../sass/launch.sass */
 #contact #social_links li:hover img {
   cursor: pointer;
   -webkit-transform: rotate(-360deg);
@@ -1574,12 +1581,12 @@ article {
   -webkit-transition: -webkit-transform 0.5s ease-in;
   -moz-transition: -moz-transform 0.5s ease-in;
 }
-/* line 601, ../sass/launch.sass */
+/* line 607, ../sass/launch.sass */
 #contact #social_links li:hover a {
   color: black;
   cursor: pointer;
 }
-/* line 604, ../sass/launch.sass */
+/* line 610, ../sass/launch.sass */
 #contact #social_links li a {
   cursor: pointer;
   color: #707070;
@@ -1588,12 +1595,12 @@ article {
   padding: 10px 0 10px 0;
   background: left top no-repeat;
 }
-/* line 611, ../sass/launch.sass */
+/* line 617, ../sass/launch.sass */
 #contact #social_links li img {
   cursor: pointer;
   vertical-align: middle;
 }
-/* line 615, ../sass/launch.sass */
+/* line 621, ../sass/launch.sass */
 #contact #lifestream {
   float: left;
   width: 500px;
@@ -1601,17 +1608,17 @@ article {
   padding: 20px;
   margin: 10px 0 10px 50px;
 }
-/* line 623, ../sass/launch.sass */
+/* line 629, ../sass/launch.sass */
 #contact #lifestream .lifestream li {
   margin-bottom: 10px;
   font-size: 14px;
 }
-/* line 627, ../sass/launch.sass */
+/* line 633, ../sass/launch.sass */
 #contact #lifestream .lifestream li a {
   color: #cc9600;
   border-bottom: none;
 }
-/* line 631, ../sass/launch.sass */
+/* line 637, ../sass/launch.sass */
 #contact #lifestream .lifestream li a:hover {
   color: #ffbc00;
 }
@@ -1619,7 +1626,7 @@ article {
 /* Work
  * --------------------------------------------------
  */
-/* line 641, ../sass/launch.sass */
+/* line 647, ../sass/launch.sass */
 .sass, .css {
   background-color: #75c9ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#75c9ff, endColorstr=#0fa1ff);
@@ -1642,7 +1649,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#42b5ff), to(#0085db));
 }
 
-/* line 644, ../sass/launch.sass */
+/* line 650, ../sass/launch.sass */
 .haml, .html {
   background-color: #ff66c2;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff66c2, endColorstr=#ff0099);
@@ -1665,7 +1672,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff33ad), to(#cc007a));
 }
 
-/* line 647, ../sass/launch.sass */
+/* line 653, ../sass/launch.sass */
 .php {
   background-color: #ffd766;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffd766, endColorstr=#ffbc00);
@@ -1688,7 +1695,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffc933), to(#cc9600));
 }
 
-/* line 650, ../sass/launch.sass */
+/* line 656, ../sass/launch.sass */
 .jquery, .javascript, .d3js {
   background-color: #c266ff;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c266ff, endColorstr=#9900ff);
@@ -1711,7 +1718,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ad33ff), to(#7a00cc));
 }
 
-/* line 653, ../sass/launch.sass */
+/* line 659, ../sass/launch.sass */
 .python, .pygames {
   background-color: #ff0da0;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff0da0, endColorstr=#a60065);
@@ -1734,7 +1741,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d90084), to(#730046));
 }
 
-/* line 656, ../sass/launch.sass */
+/* line 662, ../sass/launch.sass */
 .ror {
   background-color: #c2ff66;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c2ff66, endColorstr=#99ff00);
@@ -1757,7 +1764,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#adff33), to(#7acc00));
 }
 
-/* line 659, ../sass/launch.sass */
+/* line 665, ../sass/launch.sass */
 .ms-access, .visual-basic, .visual-studio {
   background-color: #fffc66;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fffc66, endColorstr=#fffa00);
@@ -1780,7 +1787,7 @@ article {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fffb33), to(#ccc800));
 }
 
-/* line 662, ../sass/launch.sass */
+/* line 668, ../sass/launch.sass */
 .show-all {
   background-color: #333333;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#333333, endColorstr=black);
@@ -1802,35 +1809,35 @@ article {
   background-image: -moz-linear-gradient(center top, #1a1a1a, black);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a1a1a), to(black));
 }
-/* line 664, ../sass/launch.sass */
+/* line 670, ../sass/launch.sass */
 .show-all a {
   color: white;
 }
 
-/* line 668, ../sass/launch.sass */
+/* line 674, ../sass/launch.sass */
 #work a {
   color: #0fa1ff;
 }
-/* line 671, ../sass/launch.sass */
+/* line 677, ../sass/launch.sass */
 #work a:hover {
   color: #333333;
 }
-/* line 675, ../sass/launch.sass */
+/* line 681, ../sass/launch.sass */
 #work #work-content {
   width: 95%;
 }
-/* line 677, ../sass/launch.sass */
+/* line 683, ../sass/launch.sass */
 #work ul#work-list-filters {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 679, ../sass/launch.sass */
+/* line 685, ../sass/launch.sass */
 #work ul#work-list-filters li {
   float: left;
   margin: 10px;
   cursor: pointer;
 }
-/* line 683, ../sass/launch.sass */
+/* line 689, ../sass/launch.sass */
 #work ul#work-list-filters li a {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1842,22 +1849,22 @@ article {
   border: none;
   color: black;
 }
-/* line 690, ../sass/launch.sass */
+/* line 696, ../sass/launch.sass */
 #work ul#work-list-filters li a.show-all {
   color: white;
 }
-/* line 693, ../sass/launch.sass */
+/* line 699, ../sass/launch.sass */
 #work ul#work-list-filters li.active a {
   -moz-box-shadow: 1px 1px 0px 1px #333333 inset;
   -webkit-box-shadow: 1px 1px 0px 1px #333333 inset;
   box-shadow: 1px 1px 0px 1px #333333 inset;
 }
-/* line 696, ../sass/launch.sass */
+/* line 702, ../sass/launch.sass */
 #work ul#work-list {
   margin-top: 20px;
   min-width: 750px;
 }
-/* line 703, ../sass/launch.sass */
+/* line 709, ../sass/launch.sass */
 #work ul#work-list li.work-list-item {
   border: 2px solid #cccccc;
   width: 290px;
@@ -1871,74 +1878,74 @@ article {
   -webkit-border-radius: 5px;
   background: white;
 }
-/* line 714, ../sass/launch.sass */
+/* line 720, ../sass/launch.sass */
 #work ul#work-list li.work-list-item:hover {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
   border-color: #666666;
 }
-/* line 718, ../sass/launch.sass */
+/* line 724, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .slider-wrapper {
   width: 0;
   height: 0;
   overflow: hidden;
   margin: 0 auto;
 }
-/* line 724, ../sass/launch.sass */
+/* line 730, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .slider-wrapper .img-container {
   width: 600px;
   height: 400px;
   overflow: hidden;
 }
-/* line 728, ../sass/launch.sass */
+/* line 734, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .slider-wrapper .img-container img {
   width: 100%;
 }
-/* line 730, ../sass/launch.sass */
+/* line 736, ../sass/launch.sass */
 #work ul#work-list li.work-list-item.large {
   width: 95%;
   min-height: 450px;
 }
-/* line 733, ../sass/launch.sass */
+/* line 739, ../sass/launch.sass */
 #work ul#work-list li.work-list-item.large .slider-wrapper {
   width: 600px;
   height: auto;
 }
-/* line 737, ../sass/launch.sass */
+/* line 743, ../sass/launch.sass */
 #work ul#work-list li.work-list-item.large .work-list-item-links {
   display: block;
 }
-/* line 740, ../sass/launch.sass */
+/* line 746, ../sass/launch.sass */
 #work ul#work-list li.work-list-item.large .work-list-item-links .link-icon {
   display: none;
 }
-/* line 743, ../sass/launch.sass */
+/* line 749, ../sass/launch.sass */
 #work ul#work-list li.work-list-item.large .work-list-item-links .work-list-item-links-expanded {
   display: block;
 }
-/* line 746, ../sass/launch.sass */
+/* line 752, ../sass/launch.sass */
 #work ul#work-list li.work-list-item h3 {
   text-transform: capitalize;
   font-size: 14px;
   margin-bottom: 5px;
 }
-/* line 751, ../sass/launch.sass */
+/* line 757, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-description {
   font-size: 12px;
 }
-/* line 754, ../sass/launch.sass */
+/* line 760, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-icon {
   float: right;
   padding: 0px 5px 5px 0px;
 }
-/* line 758, ../sass/launch.sass */
+/* line 764, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-links {
   position: absolute;
   bottom: 5px;
   left: 5px;
 }
-/* line 762, ../sass/launch.sass */
+/* line 768, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-links .link-icon {
   text-indent: -9999px;
   display: block;
@@ -1950,11 +1957,11 @@ article {
   float: left;
   margin: 0 5px;
 }
-/* line 772, ../sass/launch.sass */
+/* line 778, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-links .work-list-item-links-expanded {
   display: none;
 }
-/* line 776, ../sass/launch.sass */
+/* line 782, ../sass/launch.sass */
 #work ul#work-list li.work-list-item .work-list-item-links .work-list-item-links-list {
   float: left;
   margin: 0;
@@ -1987,7 +1994,7 @@ article {
 #work ul#work-list li.work-list-item .work-list-item-links .work-list-item-links-list li.last {
   padding-right: 0;
 }
-/* line 782, ../sass/launch.sass */
+/* line 788, ../sass/launch.sass */
 #work ul#work-list li.work-list-item ul.work-list-item-tags {
   position: absolute;
   bottom: 5px;
@@ -1997,7 +2004,7 @@ article {
   height: 20px;
   overflow: hidden;
 }
-/* line 791, ../sass/launch.sass */
+/* line 797, ../sass/launch.sass */
 #work ul#work-list li.work-list-item ul.work-list-item-tags li {
   float: left;
   margin: 0 5px;

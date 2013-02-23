@@ -1,6 +1,6 @@
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<jnlp code="http://homepages.nyu.edu/~cj576/SubwaySqueeze/" spec="1.5+">
+<jnlp code="http://ponzeka.com/demos/SubwaySqueeze/" spec="1.5+">
     <information>
         <title>SubwaySqueeze</title>
         <vendor>Zombie Beavers</vendor>
@@ -13,13 +13,13 @@
 </security>
     <resources>
 <j2se java-vm-args="-Djava.security.policy=applet.policy" version="1.5+"/>
-<jar eager="true" href="http://homepages.nyu.edu/~cj576/SubwaySqueeze.jar" main="true"/>
+<jar eager="true" href="http://ponzeka.com/demos/SubwaySqueeze/SubwaySqueeze.jar" main="true"/>
 
 
     </resources>
     <applet-desc name="Subway Squeeze" height="500" main-class="SubwaySqueeze" width="450">
 
     </applet-desc>
- 
+
 
 </jnlp>

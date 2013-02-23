@@ -475,6 +475,16 @@
       return $("#lifestream").html(lifestreamDemo());
     }
   };
+  
+  intializeTwitterStream = function(online){
+     return $("#lifestream").lifestream({
+        list: [{
+            service: "twitter",
+            user: "PaigeTPonzeka"
+          }
+        ]
+      });
+  }
 
   lifestreamDemo = function() {
     var offline;
