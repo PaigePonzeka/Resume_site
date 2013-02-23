@@ -402,6 +402,42 @@
               }
            ]
         }
+      },
+      {
+        title: "Game Design Summer Workshop",
+        description: "Worked as the sole developer in a three person design and management team to create a game concept, test the concept and implement the concept using proper game development techniques.",
+        tags: ["Java", "Class"],
+        images: {
+          icon: "icon_playlist-creator.gif",
+          screenshots: [
+          ]
+        }
+      },
+      {
+        title: "Intro to Visual Design Fundamentals",
+        description: "Learned the fundamentals of photo re-touching/manipulation, creating vector illustrations, page layout, and professional design workflows. .",
+        tags: ["Class"],
+        images: {
+          icon: "icon_ga.png",
+          screenshots: [
+            {
+               image: "visual/1.jpg",
+               description: "Original."
+             },
+             {
+                 image: "visual/2.png",
+                 description: "Edited."
+             },
+             {
+                 image: "visual/3.jpg",
+                 description: "Original."
+             },
+             {
+                  image: "visual/4.png",
+                  description: "Edit."
+              }
+          ]
+        }
       }
     ]};
     return work;
